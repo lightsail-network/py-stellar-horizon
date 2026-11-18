@@ -1,0 +1,48 @@
+[project]
+site_name = "py-stellar-horizon"
+site_description = "A typed Python client for the Stellar Horizon API."
+site_url = "https://stellar-horizon.readthedocs.io/"
+repo_url = "https://github.com/lightsail-network/py-stellar-horizon"
+repo_name = "lightsail-network/py-stellar-horizon"
+edit_uri = "edit/main/docs/"
+nav = [
+    { "Home" = "index.md" },
+    { "Guide" = "guide.md" },
+    { "API reference" = "api.md" },
+    { "API coverage" = "api-coverage.md" },
+    { "Changelog" = "changelog.md" },
+]
+
+[project.theme]
+features = ["content.code.copy", "navigation.instant", "search.highlight", "toc.follow"]
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme: light)"
+scheme = "default"
+toggle = { icon = "lucide/sun", name = "Switch to dark mode" }
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme: dark)"
+scheme = "slate"
+toggle = { icon = "lucide/moon", name = "Switch to light mode" }
+
+[project.plugins.mkdocstrings.handlers.python]
+paths = ["src"]
+inventories = ["https://docs.python.org/3/objects.inv"]
+
+[project.plugins.mkdocstrings.handlers.python.options]
+docstring_style = "google"
+filters = ["!^_"]
+heading_level = 3
+inherited_members = true
+members_order = "source"
+merge_init_into_class = true
+separate_signature = true
+show_attribute_values = false
+show_bases = false
+show_root_full_path = false
+show_root_heading = true
+show_signature_annotations = true
+show_source = false
+show_symbol_type_heading = true
+signature_crossrefs = true
