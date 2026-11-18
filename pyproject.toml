@@ -1,0 +1,146 @@
+[project]
+name = "stellar-horizon"
+version = "0.1.0.dev0"
+description = "A typed Python client for the Stellar Horizon API."
+readme = "README.md"
+authors = [{ name = "overcat", email = "hi@overcat.dev" }]
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+requires-python = ">=3.11"
+keywords = ["stellar", "horizon", "stellar-sdk", "api-client"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Programming Language :: Python :: 3.15",
+    "Programming Language :: Python :: Free Threading :: 3 - Stable",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Implementation :: PyPy",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Typing :: Typed",
+]
+dependencies = [
+    "anyio>=4.10,<5",
+    "httpx2>=2.16,<3",
+    "pydantic>=2.9,<3",
+]
+
+[project.urls]
+Homepage = "https://github.com/lightsail-network/py-stellar-horizon"
+Documentation = "https://stellar-horizon.readthedocs.io/"
+Repository = "https://github.com/lightsail-network/py-stellar-horizon"
+Issues = "https://github.com/lightsail-network/py-stellar-horizon/issues"
+Changelog = "https://github.com/lightsail-network/py-stellar-horizon/blob/main/CHANGELOG.md"
+
+[dependency-groups]
+dev = [
+    { include-group = "test" },
+    { include-group = "examples" },
+    "git-cliff>=2.14.2",
+    "mypy>=2.4",
+    "prek>=0.5",
+    "pyright[nodejs]>=1.1.414",
+    "ruff>=0.17",
+    "zizmor>=1.32",
+]
+test = [
+    "pytest>=9.2",
+    "pytest-cov>=7.1",
+]
+# The examples build and sign transactions with the Python Stellar SDK.
+examples = [
+    "stellar-sdk>=17.0.1",
+]
+docs = [
+    "mkdocstrings-python>=2.0.10",
+    "zensical>=0.0.74",
+]
+
+[build-system]
+requires = ["uv_build>=0.13,<0.14"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+# Ship the tests with the source distribution so that downstream packagers can run them.
+# The docs are included because the tests run their examples. docs/changelog.md is a
+# build-time copy of CHANGELOG.md.
+source-include = ["tests/**", "docs/**", "CHANGELOG.md"]
+source-exclude = ["docs/changelog.md", ".DS_Store"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = [
+    "COM812", # conflicts with the formatter
+    "CPY001", # the LICENSE file covers the whole package
+    "D105",   # dunder methods are self-explanatory
+    "D107",   # the class docstring documents construction
+    "TRY003", # short, specific exception messages read better inline
+    "EM101",  # as above
+    "EM102",  # as above
+    "PLR0913", # an endpoint takes one keyword argument per query parameter
+]
+
+[tool.ruff.lint.per-file-ignores]
+# Generated from async code, where these rewrites are not possible.
+"src/stellar_horizon/_sync/*.py" = [
+    "UP028", # `async for ...: yield` has no `yield from`
+    "SIM117", # `async with` and `with` cannot be combined
+]
+"tests/_sync/*.py" = [
+    "C416",   # an async comprehension has no `list()`
+    "SIM117", # as above
+    "UP028",  # as above
+]
+"examples/**" = [
+    "INP001", # standalone scripts, not a package
+    "T201",   # they print what they find
+]
+"scripts/**" = [
+    "INP001", # standalone scripts, not a package
+    "T201",   # command-line output
+]
+"tests/**" = [
+    "D",       # test names are the documentation
+    "ANN401",  # tests deliberately pass arbitrary objects
+    "PLR2004", # literal expectations are the point of a test
+    "S101",    # pytest uses assert
+    "SLF001",  # white-box assertions
+]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.mypy]
+strict = true
+python_version = "3.11"
+files = ["src", "tests"]
+
+[tool.pyright]
+include = ["src", "tests"]
+typeCheckingMode = "strict"
+pythonVersion = "3.11"
+
+[tool.pytest]
+minversion = "9.0"
+testpaths = ["tests"]
+strict = true
+addopts = ["-ra"]
+
+[tool.coverage.run]
+branch = true
+source_pkgs = ["stellar_horizon"]
+
+[tool.coverage.report]
+fail_under = 100
+show_missing = true
+skip_covered = true
+exclude_also = ["if TYPE_CHECKING:"]
