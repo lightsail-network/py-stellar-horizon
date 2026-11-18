@@ -1,0 +1,807 @@
+{
+  "horizon_version": "30.0.1",
+  "source": "https://github.com/stellar/stellar-horizon/blob/01ba44a988b3ebc2d68d3cb6747fa2c2733773cd/internal/httpx/router.go",
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/health",
+      "body": "object",
+      "stream": null,
+      "not_offered": "It tells a load balancer whether the server is up, and is not part of the API."
+    },
+    {
+      "method": "GET",
+      "path": "/",
+      "body": "object",
+      "stream": null,
+      "call": {
+        "resource": "",
+        "method": "root"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/fee_stats",
+      "body": "object",
+      "stream": null,
+      "call": {
+        "resource": "",
+        "method": "fee_stats"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/accounts",
+      "body": "page",
+      "stream": null,
+      "call": {
+        "resource": "accounts",
+        "method": "list",
+        "kwargs": {
+          "signer": "GAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWHF"
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{account_id}",
+      "body": "object",
+      "stream": "object",
+      "call": {
+        "resource": "accounts",
+        "method": "get",
+        "args": [
+          "GAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWHF"
+        ]
+      },
+      "stream_not_offered": "Horizon v30 sends the account once per connection and never again, because it compares only the account ID to tell whether the account changed."
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{account_id}/data/{key}",
+      "body": "object",
+      "stream": "object",
+      "call": {
+        "resource": "accounts",
+        "method": "data",
+        "args": [
+          "GAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWHF",
+          "config.memo_required"
+        ]
+      },
+      "stream_call": {
+        "resource": "accounts",
+        "method": "stream_data",
+        "args": [
+          "GAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWHF",
+          "config.memo_required"
+        ]
+      },
+      "raw": true,
+      "raw_not_offered": "`data()` returns the same bytes, decoded from the JSON body."
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{account_id}/offers",
+      "body": "page",
+      "stream": "records",
+      "not_offered": "As a page, it holds the same offers as `/offers?seller=`, which `client.offers.list(seller=\u2026)` calls. Its stream is offered.",
+      "stream_call": {
+        "resource": "offers",
+        "method": "stream",
+        "kwargs": {
+          "seller": "GAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWHF"
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{account_id}/effects",
+      "body": "page",
+      "stream": "records",
+      "call": {
+        "resource": "effects",
+        "method": "list",
+        "kwargs": {
+          "account": "GAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWHF"
+        }
+      },
+      "stream_call": {
+        "resource": "effects",
+        "method": "stream",
+        "kwargs": {
+          "account": "GAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWHF"
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{account_id}/operations",
+      "body": "page",
+      "stream": "records",
+      "call": {
+        "resource": "operations",
+        "method": "list",
+        "kwargs": {
+          "account": "GAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWHF"
+        }
+      },
+      "stream_call": {
+        "resource": "operations",
+        "method": "stream",
+        "kwargs": {
+          "account": "GAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWHF"
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{account_id}/payments",
+      "body": "page",
+      "stream": "records",
+      "call": {
+        "resource": "payments",
+        "method": "list",
+        "kwargs": {
+          "account": "GAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWHF"
+        }
+      },
+      "stream_call": {
+        "resource": "payments",
+        "method": "stream",
+        "kwargs": {
+          "account": "GAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWHF"
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{account_id}/trades",
+      "body": "page",
+      "stream": "records",
+      "call": {
+        "resource": "trades",
+        "method": "list",
+        "kwargs": {
+          "account": "GAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWHF"
+        }
+      },
+      "stream_call": {
+        "resource": "trades",
+        "method": "stream",
+        "kwargs": {
+          "account": "GAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWHF"
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{account_id}/transactions",
+      "body": "page",
+      "stream": "records",
+      "call": {
+        "resource": "transactions",
+        "method": "list",
+        "kwargs": {
+          "account": "GAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWHF"
+        }
+      },
+      "stream_call": {
+        "resource": "transactions",
+        "method": "stream",
+        "kwargs": {
+          "account": "GAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWHF"
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/claimable_balances",
+      "body": "page",
+      "stream": null,
+      "call": {
+        "resource": "claimable_balances",
+        "method": "list"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/claimable_balances/{id}",
+      "body": "object",
+      "stream": null,
+      "call": {
+        "resource": "claimable_balances",
+        "method": "get",
+        "args": [
+          "00000000efefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefef"
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/claimable_balances/{claimable_balance_id}/operations",
+      "body": "page",
+      "stream": "records",
+      "call": {
+        "resource": "operations",
+        "method": "list",
+        "kwargs": {
+          "claimable_balance": "00000000efefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefef"
+        }
+      },
+      "stream_call": {
+        "resource": "operations",
+        "method": "stream",
+        "kwargs": {
+          "claimable_balance": "00000000efefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefef"
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/claimable_balances/{claimable_balance_id}/transactions",
+      "body": "page",
+      "stream": "records",
+      "call": {
+        "resource": "transactions",
+        "method": "list",
+        "kwargs": {
+          "claimable_balance": "00000000efefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefef"
+        }
+      },
+      "stream_call": {
+        "resource": "transactions",
+        "method": "stream",
+        "kwargs": {
+          "claimable_balance": "00000000efefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefef"
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/liquidity_pools",
+      "body": "page",
+      "stream": null,
+      "call": {
+        "resource": "liquidity_pools",
+        "method": "list"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/liquidity_pools/{liquidity_pool_id}",
+      "body": "object",
+      "stream": null,
+      "call": {
+        "resource": "liquidity_pools",
+        "method": "get",
+        "args": [
+          "cdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcd"
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/liquidity_pools/{liquidity_pool_id}/operations",
+      "body": "page",
+      "stream": "records",
+      "call": {
+        "resource": "operations",
+        "method": "list",
+        "kwargs": {
+          "liquidity_pool": "cdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcd"
+        }
+      },
+      "stream_call": {
+        "resource": "operations",
+        "method": "stream",
+        "kwargs": {
+          "liquidity_pool": "cdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcd"
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/liquidity_pools/{liquidity_pool_id}/transactions",
+      "body": "page",
+      "stream": "records",
+      "call": {
+        "resource": "transactions",
+        "method": "list",
+        "kwargs": {
+          "liquidity_pool": "cdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcd"
+        }
+      },
+      "stream_call": {
+        "resource": "transactions",
+        "method": "stream",
+        "kwargs": {
+          "liquidity_pool": "cdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcd"
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/liquidity_pools/{liquidity_pool_id}/effects",
+      "body": "page",
+      "stream": "records",
+      "call": {
+        "resource": "effects",
+        "method": "list",
+        "kwargs": {
+          "liquidity_pool": "cdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcd"
+        }
+      },
+      "stream_call": {
+        "resource": "effects",
+        "method": "stream",
+        "kwargs": {
+          "liquidity_pool": "cdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcd"
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/liquidity_pools/{liquidity_pool_id}/trades",
+      "body": "page",
+      "stream": "records",
+      "call": {
+        "resource": "trades",
+        "method": "list",
+        "kwargs": {
+          "liquidity_pool": "cdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcd"
+        }
+      },
+      "stream_call": {
+        "resource": "trades",
+        "method": "stream",
+        "kwargs": {
+          "liquidity_pool": "cdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcd"
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/offers",
+      "body": "page",
+      "stream": null,
+      "call": {
+        "resource": "offers",
+        "method": "list"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/offers/{offer_id}",
+      "body": "object",
+      "stream": null,
+      "call": {
+        "resource": "offers",
+        "method": "get",
+        "args": [
+          5
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/offers/{offer_id}/trades",
+      "body": "page",
+      "stream": "records",
+      "call": {
+        "resource": "trades",
+        "method": "list",
+        "kwargs": {
+          "offer": 5
+        }
+      },
+      "stream_call": {
+        "resource": "trades",
+        "method": "stream",
+        "kwargs": {
+          "offer": 5
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/assets",
+      "body": "page",
+      "stream": null,
+      "call": {
+        "resource": "assets",
+        "method": "list"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/paths",
+      "body": "list",
+      "stream": null,
+      "not_offered": "An older name of `/paths/strict-receive`, which `paths.strict_receive()` calls."
+    },
+    {
+      "method": "GET",
+      "path": "/paths/strict-receive",
+      "body": "list",
+      "stream": null,
+      "call": {
+        "resource": "paths",
+        "method": "strict_receive",
+        "kwargs": {
+          "destination_asset": "native",
+          "destination_amount": "1",
+          "source_account": "GAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWHF"
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/paths/strict-send",
+      "body": "list",
+      "stream": null,
+      "call": {
+        "resource": "paths",
+        "method": "strict_send",
+        "kwargs": {
+          "source_asset": "native",
+          "source_amount": "1",
+          "destination_account": "GAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWHF"
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/order_book",
+      "body": "object",
+      "stream": "object",
+      "call": {
+        "resource": "order_book",
+        "method": "get",
+        "args": [
+          "native",
+          "USD:GAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWHF"
+        ]
+      },
+      "stream_call": {
+        "resource": "order_book",
+        "method": "stream",
+        "args": [
+          "native",
+          "USD:GAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWHF"
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/ledgers",
+      "body": "page",
+      "stream": "records",
+      "call": {
+        "resource": "ledgers",
+        "method": "list"
+      },
+      "stream_call": {
+        "resource": "ledgers",
+        "method": "stream"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/ledgers/{ledger_id}",
+      "body": "object",
+      "stream": null,
+      "call": {
+        "resource": "ledgers",
+        "method": "get",
+        "args": [
+          7
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/ledgers/{ledger_id}/transactions",
+      "body": "page",
+      "stream": "records",
+      "call": {
+        "resource": "transactions",
+        "method": "list",
+        "kwargs": {
+          "ledger": 7
+        }
+      },
+      "stream_call": {
+        "resource": "transactions",
+        "method": "stream",
+        "kwargs": {
+          "ledger": 7
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/ledgers/{ledger_id}/effects",
+      "body": "page",
+      "stream": "records",
+      "call": {
+        "resource": "effects",
+        "method": "list",
+        "kwargs": {
+          "ledger": 7
+        }
+      },
+      "stream_call": {
+        "resource": "effects",
+        "method": "stream",
+        "kwargs": {
+          "ledger": 7
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/ledgers/{ledger_id}/operations",
+      "body": "page",
+      "stream": "records",
+      "call": {
+        "resource": "operations",
+        "method": "list",
+        "kwargs": {
+          "ledger": 7
+        }
+      },
+      "stream_call": {
+        "resource": "operations",
+        "method": "stream",
+        "kwargs": {
+          "ledger": 7
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/ledgers/{ledger_id}/payments",
+      "body": "page",
+      "stream": "records",
+      "call": {
+        "resource": "payments",
+        "method": "list",
+        "kwargs": {
+          "ledger": 7
+        }
+      },
+      "stream_call": {
+        "resource": "payments",
+        "method": "stream",
+        "kwargs": {
+          "ledger": 7
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/transactions",
+      "body": "page",
+      "stream": "records",
+      "call": {
+        "resource": "transactions",
+        "method": "list"
+      },
+      "stream_call": {
+        "resource": "transactions",
+        "method": "stream"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/transactions/{tx_id}",
+      "body": "object",
+      "stream": null,
+      "call": {
+        "resource": "transactions",
+        "method": "get",
+        "args": [
+          "abababababababababababababababababababababababababababababababab"
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/transactions/{tx_id}/effects",
+      "body": "page",
+      "stream": "records",
+      "call": {
+        "resource": "effects",
+        "method": "list",
+        "kwargs": {
+          "transaction": "abababababababababababababababababababababababababababababababab"
+        }
+      },
+      "stream_call": {
+        "resource": "effects",
+        "method": "stream",
+        "kwargs": {
+          "transaction": "abababababababababababababababababababababababababababababababab"
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/transactions/{tx_id}/operations",
+      "body": "page",
+      "stream": "records",
+      "call": {
+        "resource": "operations",
+        "method": "list",
+        "kwargs": {
+          "transaction": "abababababababababababababababababababababababababababababababab"
+        }
+      },
+      "stream_call": {
+        "resource": "operations",
+        "method": "stream",
+        "kwargs": {
+          "transaction": "abababababababababababababababababababababababababababababababab"
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/transactions/{tx_id}/payments",
+      "body": "page",
+      "stream": "records",
+      "call": {
+        "resource": "payments",
+        "method": "list",
+        "kwargs": {
+          "transaction": "abababababababababababababababababababababababababababababababab"
+        }
+      },
+      "stream_call": {
+        "resource": "payments",
+        "method": "stream",
+        "kwargs": {
+          "transaction": "abababababababababababababababababababababababababababababababab"
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/operations",
+      "body": "page",
+      "stream": "records",
+      "call": {
+        "resource": "operations",
+        "method": "list"
+      },
+      "stream_call": {
+        "resource": "operations",
+        "method": "stream"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/operations/{id}",
+      "body": "object",
+      "stream": null,
+      "call": {
+        "resource": "operations",
+        "method": "get",
+        "args": [
+          12
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/operations/{op_id}/effects",
+      "body": "page",
+      "stream": "records",
+      "call": {
+        "resource": "effects",
+        "method": "list",
+        "kwargs": {
+          "operation": 12
+        }
+      },
+      "stream_call": {
+        "resource": "effects",
+        "method": "stream",
+        "kwargs": {
+          "operation": 12
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/payments",
+      "body": "page",
+      "stream": "records",
+      "call": {
+        "resource": "payments",
+        "method": "list"
+      },
+      "stream_call": {
+        "resource": "payments",
+        "method": "stream"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/effects",
+      "body": "page",
+      "stream": "records",
+      "call": {
+        "resource": "effects",
+        "method": "list"
+      },
+      "stream_call": {
+        "resource": "effects",
+        "method": "stream"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/trades",
+      "body": "page",
+      "stream": "records",
+      "call": {
+        "resource": "trades",
+        "method": "list"
+      },
+      "stream_call": {
+        "resource": "trades",
+        "method": "stream"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/trade_aggregations",
+      "body": "page",
+      "stream": null,
+      "call": {
+        "resource": "trade_aggregations",
+        "method": "list",
+        "args": [
+          "native",
+          "USD:GAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWHF",
+          60000
+        ]
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/transactions",
+      "body": "object",
+      "stream": null,
+      "call": {
+        "resource": "transactions",
+        "method": "submit",
+        "args": [
+          "AAAA"
+        ]
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/transactions_async",
+      "body": "object",
+      "stream": null,
+      "call": {
+        "resource": "transactions",
+        "method": "enqueue",
+        "args": [
+          "AAAA"
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/friendbot",
+      "body": "redirect",
+      "stream": null,
+      "not_offered": "A redirect, for `GET` and `POST`, to the friendbot of a test network, only on servers configured with one. Call friendbot itself."
+    }
+  ]
+}
