@@ -1,0 +1,64 @@
+{
+  "_links": {
+    "self": {
+      "href": "https://horizon.stellar.org/operations/281183284006817793/effects?cursor=0\u0026limit=1\u0026order=asc"
+    },
+    "next": {
+      "href": "https://horizon.stellar.org/operations/281183284006817793/effects?cursor=281183284006817793-1\u0026limit=1\u0026order=asc"
+    },
+    "prev": {
+      "href": "https://horizon.stellar.org/operations/281183284006817793/effects?cursor=281183284006817793-1\u0026limit=1\u0026order=desc"
+    }
+  },
+  "_embedded": {
+    "records": [
+      {
+        "_links": {
+          "operation": {
+            "href": "https://horizon.stellar.org/operations/281183284006817793"
+          },
+          "succeeds": {
+            "href": "https://horizon.stellar.org/effects?order=desc\u0026cursor=281183284006817793-1"
+          },
+          "precedes": {
+            "href": "https://horizon.stellar.org/effects?order=asc\u0026cursor=281183284006817793-1"
+          }
+        },
+        "id": "0281183284006817793-0000000001",
+        "paging_token": "281183284006817793-1",
+        "account": "GC3YFH5LOLBJ3A3YPEANAH52AG7CMGNCET4F5KB23VIOG2F6FQJOIMVL",
+        "type": "liquidity_pool_withdrew",
+        "type_i": 91,
+        "created_at": "2026-11-14T03:21:07Z",
+        "liquidity_pool": {
+          "id": "77ea94ffd7acb40bb9458c8f89294640145b90c5ab3ddcefbaa8f6d8b0a761d7",
+          "fee_bp": 30,
+          "type": "constant_product",
+          "total_trustlines": "1",
+          "total_shares": "0.0000000",
+          "reserves": [
+            {
+              "asset": "OM:GAIRK7D3EZ3KNOFUFMOEMY5SAPWZ4AV3WDOHCHMO4ACOQQRZLBFFXGH7",
+              "amount": "0.0000000"
+            },
+            {
+              "asset": "OP:GAIRK7D3EZ3KNOFUFMOEMY5SAPWZ4AV3WDOHCHMO4ACOQQRZLBFFXGH7",
+              "amount": "0.0000000"
+            }
+          ]
+        },
+        "reserves_received": [
+          {
+            "asset": "OM:GAIRK7D3EZ3KNOFUFMOEMY5SAPWZ4AV3WDOHCHMO4ACOQQRZLBFFXGH7",
+            "amount": "10000000.0000000"
+          },
+          {
+            "asset": "OP:GAIRK7D3EZ3KNOFUFMOEMY5SAPWZ4AV3WDOHCHMO4ACOQQRZLBFFXGH7",
+            "amount": "10000000.0000000"
+          }
+        ],
+        "shares_redeemed": "10000000.0000000"
+      }
+    ]
+  }
+}

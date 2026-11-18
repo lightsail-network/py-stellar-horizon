@@ -1,0 +1,152 @@
+{
+  "_links": {
+    "self": {
+      "href": "https://horizon.stellar.org/trade_aggregations?base_asset_type=native\u0026counter_asset_type=credit_alphanum4\u0026counter_asset_code=USDC\u0026counter_asset_issuer=GA5ZSEJYB37JRC5AVCIA5MOP4RHTM335X2KGX3IHOJAPP5RE34K4KZVN\u0026resolution=3600000\u0026order=desc\u0026limit=5"
+    },
+    "next": {
+      "href": "https://horizon.stellar.org/trade_aggregations?base_asset_type=native\u0026counter_asset_code=USDC\u0026counter_asset_issuer=GA5ZSEJYB37JRC5AVCIA5MOP4RHTM335X2KGX3IHOJAPP5RE34K4KZVN\u0026counter_asset_type=credit_alphanum4\u0026end_time=1794625200000\u0026limit=5\u0026order=desc\u0026resolution=3600000"
+    },
+    "prev": {
+      "href": ""
+    }
+  },
+  "_embedded": {
+    "records": [
+      {
+        "timestamp": "1794639600000",
+        "trade_count": "772",
+        "base_volume": "264951.5631257",
+        "counter_volume": "37913.3674539",
+        "avg": "0.1430955",
+        "high": "0.1440611",
+        "high_r": {
+          "n": "1440611",
+          "d": "10000000"
+        },
+        "low": "0.1424164",
+        "low_r": {
+          "n": "28483",
+          "d": "199998"
+        },
+        "open": "0.1426879",
+        "open_r": {
+          "n": "1426879",
+          "d": "10000000"
+        },
+        "close": "0.1427840",
+        "close_r": {
+          "n": "14278401",
+          "d": "100000000"
+        }
+      },
+      {
+        "timestamp": "1794636000000",
+        "trade_count": "1234",
+        "base_volume": "232716.7060431",
+        "counter_volume": "33504.9994573",
+        "avg": "0.1439733",
+        "high": "0.1446838",
+        "high_r": {
+          "n": "29177608",
+          "d": "201664679"
+        },
+        "low": "0.1434731",
+        "low_r": {
+          "n": "4691075",
+          "d": "32696556"
+        },
+        "open": "0.1441626",
+        "open_r": {
+          "n": "720813",
+          "d": "5000000"
+        },
+        "close": "0.1441066",
+        "close_r": {
+          "n": "243897561",
+          "d": "1692479800"
+        }
+      },
+      {
+        "timestamp": "1794632400000",
+        "trade_count": "980",
+        "base_volume": "197249.6055469",
+        "counter_volume": "28343.1411388",
+        "avg": "0.1436918",
+        "high": "0.1442239",
+        "high_r": {
+          "n": "5016254063",
+          "d": "34781017985"
+        },
+        "low": "0.1430170",
+        "low_r": {
+          "n": "143017",
+          "d": "1000000"
+        },
+        "open": "0.1433899",
+        "open_r": {
+          "n": "1433899",
+          "d": "10000000"
+        },
+        "close": "0.1441390",
+        "close_r": {
+          "n": "360344",
+          "d": "2499975"
+        }
+      },
+      {
+        "timestamp": "1794628800000",
+        "trade_count": "1186",
+        "base_volume": "367139.1219432",
+        "counter_volume": "52560.2961306",
+        "avg": "0.1431618",
+        "high": "0.1439523",
+        "high_r": {
+          "n": "1439523",
+          "d": "10000000"
+        },
+        "low": "0.1421711",
+        "low_r": {
+          "n": "50000",
+          "d": "351689"
+        },
+        "open": "0.1427656",
+        "open_r": {
+          "n": "10000000",
+          "d": "70044906"
+        },
+        "close": "0.1427610",
+        "close_r": {
+          "n": "167752",
+          "d": "1175055"
+        }
+      },
+      {
+        "timestamp": "1794625200000",
+        "trade_count": "1268",
+        "base_volume": "848957.7677828",
+        "counter_volume": "121401.9766398",
+        "avg": "0.1430012",
+        "high": "0.1446024",
+        "high_r": {
+          "n": "1446024",
+          "d": "10000000"
+        },
+        "low": "0.1420910",
+        "low_r": {
+          "n": "1420910181",
+          "d": "10000000000"
+        },
+        "open": "0.1429108",
+        "open_r": {
+          "n": "357277",
+          "d": "2500000"
+        },
+        "close": "0.1429108",
+        "close_r": {
+          "n": "357277",
+          "d": "2500000"
+        }
+      }
+    ]
+  }
+}

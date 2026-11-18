@@ -1,0 +1,39 @@
+{
+  "_links": {
+    "self": {
+      "href": "https://horizon-testnet.stellar.org/effects?cursor=24577774257717249-1\u0026limit=1\u0026order=desc"
+    },
+    "next": {
+      "href": "https://horizon-testnet.stellar.org/effects?cursor=24577774257709058-1\u0026limit=1\u0026order=desc"
+    },
+    "prev": {
+      "href": "https://horizon-testnet.stellar.org/effects?cursor=24577774257709058-1\u0026limit=1\u0026order=asc"
+    }
+  },
+  "_embedded": {
+    "records": [
+      {
+        "_links": {
+          "operation": {
+            "href": "https://horizon-testnet.stellar.org/operations/24577774257709058"
+          },
+          "succeeds": {
+            "href": "https://horizon-testnet.stellar.org/effects?order=desc\u0026cursor=24577774257709058-1"
+          },
+          "precedes": {
+            "href": "https://horizon-testnet.stellar.org/effects?order=asc\u0026cursor=24577774257709058-1"
+          }
+        },
+        "id": "0024577774257709058-0000000001",
+        "paging_token": "24577774257709058-1",
+        "account": "GC5UTAORS4ASIS5H6M4WNFZECGWXJHET5VRPVYC7UM44CM62OA2RQEPS",
+        "type": "claimable_balance_sponsorship_updated",
+        "type_i": 70,
+        "created_at": "2026-11-14T05:58:59Z",
+        "balance_id": "00000000c5b7932850636b2def5eebf75aecd0c3a9d56e2a61ea030fa7e73568b29dffe4",
+        "former_sponsor": "GC5UTAORS4ASIS5H6M4WNFZECGWXJHET5VRPVYC7UM44CM62OA2RQEPS",
+        "new_sponsor": "GDUFELVZEZ3CX5PLYJAGPZ7CIM3HTVAD2JRHKXTGK4N5B2ADCALW7NGW"
+      }
+    ]
+  }
+}

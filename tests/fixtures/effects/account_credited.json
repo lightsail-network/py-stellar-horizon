@@ -1,0 +1,40 @@
+{
+  "_links": {
+    "self": {
+      "href": "https://horizon.stellar.org/operations/281176562383257601/effects?cursor=281176562383257601-1\u0026limit=1\u0026order=asc"
+    },
+    "next": {
+      "href": "https://horizon.stellar.org/operations/281176562383257601/effects?cursor=281176562383257601-2\u0026limit=1\u0026order=asc"
+    },
+    "prev": {
+      "href": "https://horizon.stellar.org/operations/281176562383257601/effects?cursor=281176562383257601-2\u0026limit=1\u0026order=desc"
+    }
+  },
+  "_embedded": {
+    "records": [
+      {
+        "_links": {
+          "operation": {
+            "href": "https://horizon.stellar.org/operations/281176562383257601"
+          },
+          "succeeds": {
+            "href": "https://horizon.stellar.org/effects?order=desc\u0026cursor=281176562383257601-2"
+          },
+          "precedes": {
+            "href": "https://horizon.stellar.org/effects?order=asc\u0026cursor=281176562383257601-2"
+          }
+        },
+        "id": "0281176562383257601-0000000002",
+        "paging_token": "281176562383257601-2",
+        "account": "GD3ZN2T6QQMKLAGKKMWHHY4FITANVJBTREEJERHTWGWF2GSBPOSHGCLU",
+        "account_muxed": "MD3ZN2T6QQMKLAGKKMWHHY4FITANVJBTREEJERHTWGWF2GSBPOSHGAAAAAAAAAAC4SRI2",
+        "account_muxed_id": "740",
+        "type": "account_credited",
+        "type_i": 2,
+        "created_at": "2026-11-14T01:10:42Z",
+        "asset_type": "native",
+        "amount": "0.0306264"
+      }
+    ]
+  }
+}

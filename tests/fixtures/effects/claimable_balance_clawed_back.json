@@ -1,0 +1,37 @@
+{
+  "_links": {
+    "self": {
+      "href": "https://horizon.stellar.org/operations/281176562383458367/effects?cursor=0\u0026limit=1\u0026order=asc"
+    },
+    "next": {
+      "href": "https://horizon.stellar.org/operations/281176562383458367/effects?cursor=281176562383458367-1\u0026limit=1\u0026order=asc"
+    },
+    "prev": {
+      "href": "https://horizon.stellar.org/operations/281176562383458367/effects?cursor=281176562383458367-1\u0026limit=1\u0026order=desc"
+    }
+  },
+  "_embedded": {
+    "records": [
+      {
+        "_links": {
+          "operation": {
+            "href": "https://horizon.stellar.org/operations/281176562383458367"
+          },
+          "succeeds": {
+            "href": "https://horizon.stellar.org/effects?order=desc\u0026cursor=281176562383458367-1"
+          },
+          "precedes": {
+            "href": "https://horizon.stellar.org/effects?order=asc\u0026cursor=281176562383458367-1"
+          }
+        },
+        "id": "0281176562383458367-0000000001",
+        "paging_token": "281176562383458367-1",
+        "account": "GAXSGZ2JM3LNWOO4WRGADISNMWO4HQLG4QBGUZRKH5ZHL3EQBGX73ICE",
+        "type": "claimable_balance_clawed_back",
+        "type_i": 80,
+        "created_at": "2026-11-14T01:10:42Z",
+        "balance_id": "0000000022ee65c517aa0c2996af6a62de882c2d5842e6a7b882c94f2a18bb26cbb14cf4"
+      }
+    ]
+  }
+}

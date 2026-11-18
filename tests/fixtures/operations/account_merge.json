@@ -1,0 +1,31 @@
+{
+  "_links": {
+    "self": {
+      "href": "https://horizon.stellar.org/operations/281176562383257601"
+    },
+    "transaction": {
+      "href": "https://horizon.stellar.org/transactions/b062e722118462ce1e0783af0282eade3d1dbf8d60a312ee235eae1bee5ea31a"
+    },
+    "effects": {
+      "href": "https://horizon.stellar.org/operations/281176562383257601/effects"
+    },
+    "succeeds": {
+      "href": "https://horizon.stellar.org/effects?order=desc\u0026cursor=281176562383257601"
+    },
+    "precedes": {
+      "href": "https://horizon.stellar.org/effects?order=asc\u0026cursor=281176562383257601"
+    }
+  },
+  "id": "281176562383257601",
+  "paging_token": "281176562383257601",
+  "transaction_successful": true,
+  "source_account": "GB5QEUI3EIVG7GAPUHXDTKLIOYOQGJ5NB3JWOIXFSWHLBLXZH6IXO3GZ",
+  "type": "account_merge",
+  "type_i": 8,
+  "created_at": "2026-11-14T01:10:42Z",
+  "transaction_hash": "b062e722118462ce1e0783af0282eade3d1dbf8d60a312ee235eae1bee5ea31a",
+  "account": "GB5QEUI3EIVG7GAPUHXDTKLIOYOQGJ5NB3JWOIXFSWHLBLXZH6IXO3GZ",
+  "into": "GD3ZN2T6QQMKLAGKKMWHHY4FITANVJBTREEJERHTWGWF2GSBPOSHGCLU",
+  "into_muxed": "MD3ZN2T6QQMKLAGKKMWHHY4FITANVJBTREEJERHTWGWF2GSBPOSHGAAAAAAAAAAC4SRI2",
+  "into_muxed_id": "740"
+}

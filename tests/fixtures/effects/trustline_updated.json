@@ -1,0 +1,40 @@
+{
+  "_links": {
+    "self": {
+      "href": "https://horizon-testnet.stellar.org/effects?cursor=24579406345293825-1\u0026limit=1\u0026order=desc"
+    },
+    "next": {
+      "href": "https://horizon-testnet.stellar.org/effects?cursor=24579406345285633-1\u0026limit=1\u0026order=desc"
+    },
+    "prev": {
+      "href": "https://horizon-testnet.stellar.org/effects?cursor=24579406345285633-1\u0026limit=1\u0026order=asc"
+    }
+  },
+  "_embedded": {
+    "records": [
+      {
+        "_links": {
+          "operation": {
+            "href": "https://horizon-testnet.stellar.org/operations/24579406345285633"
+          },
+          "succeeds": {
+            "href": "https://horizon-testnet.stellar.org/effects?order=desc\u0026cursor=24579406345285633-1"
+          },
+          "precedes": {
+            "href": "https://horizon-testnet.stellar.org/effects?order=asc\u0026cursor=24579406345285633-1"
+          }
+        },
+        "id": "0024579406345285633-0000000001",
+        "paging_token": "24579406345285633-1",
+        "account": "GCFGEBTOIDIQV27H4LTWHGQH4RO5PVUMNBXN737G4N46MEDDZAEY3EEI",
+        "type": "trustline_updated",
+        "type_i": 22,
+        "created_at": "2026-11-14T06:30:39Z",
+        "asset_type": "credit_alphanum4",
+        "asset_code": "USDC",
+        "asset_issuer": "GBBD47IF6LWK7P7MDEVSCWR7DPUWV3NY3DTQEVFL4NAT4AQH3ZLLFLA5",
+        "limit": "922337203685.4775807"
+      }
+    ]
+  }
+}

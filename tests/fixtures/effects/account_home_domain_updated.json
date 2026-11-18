@@ -1,0 +1,37 @@
+{
+  "_links": {
+    "self": {
+      "href": "https://horizon-testnet.stellar.org/effects?cursor=24580381302865921-1\u0026limit=1\u0026order=desc"
+    },
+    "next": {
+      "href": "https://horizon-testnet.stellar.org/effects?cursor=24580381302853633-1\u0026limit=1\u0026order=desc"
+    },
+    "prev": {
+      "href": "https://horizon-testnet.stellar.org/effects?cursor=24580381302853633-1\u0026limit=1\u0026order=asc"
+    }
+  },
+  "_embedded": {
+    "records": [
+      {
+        "_links": {
+          "operation": {
+            "href": "https://horizon-testnet.stellar.org/operations/24580381302853633"
+          },
+          "succeeds": {
+            "href": "https://horizon-testnet.stellar.org/effects?order=desc\u0026cursor=24580381302853633-1"
+          },
+          "precedes": {
+            "href": "https://horizon-testnet.stellar.org/effects?order=asc\u0026cursor=24580381302853633-1"
+          }
+        },
+        "id": "0024580381302853633-0000000001",
+        "paging_token": "24580381302853633-1",
+        "account": "GARPNBW63CCCVEM4II5B2TXEGJRCQXBNPEBEI43OUR54GLYMTLASU5W3",
+        "type": "account_home_domain_updated",
+        "type_i": 5,
+        "created_at": "2026-11-14T06:49:34Z",
+        "home_domain": "example.com"
+      }
+    ]
+  }
+}

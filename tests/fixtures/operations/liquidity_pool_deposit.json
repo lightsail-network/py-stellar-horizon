@@ -1,0 +1,59 @@
+{
+  "_links": {
+    "self": {
+      "href": "https://horizon.stellar.org/operations/281176403469336578"
+    },
+    "transaction": {
+      "href": "https://horizon.stellar.org/transactions/bff026df59d8382338c90996450953254473adaf8b30b005478c4a97246d25ba"
+    },
+    "effects": {
+      "href": "https://horizon.stellar.org/operations/281176403469336578/effects"
+    },
+    "succeeds": {
+      "href": "https://horizon.stellar.org/effects?order=desc\u0026cursor=281176403469336578"
+    },
+    "precedes": {
+      "href": "https://horizon.stellar.org/effects?order=asc\u0026cursor=281176403469336578"
+    }
+  },
+  "id": "281176403469336578",
+  "paging_token": "281176403469336578",
+  "transaction_successful": true,
+  "source_account": "GCHAIE7BKB2EWTPQG2RWI3IQIALHUKP2LPAZZFG3STLXRUD37PZ7WEUZ",
+  "type": "liquidity_pool_deposit",
+  "type_i": 22,
+  "created_at": "2026-11-14T01:07:37Z",
+  "transaction_hash": "bff026df59d8382338c90996450953254473adaf8b30b005478c4a97246d25ba",
+  "liquidity_pool_id": "847e5f92ab6a8c03414f48cbd1889567349941bdd254b52b3734a7db42c930e7",
+  "reserves_max": [
+    {
+      "asset": "PYUSD:GDQE7IXJ4HUHV6RQHIUPRJSEZE4DRS5WY577O2FY6YQ5LVWZ7JZTU2V5",
+      "amount": "0.2970583"
+    },
+    {
+      "asset": "xLMNR:GDKA6WVMFSA73BMEVKPO6WXSSWP4MPRBDJVSXLLSEVIEVH226L5RJ7NL",
+      "amount": "4309.4403143"
+    }
+  ],
+  "min_price": "0.0000682",
+  "min_price_r": {
+    "n": 140017,
+    "d": 2051751466
+  },
+  "max_price": "0.0000696",
+  "max_price_r": {
+    "n": 14264,
+    "d": 204879797
+  },
+  "reserves_deposited": [
+    {
+      "asset": "PYUSD:GDQE7IXJ4HUHV6RQHIUPRJSEZE4DRS5WY577O2FY6YQ5LVWZ7JZTU2V5",
+      "amount": "0.2970583"
+    },
+    {
+      "asset": "xLMNR:GDKA6WVMFSA73BMEVKPO6WXSSWP4MPRBDJVSXLLSEVIEVH226L5RJ7NL",
+      "amount": "4309.4403143"
+    }
+  ],
+  "shares_received": "35.7792539"
+}

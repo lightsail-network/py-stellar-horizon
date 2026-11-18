@@ -1,0 +1,10 @@
+retry: 1000
+event: open
+data: "hello"
+
+data: {"value":"MQ=="}
+
+retry: 10
+event: close
+data: "byebye"
+

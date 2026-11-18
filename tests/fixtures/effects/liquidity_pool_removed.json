@@ -1,0 +1,37 @@
+{
+  "_links": {
+    "self": {
+      "href": "https://horizon-testnet.stellar.org/transactions/80e40362356f331aa97ab8dfb9717e0e9c5510a0843b72ac79cf141c64e7ed89/effects?cursor=24582528786522114-1\u0026limit=1\u0026order=asc"
+    },
+    "next": {
+      "href": "https://horizon-testnet.stellar.org/transactions/80e40362356f331aa97ab8dfb9717e0e9c5510a0843b72ac79cf141c64e7ed89/effects?cursor=24582528786522114-2\u0026limit=1\u0026order=asc"
+    },
+    "prev": {
+      "href": "https://horizon-testnet.stellar.org/transactions/80e40362356f331aa97ab8dfb9717e0e9c5510a0843b72ac79cf141c64e7ed89/effects?cursor=24582528786522114-2\u0026limit=1\u0026order=desc"
+    }
+  },
+  "_embedded": {
+    "records": [
+      {
+        "_links": {
+          "operation": {
+            "href": "https://horizon-testnet.stellar.org/operations/24582528786522114"
+          },
+          "succeeds": {
+            "href": "https://horizon-testnet.stellar.org/effects?order=desc\u0026cursor=24582528786522114-2"
+          },
+          "precedes": {
+            "href": "https://horizon-testnet.stellar.org/effects?order=asc\u0026cursor=24582528786522114-2"
+          }
+        },
+        "id": "0024582528786522114-0000000002",
+        "paging_token": "24582528786522114-2",
+        "account": "GBWG4TML4WB24R6UUVYBV6CFGBRQK6WPOA5WKZJUJXJVTAIJXMG2UFEV",
+        "type": "liquidity_pool_removed",
+        "type_i": 94,
+        "created_at": "2026-11-14T07:31:14Z",
+        "liquidity_pool_id": "3730f54382422eb8692add99f3eec3522ce59463bd75876b187f272a9fbe430b"
+      }
+    ]
+  }
+}

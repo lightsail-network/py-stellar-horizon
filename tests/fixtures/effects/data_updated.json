@@ -1,0 +1,38 @@
+{
+  "_links": {
+    "self": {
+      "href": "https://horizon-testnet.stellar.org/effects?cursor=24582069225013249-1\u0026limit=1\u0026order=desc"
+    },
+    "next": {
+      "href": "https://horizon-testnet.stellar.org/effects?cursor=24582069225009153-1\u0026limit=1\u0026order=desc"
+    },
+    "prev": {
+      "href": "https://horizon-testnet.stellar.org/effects?cursor=24582069225009153-1\u0026limit=1\u0026order=asc"
+    }
+  },
+  "_embedded": {
+    "records": [
+      {
+        "_links": {
+          "operation": {
+            "href": "https://horizon-testnet.stellar.org/operations/24582069225009153"
+          },
+          "succeeds": {
+            "href": "https://horizon-testnet.stellar.org/effects?order=desc\u0026cursor=24582069225009153-1"
+          },
+          "precedes": {
+            "href": "https://horizon-testnet.stellar.org/effects?order=asc\u0026cursor=24582069225009153-1"
+          }
+        },
+        "id": "0024582069225009153-0000000001",
+        "paging_token": "24582069225009153-1",
+        "account": "GBLXLM7LZMUBNMZHWTC26MSP7IWVVIG3DNKNSJ7GFWB44AEVAVWZDCTD",
+        "type": "data_updated",
+        "type_i": 42,
+        "created_at": "2026-11-14T07:22:19Z",
+        "name": "evidence_pack_sha256",
+        "value": "+78Yj+RPlp27iMWXj+G5XovzApb7yqw22aEFrqRKR0Y="
+      }
+    ]
+  }
+}

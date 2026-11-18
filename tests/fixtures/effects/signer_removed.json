@@ -1,0 +1,39 @@
+{
+  "_links": {
+    "self": {
+      "href": "https://horizon.stellar.org/effects?cursor=281195924095602691-3\u0026limit=1\u0026order=desc"
+    },
+    "next": {
+      "href": "https://horizon.stellar.org/effects?cursor=281195924095602691-2\u0026limit=1\u0026order=desc"
+    },
+    "prev": {
+      "href": "https://horizon.stellar.org/effects?cursor=281195924095602691-2\u0026limit=1\u0026order=asc"
+    }
+  },
+  "_embedded": {
+    "records": [
+      {
+        "_links": {
+          "operation": {
+            "href": "https://horizon.stellar.org/operations/281195924095602691"
+          },
+          "succeeds": {
+            "href": "https://horizon.stellar.org/effects?order=desc\u0026cursor=281195924095602691-2"
+          },
+          "precedes": {
+            "href": "https://horizon.stellar.org/effects?order=asc\u0026cursor=281195924095602691-2"
+          }
+        },
+        "id": "0281195924095602691-0000000002",
+        "paging_token": "281195924095602691-2",
+        "account": "GDWC7ER77XPKAYTSNFNDCNXJOV3HTZ4PP5U5G7EPRBGXLIDR6VEE6INT",
+        "type": "signer_removed",
+        "type_i": 11,
+        "created_at": "2026-11-14T07:26:22Z",
+        "weight": 0,
+        "public_key": "GDWC7ER77XPKAYTSNFNDCNXJOV3HTZ4PP5U5G7EPRBGXLIDR6VEE6INT",
+        "key": ""
+      }
+    ]
+  }
+}

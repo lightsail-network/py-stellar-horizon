@@ -1,0 +1,412 @@
+{
+  "_links": {
+    "self": {
+      "href": "https://horizon.stellar.org/claimable_balances?cursor=\u0026limit=10\u0026order=desc"
+    },
+    "next": {
+      "href": "https://horizon.stellar.org/claimable_balances?cursor=65471004-00000000dc2e6f93b91cc3315281ba3677753dfa4f2fc530d5a79518018454207b53ce33\u0026limit=10\u0026order=desc"
+    },
+    "prev": {
+      "href": "https://horizon.stellar.org/claimable_balances?cursor=65471031-000000009f8c08a011abc98eb36bf01cf895b3383bae5ca0ac53cbcb620f785365cd2c9c\u0026limit=10\u0026order=asc"
+    }
+  },
+  "_embedded": {
+    "records": [
+      {
+        "_links": {
+          "self": {
+            "href": "https://horizon.stellar.org/claimable_balances/000000009f8c08a011abc98eb36bf01cf895b3383bae5ca0ac53cbcb620f785365cd2c9c"
+          },
+          "transactions": {
+            "href": "https://horizon.stellar.org/claimable_balances/000000009f8c08a011abc98eb36bf01cf895b3383bae5ca0ac53cbcb620f785365cd2c9c/transactions{?cursor,limit,order}",
+            "templated": true
+          },
+          "operations": {
+            "href": "https://horizon.stellar.org/claimable_balances/000000009f8c08a011abc98eb36bf01cf895b3383bae5ca0ac53cbcb620f785365cd2c9c/operations{?cursor,limit,order}",
+            "templated": true
+          }
+        },
+        "id": "000000009f8c08a011abc98eb36bf01cf895b3383bae5ca0ac53cbcb620f785365cd2c9c",
+        "asset": "BHD:GBKH45V6XGE46Z4JPARO77PCVMOCL5T6YAVV2UJL2ETVHBUUTKM3LNEW",
+        "amount": "1.0000000",
+        "sponsor": "GCS3AW5VPCOQKCS3M2ATDHUMSNKKHPFVTHLUW3EJPVXBKGXHVRUIPZ6R",
+        "last_modified_ledger": 65471031,
+        "last_modified_time": "2026-11-14T07:26:37Z",
+        "claimants": [
+          {
+            "destination": "GCS3AW5VPCOQKCS3M2ATDHUMSNKKHPFVTHLUW3EJPVXBKGXHVRUIPZ6R",
+            "predicate": {
+              "not": {
+                "abs_before": "2026-11-15T07:26:34Z",
+                "abs_before_epoch": "1794727594"
+              }
+            }
+          },
+          {
+            "destination": "GDACXOGCNAW7KIMF67NQKTHUIMMXYMYV6C6GUCK5VMU5Z3RPYUG3DXFS",
+            "predicate": {
+              "unconditional": true
+            }
+          }
+        ],
+        "flags": {
+          "clawback_enabled": false
+        },
+        "paging_token": "65471031-000000009f8c08a011abc98eb36bf01cf895b3383bae5ca0ac53cbcb620f785365cd2c9c"
+      },
+      {
+        "_links": {
+          "self": {
+            "href": "https://horizon.stellar.org/claimable_balances/000000004134f97c13d728758d2ab52781383fcb3878b7b15a7ba21d78255c1cf3ecd4b7"
+          },
+          "transactions": {
+            "href": "https://horizon.stellar.org/claimable_balances/000000004134f97c13d728758d2ab52781383fcb3878b7b15a7ba21d78255c1cf3ecd4b7/transactions{?cursor,limit,order}",
+            "templated": true
+          },
+          "operations": {
+            "href": "https://horizon.stellar.org/claimable_balances/000000004134f97c13d728758d2ab52781383fcb3878b7b15a7ba21d78255c1cf3ecd4b7/operations{?cursor,limit,order}",
+            "templated": true
+          }
+        },
+        "id": "000000004134f97c13d728758d2ab52781383fcb3878b7b15a7ba21d78255c1cf3ecd4b7",
+        "asset": "STARDUST:GD3ZN2T6QQMKLAGKKMWHHY4FITANVJBTREEJERHTWGWF2GSBPOSHGCLU",
+        "amount": "0.0368856",
+        "sponsor": "GD3ZN2T6QQMKLAGKKMWHHY4FITANVJBTREEJERHTWGWF2GSBPOSHGCLU",
+        "last_modified_ledger": 65471025,
+        "last_modified_time": "2026-11-14T07:26:07Z",
+        "claimants": [
+          {
+            "destination": "GBB6O62AOEAG4FPPZHMWSO5W6X5WXML7FE7WH2G2WPIMN2YADVXCIJYP",
+            "predicate": {
+              "unconditional": true
+            }
+          }
+        ],
+        "flags": {
+          "clawback_enabled": false
+        },
+        "paging_token": "65471025-000000004134f97c13d728758d2ab52781383fcb3878b7b15a7ba21d78255c1cf3ecd4b7"
+      },
+      {
+        "_links": {
+          "self": {
+            "href": "https://horizon.stellar.org/claimable_balances/0000000051d6d18d8ec85f1391e8cb56d0a427cebf71be7c17d9248017c624bbb59ba71e"
+          },
+          "transactions": {
+            "href": "https://horizon.stellar.org/claimable_balances/0000000051d6d18d8ec85f1391e8cb56d0a427cebf71be7c17d9248017c624bbb59ba71e/transactions{?cursor,limit,order}",
+            "templated": true
+          },
+          "operations": {
+            "href": "https://horizon.stellar.org/claimable_balances/0000000051d6d18d8ec85f1391e8cb56d0a427cebf71be7c17d9248017c624bbb59ba71e/operations{?cursor,limit,order}",
+            "templated": true
+          }
+        },
+        "id": "0000000051d6d18d8ec85f1391e8cb56d0a427cebf71be7c17d9248017c624bbb59ba71e",
+        "asset": "AUDD:GBKH45V6XGE46Z4JPARO77PCVMOCL5T6YAVV2UJL2ETVHBUUTKM3LNEW",
+        "amount": "1.0000000",
+        "sponsor": "GCS3AW5VPCOQKCS3M2ATDHUMSNKKHPFVTHLUW3EJPVXBKGXHVRUIPZ6R",
+        "last_modified_ledger": 65471017,
+        "last_modified_time": "2026-11-14T07:25:27Z",
+        "claimants": [
+          {
+            "destination": "GCS3AW5VPCOQKCS3M2ATDHUMSNKKHPFVTHLUW3EJPVXBKGXHVRUIPZ6R",
+            "predicate": {
+              "not": {
+                "abs_before": "2026-11-15T07:25:21Z",
+                "abs_before_epoch": "1794727521"
+              }
+            }
+          },
+          {
+            "destination": "GDACXOGCNAW7KIMF67NQKTHUIMMXYMYV6C6GUCK5VMU5Z3RPYUG3DXFS",
+            "predicate": {
+              "unconditional": true
+            }
+          }
+        ],
+        "flags": {
+          "clawback_enabled": false
+        },
+        "paging_token": "65471017-0000000051d6d18d8ec85f1391e8cb56d0a427cebf71be7c17d9248017c624bbb59ba71e"
+      },
+      {
+        "_links": {
+          "self": {
+            "href": "https://horizon.stellar.org/claimable_balances/00000000ce28bde11251a62cfa4d29be433ca74c8b2b78d3107863a54cb6ad5f87efd0cd"
+          },
+          "transactions": {
+            "href": "https://horizon.stellar.org/claimable_balances/00000000ce28bde11251a62cfa4d29be433ca74c8b2b78d3107863a54cb6ad5f87efd0cd/transactions{?cursor,limit,order}",
+            "templated": true
+          },
+          "operations": {
+            "href": "https://horizon.stellar.org/claimable_balances/00000000ce28bde11251a62cfa4d29be433ca74c8b2b78d3107863a54cb6ad5f87efd0cd/operations{?cursor,limit,order}",
+            "templated": true
+          }
+        },
+        "id": "00000000ce28bde11251a62cfa4d29be433ca74c8b2b78d3107863a54cb6ad5f87efd0cd",
+        "asset": "upvoteICE:GAXSGZ2JM3LNWOO4WRGADISNMWO4HQLG4QBGUZRKH5ZHL3EQBGX73ICE",
+        "amount": "3779509.9112748",
+        "sponsor": "GDGYLDEFQHPMMOBG22TJTOP7JMZ6EN4KWZQYT66SRFU4NGGJXQIAX3KD",
+        "last_modified_ledger": 65471013,
+        "last_modified_time": "2026-11-14T07:25:07Z",
+        "claimants": [
+          {
+            "destination": "GBKBL6JQTW5Y5KI7VWZFCSD6GED4EHO5FVZPB3BKIXAFAR5EUPKST3T2",
+            "predicate": {
+              "not": {
+                "unconditional": true
+              }
+            }
+          },
+          {
+            "destination": "GDGYLDEFQHPMMOBG22TJTOP7JMZ6EN4KWZQYT66SRFU4NGGJXQIAX3KD",
+            "predicate": {
+              "not": {
+                "abs_before": "2026-11-14T08:36:55Z",
+                "abs_before_epoch": "1794645415"
+              }
+            }
+          }
+        ],
+        "flags": {
+          "clawback_enabled": true
+        },
+        "paging_token": "65471013-00000000ce28bde11251a62cfa4d29be433ca74c8b2b78d3107863a54cb6ad5f87efd0cd"
+      },
+      {
+        "_links": {
+          "self": {
+            "href": "https://horizon.stellar.org/claimable_balances/00000000f615dc813ac624c2e61a610b646f0f8f276e1165c6360cb706aadec8bcf68ac3"
+          },
+          "transactions": {
+            "href": "https://horizon.stellar.org/claimable_balances/00000000f615dc813ac624c2e61a610b646f0f8f276e1165c6360cb706aadec8bcf68ac3/transactions{?cursor,limit,order}",
+            "templated": true
+          },
+          "operations": {
+            "href": "https://horizon.stellar.org/claimable_balances/00000000f615dc813ac624c2e61a610b646f0f8f276e1165c6360cb706aadec8bcf68ac3/operations{?cursor,limit,order}",
+            "templated": true
+          }
+        },
+        "id": "00000000f615dc813ac624c2e61a610b646f0f8f276e1165c6360cb706aadec8bcf68ac3",
+        "asset": "BFAB:GCFK76RBKT6FTHC3BH4P6O5IQXH4Q2QHL4OAPAEUCFG52GK6VZVGBFAB",
+        "amount": "4.4620000",
+        "sponsor": "GB4NLVHUFFJYUG5PMJRPSOOXGM6GRKNKWJ2BMJQATAZOEG2GZD2PVN27",
+        "last_modified_ledger": 65471004,
+        "last_modified_time": "2026-11-14T07:24:22Z",
+        "claimants": [
+          {
+            "destination": "GB3BMX4RT4KNHLO2SVA24KHXCDORY6P5CT6AFIZWBR6GP7RYJIV72YJQ",
+            "predicate": {
+              "unconditional": true
+            }
+          },
+          {
+            "destination": "GB4NLVHUFFJYUG5PMJRPSOOXGM6GRKNKWJ2BMJQATAZOEG2GZD2PVN27",
+            "predicate": {
+              "unconditional": true
+            }
+          }
+        ],
+        "flags": {
+          "clawback_enabled": false
+        },
+        "paging_token": "65471004-00000000f615dc813ac624c2e61a610b646f0f8f276e1165c6360cb706aadec8bcf68ac3"
+      },
+      {
+        "_links": {
+          "self": {
+            "href": "https://horizon.stellar.org/claimable_balances/00000000e32f4b557d43c7842e30b14aef2fee526d66bbade03f060cb66abd7367438fa3"
+          },
+          "transactions": {
+            "href": "https://horizon.stellar.org/claimable_balances/00000000e32f4b557d43c7842e30b14aef2fee526d66bbade03f060cb66abd7367438fa3/transactions{?cursor,limit,order}",
+            "templated": true
+          },
+          "operations": {
+            "href": "https://horizon.stellar.org/claimable_balances/00000000e32f4b557d43c7842e30b14aef2fee526d66bbade03f060cb66abd7367438fa3/operations{?cursor,limit,order}",
+            "templated": true
+          }
+        },
+        "id": "00000000e32f4b557d43c7842e30b14aef2fee526d66bbade03f060cb66abd7367438fa3",
+        "asset": "BFAB:GCFK76RBKT6FTHC3BH4P6O5IQXH4Q2QHL4OAPAEUCFG52GK6VZVGBFAB",
+        "amount": "4.4620000",
+        "sponsor": "GB4NLVHUFFJYUG5PMJRPSOOXGM6GRKNKWJ2BMJQATAZOEG2GZD2PVN27",
+        "last_modified_ledger": 65471004,
+        "last_modified_time": "2026-11-14T07:24:22Z",
+        "claimants": [
+          {
+            "destination": "GCHDWZ2S7QZDGTWUMCO54PR7QDMRBVM53ZWCPMJEW3OY4QBR7WPEYBBN",
+            "predicate": {
+              "unconditional": true
+            }
+          },
+          {
+            "destination": "GB4NLVHUFFJYUG5PMJRPSOOXGM6GRKNKWJ2BMJQATAZOEG2GZD2PVN27",
+            "predicate": {
+              "unconditional": true
+            }
+          }
+        ],
+        "flags": {
+          "clawback_enabled": false
+        },
+        "paging_token": "65471004-00000000e32f4b557d43c7842e30b14aef2fee526d66bbade03f060cb66abd7367438fa3"
+      },
+      {
+        "_links": {
+          "self": {
+            "href": "https://horizon.stellar.org/claimable_balances/00000000e3214c2c7247b2562fe2914a1930c621f1ff7295e43f06f06c197c79b88f48cc"
+          },
+          "transactions": {
+            "href": "https://horizon.stellar.org/claimable_balances/00000000e3214c2c7247b2562fe2914a1930c621f1ff7295e43f06f06c197c79b88f48cc/transactions{?cursor,limit,order}",
+            "templated": true
+          },
+          "operations": {
+            "href": "https://horizon.stellar.org/claimable_balances/00000000e3214c2c7247b2562fe2914a1930c621f1ff7295e43f06f06c197c79b88f48cc/operations{?cursor,limit,order}",
+            "templated": true
+          }
+        },
+        "id": "00000000e3214c2c7247b2562fe2914a1930c621f1ff7295e43f06f06c197c79b88f48cc",
+        "asset": "BFAB:GCFK76RBKT6FTHC3BH4P6O5IQXH4Q2QHL4OAPAEUCFG52GK6VZVGBFAB",
+        "amount": "4.4620000",
+        "sponsor": "GB4NLVHUFFJYUG5PMJRPSOOXGM6GRKNKWJ2BMJQATAZOEG2GZD2PVN27",
+        "last_modified_ledger": 65471004,
+        "last_modified_time": "2026-11-14T07:24:22Z",
+        "claimants": [
+          {
+            "destination": "GAQNTTXCXPWGKYUV6WCG4ONFQAPKLAUC7RBRSPBSTSQ5LHQ22XF5XUE5",
+            "predicate": {
+              "unconditional": true
+            }
+          },
+          {
+            "destination": "GB4NLVHUFFJYUG5PMJRPSOOXGM6GRKNKWJ2BMJQATAZOEG2GZD2PVN27",
+            "predicate": {
+              "unconditional": true
+            }
+          }
+        ],
+        "flags": {
+          "clawback_enabled": false
+        },
+        "paging_token": "65471004-00000000e3214c2c7247b2562fe2914a1930c621f1ff7295e43f06f06c197c79b88f48cc"
+      },
+      {
+        "_links": {
+          "self": {
+            "href": "https://horizon.stellar.org/claimable_balances/00000000e0aa11848cae4e120b81ba3b7940040f21328124c1c26ddd87a191eb55c06b23"
+          },
+          "transactions": {
+            "href": "https://horizon.stellar.org/claimable_balances/00000000e0aa11848cae4e120b81ba3b7940040f21328124c1c26ddd87a191eb55c06b23/transactions{?cursor,limit,order}",
+            "templated": true
+          },
+          "operations": {
+            "href": "https://horizon.stellar.org/claimable_balances/00000000e0aa11848cae4e120b81ba3b7940040f21328124c1c26ddd87a191eb55c06b23/operations{?cursor,limit,order}",
+            "templated": true
+          }
+        },
+        "id": "00000000e0aa11848cae4e120b81ba3b7940040f21328124c1c26ddd87a191eb55c06b23",
+        "asset": "BFAB:GCFK76RBKT6FTHC3BH4P6O5IQXH4Q2QHL4OAPAEUCFG52GK6VZVGBFAB",
+        "amount": "4.4620000",
+        "sponsor": "GB4NLVHUFFJYUG5PMJRPSOOXGM6GRKNKWJ2BMJQATAZOEG2GZD2PVN27",
+        "last_modified_ledger": 65471004,
+        "last_modified_time": "2026-11-14T07:24:22Z",
+        "claimants": [
+          {
+            "destination": "GBMC2LIYTDUEL3BAAOCC2RSFH2UIUBSNDBOQG6XAJSTJKL5EQGHO2TC6",
+            "predicate": {
+              "unconditional": true
+            }
+          },
+          {
+            "destination": "GB4NLVHUFFJYUG5PMJRPSOOXGM6GRKNKWJ2BMJQATAZOEG2GZD2PVN27",
+            "predicate": {
+              "unconditional": true
+            }
+          }
+        ],
+        "flags": {
+          "clawback_enabled": false
+        },
+        "paging_token": "65471004-00000000e0aa11848cae4e120b81ba3b7940040f21328124c1c26ddd87a191eb55c06b23"
+      },
+      {
+        "_links": {
+          "self": {
+            "href": "https://horizon.stellar.org/claimable_balances/00000000dec1cbf7fc8705e01093e06bb3f726e1a769dd7f1269de9cb7c5e35030369bd5"
+          },
+          "transactions": {
+            "href": "https://horizon.stellar.org/claimable_balances/00000000dec1cbf7fc8705e01093e06bb3f726e1a769dd7f1269de9cb7c5e35030369bd5/transactions{?cursor,limit,order}",
+            "templated": true
+          },
+          "operations": {
+            "href": "https://horizon.stellar.org/claimable_balances/00000000dec1cbf7fc8705e01093e06bb3f726e1a769dd7f1269de9cb7c5e35030369bd5/operations{?cursor,limit,order}",
+            "templated": true
+          }
+        },
+        "id": "00000000dec1cbf7fc8705e01093e06bb3f726e1a769dd7f1269de9cb7c5e35030369bd5",
+        "asset": "BFAB:GCFK76RBKT6FTHC3BH4P6O5IQXH4Q2QHL4OAPAEUCFG52GK6VZVGBFAB",
+        "amount": "4.4620000",
+        "sponsor": "GB4NLVHUFFJYUG5PMJRPSOOXGM6GRKNKWJ2BMJQATAZOEG2GZD2PVN27",
+        "last_modified_ledger": 65471004,
+        "last_modified_time": "2026-11-14T07:24:22Z",
+        "claimants": [
+          {
+            "destination": "GBWW3NSMCVLZTFCSU2GR3AQE3Y7ZETW3EYD33RVP34FWH5GIQB4MOMF3",
+            "predicate": {
+              "unconditional": true
+            }
+          },
+          {
+            "destination": "GB4NLVHUFFJYUG5PMJRPSOOXGM6GRKNKWJ2BMJQATAZOEG2GZD2PVN27",
+            "predicate": {
+              "unconditional": true
+            }
+          }
+        ],
+        "flags": {
+          "clawback_enabled": false
+        },
+        "paging_token": "65471004-00000000dec1cbf7fc8705e01093e06bb3f726e1a769dd7f1269de9cb7c5e35030369bd5"
+      },
+      {
+        "_links": {
+          "self": {
+            "href": "https://horizon.stellar.org/claimable_balances/00000000dc2e6f93b91cc3315281ba3677753dfa4f2fc530d5a79518018454207b53ce33"
+          },
+          "transactions": {
+            "href": "https://horizon.stellar.org/claimable_balances/00000000dc2e6f93b91cc3315281ba3677753dfa4f2fc530d5a79518018454207b53ce33/transactions{?cursor,limit,order}",
+            "templated": true
+          },
+          "operations": {
+            "href": "https://horizon.stellar.org/claimable_balances/00000000dc2e6f93b91cc3315281ba3677753dfa4f2fc530d5a79518018454207b53ce33/operations{?cursor,limit,order}",
+            "templated": true
+          }
+        },
+        "id": "00000000dc2e6f93b91cc3315281ba3677753dfa4f2fc530d5a79518018454207b53ce33",
+        "asset": "BFAB:GCFK76RBKT6FTHC3BH4P6O5IQXH4Q2QHL4OAPAEUCFG52GK6VZVGBFAB",
+        "amount": "4.4620000",
+        "sponsor": "GB4NLVHUFFJYUG5PMJRPSOOXGM6GRKNKWJ2BMJQATAZOEG2GZD2PVN27",
+        "last_modified_ledger": 65471004,
+        "last_modified_time": "2026-11-14T07:24:22Z",
+        "claimants": [
+          {
+            "destination": "GAWJRZKUSILWFLZNWVLZWBK52NVCELMRDTEBU4A5IMFFO5D6L5MAFFTF",
+            "predicate": {
+              "unconditional": true
+            }
+          },
+          {
+            "destination": "GB4NLVHUFFJYUG5PMJRPSOOXGM6GRKNKWJ2BMJQATAZOEG2GZD2PVN27",
+            "predicate": {
+              "unconditional": true
+            }
+          }
+        ],
+        "flags": {
+          "clawback_enabled": false
+        },
+        "paging_token": "65471004-00000000dc2e6f93b91cc3315281ba3677753dfa4f2fc530d5a79518018454207b53ce33"
+      }
+    ]
+  }
+}

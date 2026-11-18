@@ -1,0 +1,30 @@
+{
+  "_links": {
+    "self": {
+      "href": "https://horizon.stellar.org/operations/281176558088437761"
+    },
+    "transaction": {
+      "href": "https://horizon.stellar.org/transactions/e2caefe53b3dca0694701696fb2cd4a0cee1a1aff69ba13a1a1219dec5aca272"
+    },
+    "effects": {
+      "href": "https://horizon.stellar.org/operations/281176558088437761/effects"
+    },
+    "succeeds": {
+      "href": "https://horizon.stellar.org/effects?order=desc\u0026cursor=281176558088437761"
+    },
+    "precedes": {
+      "href": "https://horizon.stellar.org/effects?order=asc\u0026cursor=281176558088437761"
+    }
+  },
+  "id": "281176558088437761",
+  "paging_token": "281176558088437761",
+  "transaction_successful": false,
+  "source_account": "GBOGVS7QHKU2HJUWIEKFOXJD5ZHXHI5OZJWX2Y4YKOK7PZ6NLBL3RO2G",
+  "type": "create_account",
+  "type_i": 0,
+  "created_at": "2026-11-14T01:10:37Z",
+  "transaction_hash": "e2caefe53b3dca0694701696fb2cd4a0cee1a1aff69ba13a1a1219dec5aca272",
+  "starting_balance": "1.6000000",
+  "funder": "GBOGVS7QHKU2HJUWIEKFOXJD5ZHXHI5OZJWX2Y4YKOK7PZ6NLBL3RO2G",
+  "account": "GBLP3AQGH6W4UTRHKBQYVZW7ZMIKVJCVUBCQU3YU3MA22BIQ64MATJKQ"
+}

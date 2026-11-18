@@ -1,0 +1,51 @@
+{
+  "_links": {
+    "self": {
+      "href": "https://horizon.stellar.org/operations/281176562383216641"
+    },
+    "transaction": {
+      "href": "https://horizon.stellar.org/transactions/198e8ccc9fc13c36ffb90e89b71ca7fe143c02c606c6717c478b1525e790fb50"
+    },
+    "effects": {
+      "href": "https://horizon.stellar.org/operations/281176562383216641/effects"
+    },
+    "succeeds": {
+      "href": "https://horizon.stellar.org/effects?order=desc\u0026cursor=281176562383216641"
+    },
+    "precedes": {
+      "href": "https://horizon.stellar.org/effects?order=asc\u0026cursor=281176562383216641"
+    }
+  },
+  "id": "281176562383216641",
+  "paging_token": "281176562383216641",
+  "transaction_successful": false,
+  "source_account": "GDSEYVKFTTVLGCACNYCETGY4ZY2VA4PHHL7XEHUAOGDUYNP32AGQSALA",
+  "type": "path_payment_strict_receive",
+  "type_i": 2,
+  "created_at": "2026-11-14T01:10:42Z",
+  "transaction_hash": "198e8ccc9fc13c36ffb90e89b71ca7fe143c02c606c6717c478b1525e790fb50",
+  "asset_type": "native",
+  "from": "GDSEYVKFTTVLGCACNYCETGY4ZY2VA4PHHL7XEHUAOGDUYNP32AGQSALA",
+  "to": "GDSEYVKFTTVLGCACNYCETGY4ZY2VA4PHHL7XEHUAOGDUYNP32AGQSALA",
+  "amount": "0.0467076",
+  "path": [
+    {
+      "asset_type": "credit_alphanum4",
+      "asset_code": "yBTC",
+      "asset_issuer": "GBUVRNH4RW4VLHP4C5MOF46RRIRZLAVHYGX45MVSTKA2F6TMR7E7L6NW"
+    },
+    {
+      "asset_type": "credit_alphanum4",
+      "asset_code": "BTC",
+      "asset_issuer": "GDPJALI4AZKUU2W426U5WKMAT6CN3AJRPIIRYR2YM54TL2GDWO5O2MZM"
+    },
+    {
+      "asset_type": "credit_alphanum4",
+      "asset_code": "yXLM",
+      "asset_issuer": "GARDNV3Q7YGT4AKSDF25LT32YSCCW4EV22Y2TV3I2PU2MMXJTEDL5T55"
+    }
+  ],
+  "source_amount": "0.0000000",
+  "source_max": "0.0465211",
+  "source_asset_type": "native"
+}

@@ -1,0 +1,36 @@
+{
+  "_links": {
+    "self": {
+      "href": "https://horizon-testnet.stellar.org/effects?cursor=24577623933861889-1\u0026limit=1\u0026order=desc"
+    },
+    "next": {
+      "href": "https://horizon-testnet.stellar.org/effects?cursor=24577615343919105-1\u0026limit=1\u0026order=desc"
+    },
+    "prev": {
+      "href": "https://horizon-testnet.stellar.org/effects?cursor=24577615343919105-1\u0026limit=1\u0026order=asc"
+    }
+  },
+  "_embedded": {
+    "records": [
+      {
+        "_links": {
+          "operation": {
+            "href": "https://horizon-testnet.stellar.org/operations/24577615343919105"
+          },
+          "succeeds": {
+            "href": "https://horizon-testnet.stellar.org/effects?order=desc\u0026cursor=24577615343919105-1"
+          },
+          "precedes": {
+            "href": "https://horizon-testnet.stellar.org/effects?order=asc\u0026cursor=24577615343919105-1"
+          }
+        },
+        "id": "0024577615343919105-0000000001",
+        "paging_token": "24577615343919105-1",
+        "account": "GBZOJHDLD5LPFAJJ3PJK2ODFAG7SH4ZLY6QCKZ3B5BFZSFACJLVIZBC5",
+        "type": "account_inflation_destination_updated",
+        "type_i": 7,
+        "created_at": "2026-11-14T05:55:54Z"
+      }
+    ]
+  }
+}

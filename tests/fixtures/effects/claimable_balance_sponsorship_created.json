@@ -1,0 +1,38 @@
+{
+  "_links": {
+    "self": {
+      "href": "https://horizon-testnet.stellar.org/operations/24562930850734081/effects?cursor=24562930850734081-4\u0026limit=1\u0026order=asc"
+    },
+    "next": {
+      "href": "https://horizon-testnet.stellar.org/operations/24562930850734081/effects?cursor=24562930850734081-5\u0026limit=1\u0026order=asc"
+    },
+    "prev": {
+      "href": "https://horizon-testnet.stellar.org/operations/24562930850734081/effects?cursor=24562930850734081-5\u0026limit=1\u0026order=desc"
+    }
+  },
+  "_embedded": {
+    "records": [
+      {
+        "_links": {
+          "operation": {
+            "href": "https://horizon-testnet.stellar.org/operations/24562930850734081"
+          },
+          "succeeds": {
+            "href": "https://horizon-testnet.stellar.org/effects?order=desc\u0026cursor=24562930850734081-5"
+          },
+          "precedes": {
+            "href": "https://horizon-testnet.stellar.org/effects?order=asc\u0026cursor=24562930850734081-5"
+          }
+        },
+        "id": "0024562930850734081-0000000005",
+        "paging_token": "24562930850734081-5",
+        "account": "GCSZGARG73HDTSJZXRCAYPN7DWSBXHPFRJUC55BWUFFTCJK5XERISR6T",
+        "type": "claimable_balance_sponsorship_created",
+        "type_i": 69,
+        "created_at": "2026-11-14T01:10:59Z",
+        "balance_id": "000000000d0d6d2894a9962c143827c7a9ea829f45899e69c3eaa8ef6e4a5f41650b9b1e",
+        "sponsor": "GCSZGARG73HDTSJZXRCAYPN7DWSBXHPFRJUC55BWUFFTCJK5XERISR6T"
+      }
+    ]
+  }
+}

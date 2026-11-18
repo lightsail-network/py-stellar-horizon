@@ -1,0 +1,41 @@
+{
+  "_links": {
+    "self": {
+      "href": "https://horizon.stellar.org/effects?cursor=281195967046459393-3\u0026limit=1\u0026order=desc"
+    },
+    "next": {
+      "href": "https://horizon.stellar.org/effects?cursor=281195967046459393-2\u0026limit=1\u0026order=desc"
+    },
+    "prev": {
+      "href": "https://horizon.stellar.org/effects?cursor=281195967046459393-2\u0026limit=1\u0026order=asc"
+    }
+  },
+  "_embedded": {
+    "records": [
+      {
+        "_links": {
+          "operation": {
+            "href": "https://horizon.stellar.org/operations/281195967046459393"
+          },
+          "succeeds": {
+            "href": "https://horizon.stellar.org/effects?order=desc\u0026cursor=281195967046459393-2"
+          },
+          "precedes": {
+            "href": "https://horizon.stellar.org/effects?order=asc\u0026cursor=281195967046459393-2"
+          }
+        },
+        "id": "0281195967046459393-0000000002",
+        "paging_token": "281195967046459393-2",
+        "account": "GDCRZPZYBZ24RHRO3WBPJGFDL7NDFKUQBS3ZDB6YGBJB3TGKMFYBQ3LD",
+        "type": "contract_credited",
+        "type_i": 96,
+        "created_at": "2026-11-14T07:27:12Z",
+        "asset_type": "credit_alphanum4",
+        "asset_code": "EURC",
+        "asset_issuer": "GDHU6WRG4IEQXM5NZ4BMPKOXHW76MZM4Y2IEMFDVXBSDP6SJY4ITNPP2",
+        "contract": "CBDDA5YNDGQA4RB5WCAZLUA6FCZA2RPCOYXIRKP6TBCQCE5SQDXQJQ2D",
+        "amount": "20.6749759"
+      }
+    ]
+  }
+}
