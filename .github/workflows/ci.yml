@@ -1,0 +1,140 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions: {}
+
+env:
+  UV_LOCKED: "1"
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
+        with:
+          enable-cache: false
+      - run: uv lock --check
+      - run: make lint check-generated typecheck
+
+  test:
+    runs-on: ${{ matrix.os }}
+    permissions:
+      contents: read
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest]
+        python: ["3.11", "3.12", "3.13", "3.14", "3.14t", "3.15", "3.15t", "pypy3.11", "pypy3.12"]
+        include:
+          - os: macos-latest
+            python: "3.15"
+          - os: windows-latest
+            python: "3.15"
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
+        with:
+          enable-cache: false
+      # Bash on every OS, since PowerShell on Windows would not expand $PYTHON.
+      # pydantic-core has no wheels for PyPy 3.12, so uv builds it there; the runner image
+      # has the Rust toolchain that this needs.
+      - run: uv run --no-default-groups --group test --python "$PYTHON" pytest --cov --cov-report=term-missing
+        shell: bash
+        env:
+          PYTHON: ${{ matrix.python }}
+
+  # The lowest versions that pyproject.toml allows, on the lowest Python: code that
+  # needs more than the dependencies promise fails here.
+  lowest:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
+        with:
+          enable-cache: false
+      - name: Install the lowest allowed versions
+        run: |
+          uv venv --python 3.11 "$RUNNER_TEMP/lowest"
+          uv pip install --python "$RUNNER_TEMP/lowest/bin/python" \
+            --resolution lowest-direct . --group test
+          uv pip list --python "$RUNNER_TEMP/lowest/bin/python"
+      - run: '"$RUNNER_TEMP/lowest/bin/python" -m pytest'
+
+  # The models against the Go types that Horizon serializes its responses from, at the
+  # go-stellar-sdk version that scripts/go_structs/go.mod pins.
+  go-structs:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
+        with:
+          enable-cache: false
+      - uses: actions/setup-go@924ae3a1cded613372ab5595356fb5720e22ba16 # v6.5.0
+        with:
+          go-version-file: scripts/go_structs/go.mod
+          cache: false
+      - run: make check-go-structs
+
+  docs:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
+        with:
+          enable-cache: false
+      - run: make docs
+
+  package:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
+        with:
+          enable-cache: false
+      - run: uv build
+      - name: Import the built wheel without the source tree or dev dependencies
+        run: |
+          cd "$(mktemp -d)"
+          uv run --isolated --no-project --with "$GITHUB_WORKSPACE"/dist/*.whl \
+            python -c "import stellar_horizon; print(stellar_horizon.HORIZON_VERSION)"
+      # The source distribution ships tests for downstream packagers. Run them the way
+      # they would: from the unpacked archive, against the installed wheel.
+      - name: Run the tests of the source distribution against the built wheel
+        run: |
+          uv export --only-group test --no-hashes --output-file "$RUNNER_TEMP/test-requirements.txt"
+          mkdir "$RUNNER_TEMP/sdist"
+          tar -xzf dist/*.tar.gz --strip-components=1 -C "$RUNNER_TEMP/sdist"
+          cd "$RUNNER_TEMP/sdist"
+          uv run --isolated --no-project --with "$GITHUB_WORKSPACE"/dist/*.whl \
+            --with-requirements "$RUNNER_TEMP/test-requirements.txt" pytest
