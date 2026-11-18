@@ -1,6 +1,6 @@
-.PHONY: check format lint typecheck test build release-prep
+.PHONY: check format lint typecheck test generate check-generated build release-prep
 
-check: lint typecheck test
+check: lint check-generated typecheck test
 
 format:
 	uv run ruff check --fix .
@@ -14,6 +14,13 @@ typecheck:
 	uv run mypy
 	uv run pyright
 	uv run pyright --verifytypes stellar_horizon --ignoreexternal
+
+# Write the sync code in _sync/ from the async code in _async/.
+generate:
+	uv run python scripts/unasync.py
+
+check-generated:
+	uv run python scripts/unasync.py --check
 
 test:
 	uv run pytest --cov --cov-report=term-missing
