@@ -1,4 +1,4 @@
-.PHONY: check format lint typecheck test generate check-generated build docs docs-serve release-prep
+.PHONY: check format lint typecheck test generate check-generated check-go-structs build docs docs-serve release-prep
 
 check: lint check-generated typecheck test
 
@@ -27,6 +27,10 @@ check-generated:
 
 test:
 	uv run pytest --cov --cov-report=term-missing
+
+# Compare the models with the Go types Horizon serializes its responses from. Needs Go.
+check-go-structs:
+	uv run python scripts/check_go_structs.py
 
 build:
 	uv build
