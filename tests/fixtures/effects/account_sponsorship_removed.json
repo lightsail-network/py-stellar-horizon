@@ -1,0 +1,37 @@
+{
+  "_links": {
+    "self": {
+      "href": "https://horizon.stellar.org/operations/281176562383257601/effects?cursor=281176562383257601-3\u0026limit=1\u0026order=asc"
+    },
+    "next": {
+      "href": "https://horizon.stellar.org/operations/281176562383257601/effects?cursor=281176562383257601-4\u0026limit=1\u0026order=asc"
+    },
+    "prev": {
+      "href": "https://horizon.stellar.org/operations/281176562383257601/effects?cursor=281176562383257601-4\u0026limit=1\u0026order=desc"
+    }
+  },
+  "_embedded": {
+    "records": [
+      {
+        "_links": {
+          "operation": {
+            "href": "https://horizon.stellar.org/operations/281176562383257601"
+          },
+          "succeeds": {
+            "href": "https://horizon.stellar.org/effects?order=desc\u0026cursor=281176562383257601-4"
+          },
+          "precedes": {
+            "href": "https://horizon.stellar.org/effects?order=asc\u0026cursor=281176562383257601-4"
+          }
+        },
+        "id": "0281176562383257601-0000000004",
+        "paging_token": "281176562383257601-4",
+        "account": "GB5QEUI3EIVG7GAPUHXDTKLIOYOQGJ5NB3JWOIXFSWHLBLXZH6IXO3GZ",
+        "type": "account_sponsorship_removed",
+        "type_i": 62,
+        "created_at": "2026-11-14T01:10:42Z",
+        "former_sponsor": "GD3ZN2T6QQMKLAGKKMWHHY4FITANVJBTREEJERHTWGWF2GSBPOSHGCLU"
+      }
+    ]
+  }
+}

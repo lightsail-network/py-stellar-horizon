@@ -1,0 +1,33 @@
+{
+  "_links": {
+    "self": {
+      "href": "https://horizon.stellar.org/operations/281176562383421441"
+    },
+    "transaction": {
+      "href": "https://horizon.stellar.org/transactions/868d72fca68898ade7f1645db6f1ef88e95db570e2a47f90f7c829f636d6c673"
+    },
+    "effects": {
+      "href": "https://horizon.stellar.org/operations/281176562383421441/effects"
+    },
+    "succeeds": {
+      "href": "https://horizon.stellar.org/effects?order=desc\u0026cursor=281176562383421441"
+    },
+    "precedes": {
+      "href": "https://horizon.stellar.org/effects?order=asc\u0026cursor=281176562383421441"
+    }
+  },
+  "id": "281176562383421441",
+  "paging_token": "281176562383421441",
+  "transaction_successful": true,
+  "source_account": "GCO7FOA2S7P3IHLJLFZJC565CAHDRT5WY4FWHSHLRDSB3IZF34LMCCWW",
+  "type": "change_trust",
+  "type_i": 6,
+  "created_at": "2026-11-14T01:10:42Z",
+  "transaction_hash": "868d72fca68898ade7f1645db6f1ef88e95db570e2a47f90f7c829f636d6c673",
+  "asset_type": "credit_alphanum4",
+  "asset_code": "USD",
+  "asset_issuer": "GCLB7Z52OQPUCHDBGJCLPQKS4T4V5YYNYQSUQVVGHARZFY3LXUGUKTCX",
+  "limit": "922337203685.4775807",
+  "trustee": "GCLB7Z52OQPUCHDBGJCLPQKS4T4V5YYNYQSUQVVGHARZFY3LXUGUKTCX",
+  "trustor": "GCO7FOA2S7P3IHLJLFZJC565CAHDRT5WY4FWHSHLRDSB3IZF34LMCCWW"
+}

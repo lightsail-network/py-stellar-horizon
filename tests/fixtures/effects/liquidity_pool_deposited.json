@@ -1,0 +1,64 @@
+{
+  "_links": {
+    "self": {
+      "href": "https://horizon.stellar.org/operations/281176403469336578/effects?cursor=0\u0026limit=1\u0026order=asc"
+    },
+    "next": {
+      "href": "https://horizon.stellar.org/operations/281176403469336578/effects?cursor=281176403469336578-1\u0026limit=1\u0026order=asc"
+    },
+    "prev": {
+      "href": "https://horizon.stellar.org/operations/281176403469336578/effects?cursor=281176403469336578-1\u0026limit=1\u0026order=desc"
+    }
+  },
+  "_embedded": {
+    "records": [
+      {
+        "_links": {
+          "operation": {
+            "href": "https://horizon.stellar.org/operations/281176403469336578"
+          },
+          "succeeds": {
+            "href": "https://horizon.stellar.org/effects?order=desc\u0026cursor=281176403469336578-1"
+          },
+          "precedes": {
+            "href": "https://horizon.stellar.org/effects?order=asc\u0026cursor=281176403469336578-1"
+          }
+        },
+        "id": "0281176403469336578-0000000001",
+        "paging_token": "281176403469336578-1",
+        "account": "GCHAIE7BKB2EWTPQG2RWI3IQIALHUKP2LPAZZFG3STLXRUD37PZ7WEUZ",
+        "type": "liquidity_pool_deposited",
+        "type_i": 90,
+        "created_at": "2026-11-14T01:07:37Z",
+        "liquidity_pool": {
+          "id": "847e5f92ab6a8c03414f48cbd1889567349941bdd254b52b3734a7db42c930e7",
+          "fee_bp": 30,
+          "type": "constant_product",
+          "total_trustlines": "1",
+          "total_shares": "35.7792539",
+          "reserves": [
+            {
+              "asset": "PYUSD:GDQE7IXJ4HUHV6RQHIUPRJSEZE4DRS5WY577O2FY6YQ5LVWZ7JZTU2V5",
+              "amount": "0.2970583"
+            },
+            {
+              "asset": "xLMNR:GDKA6WVMFSA73BMEVKPO6WXSSWP4MPRBDJVSXLLSEVIEVH226L5RJ7NL",
+              "amount": "4309.4403143"
+            }
+          ]
+        },
+        "reserves_deposited": [
+          {
+            "asset": "PYUSD:GDQE7IXJ4HUHV6RQHIUPRJSEZE4DRS5WY577O2FY6YQ5LVWZ7JZTU2V5",
+            "amount": "0.2970583"
+          },
+          {
+            "asset": "xLMNR:GDKA6WVMFSA73BMEVKPO6WXSSWP4MPRBDJVSXLLSEVIEVH226L5RJ7NL",
+            "amount": "4309.4403143"
+          }
+        ],
+        "shares_received": "35.7792539"
+      }
+    ]
+  }
+}

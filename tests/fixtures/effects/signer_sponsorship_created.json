@@ -1,0 +1,38 @@
+{
+  "_links": {
+    "self": {
+      "href": "https://horizon.stellar.org/operations/281176540908290051/effects?cursor=281176540908290051-1\u0026limit=1\u0026order=asc"
+    },
+    "next": {
+      "href": "https://horizon.stellar.org/operations/281176540908290051/effects?cursor=281176540908290051-2\u0026limit=1\u0026order=asc"
+    },
+    "prev": {
+      "href": "https://horizon.stellar.org/operations/281176540908290051/effects?cursor=281176540908290051-2\u0026limit=1\u0026order=desc"
+    }
+  },
+  "_embedded": {
+    "records": [
+      {
+        "_links": {
+          "operation": {
+            "href": "https://horizon.stellar.org/operations/281176540908290051"
+          },
+          "succeeds": {
+            "href": "https://horizon.stellar.org/effects?order=desc\u0026cursor=281176540908290051-2"
+          },
+          "precedes": {
+            "href": "https://horizon.stellar.org/effects?order=asc\u0026cursor=281176540908290051-2"
+          }
+        },
+        "id": "0281176540908290051-0000000002",
+        "paging_token": "281176540908290051-2",
+        "account": "GBZRVZREUMNQV5LB4K7US4YBJSVOUFONRKQCCQEWRCUBB7KOTSNAO6YK",
+        "type": "signer_sponsorship_created",
+        "type_i": 72,
+        "created_at": "2026-11-14T01:10:17Z",
+        "signer": "GAPIU4DNIAMF6P22KCXSKRSFABI27UI5ET7GIXAVF36PR7RHQGIU3UOU",
+        "sponsor": "GCUISJEWU2TZ4QIJNGNVU4BSZ5CQS3KE6A3N3ETOV7XHCBVO4GLTLGOQ"
+      }
+    ]
+  }
+}

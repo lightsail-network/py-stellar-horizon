@@ -1,0 +1,39 @@
+{
+  "_links": {
+    "self": {
+      "href": "https://horizon-testnet.stellar.org/transactions/283ab400ab6d921fc863361551fee2f4273bb0cbe775bda7d5392b881c007573/effects?cursor=24582550261350403-1\u0026limit=1\u0026order=asc"
+    },
+    "next": {
+      "href": "https://horizon-testnet.stellar.org/transactions/283ab400ab6d921fc863361551fee2f4273bb0cbe775bda7d5392b881c007573/effects?cursor=24582550261350404-1\u0026limit=1\u0026order=asc"
+    },
+    "prev": {
+      "href": "https://horizon-testnet.stellar.org/transactions/283ab400ab6d921fc863361551fee2f4273bb0cbe775bda7d5392b881c007573/effects?cursor=24582550261350404-1\u0026limit=1\u0026order=desc"
+    }
+  },
+  "_embedded": {
+    "records": [
+      {
+        "_links": {
+          "operation": {
+            "href": "https://horizon-testnet.stellar.org/operations/24582550261350404"
+          },
+          "succeeds": {
+            "href": "https://horizon-testnet.stellar.org/effects?order=desc\u0026cursor=24582550261350404-1"
+          },
+          "precedes": {
+            "href": "https://horizon-testnet.stellar.org/effects?order=asc\u0026cursor=24582550261350404-1"
+          }
+        },
+        "id": "0024582550261350404-0000000001",
+        "paging_token": "24582550261350404-1",
+        "account": "GCE46WUQTTJLFH7RTJIFSAVUW62SYAXJRM3AQBEXQIQ2CZ6KQ7UPV64J",
+        "type": "data_sponsorship_updated",
+        "type_i": 67,
+        "created_at": "2026-11-14T07:31:39Z",
+        "data_name": "fixture",
+        "former_sponsor": "GCE46WUQTTJLFH7RTJIFSAVUW62SYAXJRM3AQBEXQIQ2CZ6KQ7UPV64J",
+        "new_sponsor": "GBA55P4S3MV57T3FMNMHWYMXLXZRJZJFRS4VKJ6RIJCPLMCH7TFFJ3IT"
+      }
+    ]
+  }
+}

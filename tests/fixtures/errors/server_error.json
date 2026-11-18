@@ -1,0 +1,6 @@
+{
+  "type": "https://stellar.org/horizon-errors/server_error",
+  "title": "Internal Server Error",
+  "status": 500,
+  "detail": "An error occurred while processing this request.  This is usually due to a bug within the server software.  Trying this request again may succeed if the bug is transient. Otherwise, please contact the system administrator."
+}

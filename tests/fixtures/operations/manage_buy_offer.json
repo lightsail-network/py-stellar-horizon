@@ -1,0 +1,38 @@
+{
+  "_links": {
+    "self": {
+      "href": "https://horizon.stellar.org/operations/281176562383486979"
+    },
+    "transaction": {
+      "href": "https://horizon.stellar.org/transactions/f21a7e7f2da66ec2f9917af7b677328af3f985cbcce177c731b35dcd2da56711"
+    },
+    "effects": {
+      "href": "https://horizon.stellar.org/operations/281176562383486979/effects"
+    },
+    "succeeds": {
+      "href": "https://horizon.stellar.org/effects?order=desc\u0026cursor=281176562383486979"
+    },
+    "precedes": {
+      "href": "https://horizon.stellar.org/effects?order=asc\u0026cursor=281176562383486979"
+    }
+  },
+  "id": "281176562383486979",
+  "paging_token": "281176562383486979",
+  "transaction_successful": true,
+  "source_account": "GB3FQB7JYQ37PVYL3DE7ZWYMQCDXZFQBLA23HHJOYA3MIOHCSLT3BCYY",
+  "type": "manage_buy_offer",
+  "type_i": 12,
+  "created_at": "2026-11-14T01:10:42Z",
+  "transaction_hash": "f21a7e7f2da66ec2f9917af7b677328af3f985cbcce177c731b35dcd2da56711",
+  "amount": "10000.0000002",
+  "price": "0.1455196",
+  "price_r": {
+    "n": 363799,
+    "d": 2500000
+  },
+  "buying_asset_type": "native",
+  "selling_asset_type": "credit_alphanum4",
+  "selling_asset_code": "USDC",
+  "selling_asset_issuer": "GA5ZSEJYB37JRC5AVCIA5MOP4RHTM335X2KGX3IHOJAPP5RE34K4KZVN",
+  "offer_id": "1865973998"
+}

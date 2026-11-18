@@ -1,0 +1,49 @@
+{
+  "_links": {
+    "self": {
+      "href": "https://horizon.stellar.org/operations/281183284006817793"
+    },
+    "transaction": {
+      "href": "https://horizon.stellar.org/transactions/3f81d58bfb4459913015b5ec09e0ddeb98d60704c730defe0b06a357507cee46"
+    },
+    "effects": {
+      "href": "https://horizon.stellar.org/operations/281183284006817793/effects"
+    },
+    "succeeds": {
+      "href": "https://horizon.stellar.org/effects?order=desc\u0026cursor=281183284006817793"
+    },
+    "precedes": {
+      "href": "https://horizon.stellar.org/effects?order=asc\u0026cursor=281183284006817793"
+    }
+  },
+  "id": "281183284006817793",
+  "paging_token": "281183284006817793",
+  "transaction_successful": true,
+  "source_account": "GC3YFH5LOLBJ3A3YPEANAH52AG7CMGNCET4F5KB23VIOG2F6FQJOIMVL",
+  "type": "liquidity_pool_withdraw",
+  "type_i": 23,
+  "created_at": "2026-11-14T03:21:07Z",
+  "transaction_hash": "3f81d58bfb4459913015b5ec09e0ddeb98d60704c730defe0b06a357507cee46",
+  "liquidity_pool_id": "77ea94ffd7acb40bb9458c8f89294640145b90c5ab3ddcefbaa8f6d8b0a761d7",
+  "reserves_min": [
+    {
+      "asset": "OM:GAIRK7D3EZ3KNOFUFMOEMY5SAPWZ4AV3WDOHCHMO4ACOQQRZLBFFXGH7",
+      "amount": "9990000.0000000"
+    },
+    {
+      "asset": "OP:GAIRK7D3EZ3KNOFUFMOEMY5SAPWZ4AV3WDOHCHMO4ACOQQRZLBFFXGH7",
+      "amount": "9990000.0000000"
+    }
+  ],
+  "shares": "10000000.0000000",
+  "reserves_received": [
+    {
+      "asset": "OM:GAIRK7D3EZ3KNOFUFMOEMY5SAPWZ4AV3WDOHCHMO4ACOQQRZLBFFXGH7",
+      "amount": "10000000.0000000"
+    },
+    {
+      "asset": "OP:GAIRK7D3EZ3KNOFUFMOEMY5SAPWZ4AV3WDOHCHMO4ACOQQRZLBFFXGH7",
+      "amount": "10000000.0000000"
+    }
+  ]
+}

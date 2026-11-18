@@ -1,0 +1,3 @@
+# The fixtures are responses as Horizon sent them, and the tests read them as bytes,
+# so Git must not change their line endings, as it would on Windows.
+tests/fixtures/** -text

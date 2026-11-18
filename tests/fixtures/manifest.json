@@ -1,0 +1,978 @@
+{
+  "account.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/accounts/GALAXYVOIDAOPZTDLHILAJQKCVVFMD4IKLXLSZV5YHO7VY74IWZILUTO",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd"
+  },
+  "account_data/memo_required.json": {
+    "source": "capture",
+    "url": "https://horizon-testnet.stellar.org/accounts/GCMLBZPXOFXOCYBIFTMWP4DTTEA6HNOQEXIBL3RT63535NBTY2HOEKK4/data/config.memo_required",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "application/hal+json; charset=utf-8"
+  },
+  "assets.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/assets?asset_code=USDC&limit=10",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "application/hal+json; charset=utf-8"
+  },
+  "claimable_balance.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/claimable_balances/000000009f8c08a011abc98eb36bf01cf895b3383bae5ca0ac53cbcb620f785365cd2c9c",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "application/hal+json; charset=utf-8"
+  },
+  "claimable_balances.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/claimable_balances?order=desc&limit=10",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "application/hal+json; charset=utf-8"
+  },
+  "effects/account_created.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/effects?order=desc&limit=1&cursor=281195988520112130-2",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "application/hal+json; charset=utf-8"
+  },
+  "effects/account_credited.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/operations/281176562383257601/effects?order=asc&limit=1&cursor=281176562383257601-1",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "application/hal+json; charset=utf-8"
+  },
+  "effects/account_debited.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/operations/281176562383257601/effects?order=asc&limit=1&cursor=0",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "application/hal+json; charset=utf-8"
+  },
+  "effects/account_flags_updated.json": {
+    "source": "capture",
+    "url": "https://horizon-testnet.stellar.org/effects?order=desc&limit=1&cursor=24581820116897793-1",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "application/hal+json; charset=utf-8"
+  },
+  "effects/account_home_domain_updated.json": {
+    "source": "capture",
+    "url": "https://horizon-testnet.stellar.org/effects?order=desc&limit=1&cursor=24580381302865921-1",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "application/hal+json; charset=utf-8"
+  },
+  "effects/account_inflation_destination_updated.json": {
+    "source": "capture",
+    "url": "https://horizon-testnet.stellar.org/effects?order=desc&limit=1&cursor=24577623933861889-1",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "application/hal+json; charset=utf-8"
+  },
+  "effects/account_removed.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/operations/281176562383257601/effects?order=asc&limit=1&cursor=281176562383257601-2",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "application/hal+json; charset=utf-8"
+  },
+  "effects/account_sponsorship_created.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/effects?order=desc&limit=1&cursor=281195924095602691-1",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "application/hal+json; charset=utf-8"
+  },
+  "effects/account_sponsorship_removed.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/operations/281176562383257601/effects?order=asc&limit=1&cursor=281176562383257601-3",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "application/hal+json; charset=utf-8"
+  },
+  "effects/account_sponsorship_updated.json": {
+    "source": "capture",
+    "url": "https://horizon-testnet.stellar.org/transactions/283ab400ab6d921fc863361551fee2f4273bb0cbe775bda7d5392b881c007573/effects?order=asc&limit=1&cursor=0",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "application/hal+json; charset=utf-8"
+  },
+  "effects/account_thresholds_updated.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/effects?order=desc&limit=1&cursor=281195924095602691-2",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "application/hal+json; charset=utf-8"
+  },
+  "effects/claimable_balance_claimant_created.json": {
+    "source": "capture",
+    "url": "https://horizon-testnet.stellar.org/operations/24562930850734081/effects?order=asc&limit=1&cursor=24562930850734081-1",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "application/hal+json; charset=utf-8"
+  },
+  "effects/claimable_balance_claimed.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/operations/281176558088200193/effects?order=asc&limit=1&cursor=0",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "application/hal+json; charset=utf-8"
+  },
+  "effects/claimable_balance_clawed_back.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/operations/281176562383458367/effects?order=asc&limit=1&cursor=0",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "application/hal+json; charset=utf-8"
+  },
+  "effects/claimable_balance_created.json": {
+    "source": "capture",
+    "url": "https://horizon-testnet.stellar.org/operations/24562930850734081/effects?order=asc&limit=1&cursor=0",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "application/hal+json; charset=utf-8"
+  },
+  "effects/claimable_balance_sponsorship_created.json": {
+    "source": "capture",
+    "url": "https://horizon-testnet.stellar.org/operations/24562930850734081/effects?order=asc&limit=1&cursor=24562930850734081-4",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "application/hal+json; charset=utf-8"
+  },
+  "effects/claimable_balance_sponsorship_removed.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/operations/281176558088200193/effects?order=asc&limit=1&cursor=281176558088200193-2",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "application/hal+json; charset=utf-8"
+  },
+  "effects/claimable_balance_sponsorship_updated.json": {
+    "source": "capture",
+    "url": "https://horizon-testnet.stellar.org/effects?order=desc&limit=1&cursor=24577774257717249-1",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "application/hal+json; charset=utf-8"
+  },
+  "effects/contract_credited.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/effects?order=desc&limit=1&cursor=281195967046459393-3",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "application/hal+json; charset=utf-8"
+  },
+  "effects/contract_debited.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/effects?order=desc&limit=1&cursor=281195967046459393-4",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "application/hal+json; charset=utf-8"
+  },
+  "effects/data_created.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/effects?order=desc&limit=1&cursor=281195855376191490-2",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "application/hal+json; charset=utf-8"
+  },
+  "effects/data_removed.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/effects?order=desc&limit=1&cursor=281195855376191491-2",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "application/hal+json; charset=utf-8"
+  },
+  "effects/data_sponsorship_created.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/effects?order=desc&limit=1&cursor=281195855376191491-1",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "application/hal+json; charset=utf-8"
+  },
+  "effects/data_sponsorship_removed.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/effects?order=desc&limit=1&cursor=281195855376216065-1",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "application/hal+json; charset=utf-8"
+  },
+  "effects/data_sponsorship_updated.json": {
+    "source": "capture",
+    "url": "https://horizon-testnet.stellar.org/transactions/283ab400ab6d921fc863361551fee2f4273bb0cbe775bda7d5392b881c007573/effects?order=asc&limit=1&cursor=24582550261350403-1",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "application/hal+json; charset=utf-8"
+  },
+  "effects/data_updated.json": {
+    "source": "capture",
+    "url": "https://horizon-testnet.stellar.org/effects?order=desc&limit=1&cursor=24582069225013249-1",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "application/hal+json; charset=utf-8"
+  },
+  "effects/liquidity_pool_created.json": {
+    "source": "capture",
+    "url": "https://horizon-testnet.stellar.org/effects?order=desc&limit=1&cursor=24578942488813593-1",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "application/hal+json; charset=utf-8"
+  },
+  "effects/liquidity_pool_deposited.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/operations/281176403469336578/effects?order=asc&limit=1&cursor=0",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "application/hal+json; charset=utf-8"
+  },
+  "effects/liquidity_pool_removed.json": {
+    "source": "capture",
+    "url": "https://horizon-testnet.stellar.org/transactions/80e40362356f331aa97ab8dfb9717e0e9c5510a0843b72ac79cf141c64e7ed89/effects?order=asc&limit=1&cursor=24582528786522114-1",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "application/hal+json; charset=utf-8"
+  },
+  "effects/liquidity_pool_revoked.json": {
+    "source": "capture",
+    "url": "https://horizon-testnet.stellar.org/transactions/d5a7ac08af5e29ae2c987e8ccdf36c125811d9ce61b54112e48ca5ab40a1b4ce/effects?order=asc&limit=1&cursor=24582541671403521-6",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "application/hal+json; charset=utf-8"
+  },
+  "effects/liquidity_pool_trade.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/effects?order=desc&limit=1&cursor=281195992815157249-1",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "application/hal+json; charset=utf-8"
+  },
+  "effects/liquidity_pool_withdrew.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/operations/281183284006817793/effects?order=asc&limit=1&cursor=0",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "application/hal+json; charset=utf-8"
+  },
+  "effects/sequence_bumped.json": {
+    "source": "capture",
+    "url": "https://horizon-testnet.stellar.org/effects?order=desc&limit=1&cursor=24574733420883969-1",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "application/hal+json; charset=utf-8"
+  },
+  "effects/signer_created.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/operations/281176540908290051/effects?order=asc&limit=1&cursor=0",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "application/hal+json; charset=utf-8"
+  },
+  "effects/signer_removed.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/effects?order=desc&limit=1&cursor=281195924095602691-3",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "application/hal+json; charset=utf-8"
+  },
+  "effects/signer_sponsorship_created.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/operations/281176540908290051/effects?order=asc&limit=1&cursor=281176540908290051-1",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "application/hal+json; charset=utf-8"
+  },
+  "effects/signer_sponsorship_removed.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/operations/281176562383257601/effects?order=asc&limit=1&cursor=281176562383257601-4",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "application/hal+json; charset=utf-8"
+  },
+  "effects/signer_sponsorship_updated.json": {
+    "source": "capture",
+    "url": "https://horizon-testnet.stellar.org/transactions/283ab400ab6d921fc863361551fee2f4273bb0cbe775bda7d5392b881c007573/effects?order=asc&limit=1&cursor=24582550261350404-1",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "application/hal+json; charset=utf-8"
+  },
+  "effects/signer_updated.json": {
+    "source": "capture",
+    "url": "https://horizon-testnet.stellar.org/effects?order=desc&limit=1&cursor=24578985438482434-1",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "application/hal+json; charset=utf-8"
+  },
+  "effects/trade.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/effects?order=desc&limit=1&cursor=281195988520558593-1",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "application/hal+json; charset=utf-8"
+  },
+  "effects/trustline_authorized.json": {
+    "source": "capture",
+    "url": "https://horizon-testnet.stellar.org/operations/24562789116809217/effects?order=asc&limit=1&cursor=0",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "application/hal+json; charset=utf-8"
+  },
+  "effects/trustline_authorized_to_maintain_liabilities.json": {
+    "source": "capture",
+    "url": "https://horizon-testnet.stellar.org/transactions/33d65984d16a848ff85d48563a0dae2fe5e77a3bea0e5de36974a45135a5c487/effects?order=asc&limit=1&cursor=0",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "application/hal+json; charset=utf-8"
+  },
+  "effects/trustline_created.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/operations/281176562383421441/effects?order=asc&limit=1&cursor=0",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "application/hal+json; charset=utf-8"
+  },
+  "effects/trustline_deauthorized.json": {
+    "source": "capture",
+    "url": "https://horizon-testnet.stellar.org/transactions/d5a7ac08af5e29ae2c987e8ccdf36c125811d9ce61b54112e48ca5ab40a1b4ce/effects?order=asc&limit=1&cursor=0",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "application/hal+json; charset=utf-8"
+  },
+  "effects/trustline_flags_updated.json": {
+    "source": "capture",
+    "url": "https://horizon-testnet.stellar.org/operations/24562789116809217/effects?order=asc&limit=1&cursor=24562789116809217-1",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "application/hal+json; charset=utf-8"
+  },
+  "effects/trustline_removed.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/effects?order=desc&limit=1&cursor=281195911210909704-2",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "application/hal+json; charset=utf-8"
+  },
+  "effects/trustline_sponsorship_created.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/effects?order=desc&limit=1&cursor=281195967045287939-1",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "application/hal+json; charset=utf-8"
+  },
+  "effects/trustline_sponsorship_removed.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/effects?order=desc&limit=1&cursor=281195911210909705-1",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "application/hal+json; charset=utf-8"
+  },
+  "effects/trustline_sponsorship_updated.json": {
+    "source": "capture",
+    "url": "https://horizon-testnet.stellar.org/transactions/283ab400ab6d921fc863361551fee2f4273bb0cbe775bda7d5392b881c007573/effects?order=asc&limit=1&cursor=24582550261350402-1",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "application/hal+json; charset=utf-8"
+  },
+  "effects/trustline_updated.json": {
+    "source": "capture",
+    "url": "https://horizon-testnet.stellar.org/effects?order=desc&limit=1&cursor=24579406345293825-1",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "application/hal+json; charset=utf-8"
+  },
+  "errors/bad_request_cursor.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/transactions?cursor=-1",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 400,
+    "content_type": "application/problem+json; charset=utf-8"
+  },
+  "errors/bad_request_limit.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/transactions?limit=500",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 400,
+    "content_type": "application/problem+json; charset=utf-8"
+  },
+  "errors/bad_request_order.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/transactions?order=up",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 400,
+    "content_type": "application/problem+json; charset=utf-8"
+  },
+  "errors/before_history.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/ledgers/1",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 410,
+    "content_type": "application/problem+json; charset=utf-8"
+  },
+  "errors/invalid_accounts_params.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/accounts",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 400,
+    "content_type": "application/problem+json; charset=utf-8"
+  },
+  "errors/not_acceptable.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/accounts?signer=GALAXYVOIDAOPZTDLHILAJQKCVVFMD4IKLXLSZV5YHO7VY74IWZILUTO",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 406,
+    "content_type": "application/problem+json; charset=utf-8"
+  },
+  "errors/not_found_account.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/accounts/GAB5L2N54ZYS2DCUOEEHI2F646EOMS2JZY3PGFKYSYW2EQEWK5QJNLGP",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 404,
+    "content_type": "application/problem+json; charset=utf-8"
+  },
+  "errors/not_found_data.json": {
+    "source": "capture",
+    "url": "https://horizon-testnet.stellar.org/accounts/GCMLBZPXOFXOCYBIFTMWP4DTTEA6HNOQEXIBL3RT63535NBTY2HOEKK4/data/no.such.key",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 404,
+    "content_type": "application/problem+json; charset=utf-8"
+  },
+  "errors/not_found_route.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/nothing",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 404,
+    "content_type": "application/problem+json; charset=utf-8"
+  },
+  "errors/server_error.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/liquidity_pools?account=GALAXYVOIDAOPZTDLHILAJQKCVVFMD4IKLXLSZV5YHO7VY74IWZILUTO&reserves=native",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 500,
+    "content_type": "application/problem+json; charset=utf-8"
+  },
+  "errors/transaction_failed.json": {
+    "source": "capture",
+    "url": "https://horizon-testnet.stellar.org/transactions",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 400,
+    "content_type": "application/problem+json; charset=utf-8",
+    "method": "POST"
+  },
+  "errors/transaction_malformed.json": {
+    "source": "capture",
+    "url": "https://horizon-testnet.stellar.org/transactions",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 400,
+    "content_type": "application/problem+json; charset=utf-8",
+    "method": "POST"
+  },
+  "errors/unsupported_media_type.json": {
+    "source": "capture",
+    "url": "https://horizon-testnet.stellar.org/transactions",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 415,
+    "content_type": "application/problem+json; charset=utf-8",
+    "method": "POST"
+  },
+  "fee_stats.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/fee_stats",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "application/hal+json; charset=utf-8"
+  },
+  "ledger.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/ledgers/65471038",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "application/hal+json; charset=utf-8"
+  },
+  "ledgers.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/ledgers?order=desc&limit=5",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "application/hal+json; charset=utf-8"
+  },
+  "liquidity_pool.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/liquidity_pools/ffffe478b19c0d27c19fecdf36b6b60fefc563e1806109a58b86b4138abd085a",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "application/hal+json; charset=utf-8"
+  },
+  "liquidity_pools.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/liquidity_pools?order=desc&limit=10",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "application/hal+json; charset=utf-8"
+  },
+  "offer.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/offers/1866011213",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "application/hal+json; charset=utf-8"
+  },
+  "offers.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/offers?order=desc&limit=10",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "application/hal+json; charset=utf-8"
+  },
+  "operations.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/operations?order=desc&limit=50",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "application/hal+json; charset=utf-8"
+  },
+  "operations/account_merge.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/operations/281176562383257601",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd"
+  },
+  "operations/allow_trust.json": {
+    "source": "capture",
+    "url": "https://horizon-testnet.stellar.org/operations/24562789116809217",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd"
+  },
+  "operations/begin_sponsoring_future_reserves.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/operations/281176540908371969",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd"
+  },
+  "operations/bump_sequence.json": {
+    "source": "capture",
+    "url": "https://horizon-testnet.stellar.org/operations/24562930850754561",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd"
+  },
+  "operations/change_trust.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/operations/281176562383421441",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd"
+  },
+  "operations/claim_claimable_balance.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/operations/281176558088200193",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd"
+  },
+  "operations/clawback.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/operations/281176562383458366",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd"
+  },
+  "operations/clawback_claimable_balance.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/operations/281176562383458367",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd"
+  },
+  "operations/create_account.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/operations/281176558088437761",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd"
+  },
+  "operations/create_claimable_balance.json": {
+    "source": "capture",
+    "url": "https://horizon-testnet.stellar.org/operations/24562930850734081",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd"
+  },
+  "operations/create_passive_sell_offer.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/operations/281176549498171393",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd"
+  },
+  "operations/end_sponsoring_future_reserves.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/operations/281176540908371971",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd"
+  },
+  "operations/extend_footprint_ttl.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/operations/281183077849214977",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "application/hal+json; charset=utf-8"
+  },
+  "operations/inflation.json": {
+    "source": "stellar-model",
+    "url": "https://github.com/StellarCN/stellar-model/blob/eebe6ec/tests/resources/model/horizon/operations/inflation.json",
+    "note": "Copied unchanged from stellar-model 0.7.0, which captured it from an older Horizon."
+  },
+  "operations/invoke_host_function.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/operations/281176562383650817",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd"
+  },
+  "operations/invoke_host_function_upload.json": {
+    "source": "capture",
+    "url": "https://horizon-testnet.stellar.org/operations/24569918762553345",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "application/hal+json; charset=utf-8"
+  },
+  "operations/liquidity_pool_deposit.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/operations/281176403469336578",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd"
+  },
+  "operations/liquidity_pool_withdraw.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/operations/281183284006817793",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "application/hal+json; charset=utf-8"
+  },
+  "operations/manage_buy_offer.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/operations/281176562383486979",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd"
+  },
+  "operations/manage_data.json": {
+    "source": "capture",
+    "url": "https://horizon-testnet.stellar.org/operations/24562965210476545",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd"
+  },
+  "operations/manage_sell_offer.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/operations/281176562383486982",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd"
+  },
+  "operations/path_payment_strict_receive.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/operations/281176562383216641",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd"
+  },
+  "operations/path_payment_strict_send.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/operations/281176562383474689",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd"
+  },
+  "operations/payment.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/operations/281176562383478785",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd"
+  },
+  "operations/restore_footprint.json": {
+    "source": "capture",
+    "url": "https://horizon-testnet.stellar.org/operations/24561852813967361",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd"
+  },
+  "operations/revoke_sponsorship.json": {
+    "source": "capture",
+    "url": "https://horizon-testnet.stellar.org/operations/24562475584225293",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd"
+  },
+  "operations/set_options.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/operations/281176540908290051",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd"
+  },
+  "operations/set_trust_line_flags.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/operations/281176562383458395",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd"
+  },
+  "operations_joined.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/operations?order=desc&limit=10&join=transactions",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd"
+  },
+  "order_book.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/order_book?selling_asset_type=native&buying_asset_type=credit_alphanum4&buying_asset_code=USDC&buying_asset_issuer=GA5ZSEJYB37JRC5AVCIA5MOP4RHTM335X2KGX3IHOJAPP5RE34K4KZVN&limit=5",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "application/hal+json; charset=utf-8"
+  },
+  "pages/payments_1.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/accounts/GBVF5SBMKRAVL5L2L3F2KUKYFKXTX7ZL57JB4NQUP7LEDDK2XPEZQUNA/payments?order=asc&limit=2",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "application/hal+json; charset=utf-8"
+  },
+  "pages/payments_2.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/accounts/GBVF5SBMKRAVL5L2L3F2KUKYFKXTX7ZL57JB4NQUP7LEDDK2XPEZQUNA/payments?cursor=281183082143821825&limit=2&order=asc",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "application/hal+json; charset=utf-8"
+  },
+  "pages/payments_2_prev.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/accounts/GBVF5SBMKRAVL5L2L3F2KUKYFKXTX7ZL57JB4NQUP7LEDDK2XPEZQUNA/payments?cursor=281183086438678529&limit=2&order=desc",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "application/hal+json; charset=utf-8"
+  },
+  "pages/payments_3.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/accounts/GBVF5SBMKRAVL5L2L3F2KUKYFKXTX7ZL57JB4NQUP7LEDDK2XPEZQUNA/payments?cursor=281183086438678529&limit=2&order=asc",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "application/hal+json; charset=utf-8"
+  },
+  "paths_strict_receive.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/paths/strict-receive?source_assets=native&destination_asset_type=credit_alphanum4&destination_asset_code=USDC&destination_asset_issuer=GA5ZSEJYB37JRC5AVCIA5MOP4RHTM335X2KGX3IHOJAPP5RE34K4KZVN&destination_amount=10",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "application/hal+json; charset=utf-8"
+  },
+  "paths_strict_send.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/paths/strict-send?source_asset_type=native&source_amount=10&destination_assets=USDC:GA5ZSEJYB37JRC5AVCIA5MOP4RHTM335X2KGX3IHOJAPP5RE34K4KZVN",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "application/hal+json; charset=utf-8"
+  },
+  "payments.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/payments?order=desc&limit=200",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd"
+  },
+  "root.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd"
+  },
+  "streams/account_data.sse": {
+    "source": "capture",
+    "url": "https://horizon-testnet.stellar.org/accounts/GCMLBZPXOFXOCYBIFTMWP4DTTEA6HNOQEXIBL3RT63535NBTY2HOEKK4/data/config.memo_required",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "text/event-stream; charset=utf-8"
+  },
+  "streams/offers.sse": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/accounts/GA5HNNTDGY2OBU7DOM7U6YTHCMCK7WFP6ERLM44MHHGKGAWCNO36JOPI/offers?limit=3",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "text/event-stream; charset=utf-8"
+  },
+  "streams/order_book.sse": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/order_book?selling_asset_type=native&buying_asset_type=credit_alphanum4&buying_asset_code=USDC&buying_asset_issuer=GA5ZSEJYB37JRC5AVCIA5MOP4RHTM335X2KGX3IHOJAPP5RE34K4KZVN&limit=5",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "text/event-stream; charset=utf-8"
+  },
+  "streams/payments_1.sse": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/payments?cursor=281183236762746884&limit=3",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "text/event-stream; charset=utf-8"
+  },
+  "streams/payments_2.sse": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/payments?cursor=281183236762746887&limit=3",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "text/event-stream; charset=utf-8"
+  },
+  "streams/quiet.sse": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/accounts/GBVF5SBMKRAVL5L2L3F2KUKYFKXTX7ZL57JB4NQUP7LEDDK2XPEZQUNA/payments?cursor=now&limit=3",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "text/event-stream; charset=utf-8"
+  },
+  "submissions/async_error.json": {
+    "source": "capture",
+    "url": "https://horizon-testnet.stellar.org/transactions_async",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 400,
+    "content_type": "application/hal+json; charset=utf-8",
+    "method": "POST"
+  },
+  "submissions/async_pending.json": {
+    "source": "capture",
+    "url": "https://horizon-testnet.stellar.org/transactions_async",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 201,
+    "content_type": "application/hal+json; charset=utf-8",
+    "method": "POST"
+  },
+  "submissions/async_resubmitted.json": {
+    "source": "capture",
+    "url": "https://horizon-testnet.stellar.org/transactions_async",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 409,
+    "content_type": "application/hal+json; charset=utf-8",
+    "method": "POST"
+  },
+  "submissions/success.json": {
+    "source": "capture",
+    "url": "https://horizon-testnet.stellar.org/transactions",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "application/hal+json; charset=utf-8",
+    "method": "POST"
+  },
+  "trade_aggregations.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/trade_aggregations?base_asset_type=native&counter_asset_type=credit_alphanum4&counter_asset_code=USDC&counter_asset_issuer=GA5ZSEJYB37JRC5AVCIA5MOP4RHTM335X2KGX3IHOJAPP5RE34K4KZVN&resolution=3600000&order=desc&limit=5",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "application/hal+json; charset=utf-8"
+  },
+  "trades.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/trades?order=desc&limit=10",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "application/hal+json; charset=utf-8"
+  },
+  "trades_liquidity_pool.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/trades?trade_type=liquidity_pool&order=desc&limit=5",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd",
+    "status": 200,
+    "content_type": "application/hal+json; charset=utf-8"
+  },
+  "transactions.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/transactions?order=desc&limit=50",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd"
+  },
+  "transactions_failed.json": {
+    "source": "capture",
+    "url": "https://horizon.stellar.org/transactions?order=desc&limit=50&include_failed=true",
+    "captured": "2026-11-14",
+    "horizon_version": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd"
+  }
+}

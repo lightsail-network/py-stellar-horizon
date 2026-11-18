@@ -1,0 +1,37 @@
+{
+  "_links": {
+    "self": {
+      "href": "https://horizon.stellar.org/effects?cursor=281195988520112130-2\u0026limit=1\u0026order=desc"
+    },
+    "next": {
+      "href": "https://horizon.stellar.org/effects?cursor=281195988520112130-1\u0026limit=1\u0026order=desc"
+    },
+    "prev": {
+      "href": "https://horizon.stellar.org/effects?cursor=281195988520112130-1\u0026limit=1\u0026order=asc"
+    }
+  },
+  "_embedded": {
+    "records": [
+      {
+        "_links": {
+          "operation": {
+            "href": "https://horizon.stellar.org/operations/281195988520112130"
+          },
+          "succeeds": {
+            "href": "https://horizon.stellar.org/effects?order=desc\u0026cursor=281195988520112130-1"
+          },
+          "precedes": {
+            "href": "https://horizon.stellar.org/effects?order=asc\u0026cursor=281195988520112130-1"
+          }
+        },
+        "id": "0281195988520112130-0000000001",
+        "paging_token": "281195988520112130-1",
+        "account": "GCEPBYDYD7SGLXZZS5F3MOUUCUKFO3E2TTD4ZVY77B2LNPER6UOFSDNY",
+        "type": "account_created",
+        "type_i": 0,
+        "created_at": "2026-11-14T07:27:37Z",
+        "starting_balance": "1.5000000"
+      }
+    ]
+  }
+}

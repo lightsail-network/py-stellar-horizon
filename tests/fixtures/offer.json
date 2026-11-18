@@ -1,0 +1,29 @@
+{
+  "_links": {
+    "self": {
+      "href": "https://horizon.stellar.org/offers/1866011213"
+    },
+    "offer_maker": {
+      "href": "https://horizon.stellar.org/accounts/GA5HNNTDGY2OBU7DOM7U6YTHCMCK7WFP6ERLM44MHHGKGAWCNO36JOPI"
+    }
+  },
+  "id": "1866011213",
+  "paging_token": "1866011213",
+  "seller": "GA5HNNTDGY2OBU7DOM7U6YTHCMCK7WFP6ERLM44MHHGKGAWCNO36JOPI",
+  "selling": {
+    "asset_type": "credit_alphanum4",
+    "asset_code": "VELO",
+    "asset_issuer": "GDM4RQUQQUVSKQA7S6EM7XBZP3FCGH4Q7CL6TABQ7B2BEJ5ERARM2M5M"
+  },
+  "buying": {
+    "asset_type": "native"
+  },
+  "amount": "0.5809241",
+  "price_r": {
+    "n": 210883,
+    "d": 10000000
+  },
+  "price": "0.0210883",
+  "last_modified_ledger": 65471038,
+  "last_modified_time": "2026-11-14T07:27:12Z"
+}

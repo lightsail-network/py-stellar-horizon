@@ -1,0 +1,61 @@
+{
+  "_links": {
+    "self": {
+      "href": "https://horizon.stellar.org/effects?cursor=281195992815157249-1\u0026limit=1\u0026order=desc"
+    },
+    "next": {
+      "href": "https://horizon.stellar.org/effects?cursor=281195992815112193-3\u0026limit=1\u0026order=desc"
+    },
+    "prev": {
+      "href": "https://horizon.stellar.org/effects?cursor=281195992815112193-3\u0026limit=1\u0026order=asc"
+    }
+  },
+  "_embedded": {
+    "records": [
+      {
+        "_links": {
+          "operation": {
+            "href": "https://horizon.stellar.org/operations/281195992815112193"
+          },
+          "succeeds": {
+            "href": "https://horizon.stellar.org/effects?order=desc\u0026cursor=281195992815112193-3"
+          },
+          "precedes": {
+            "href": "https://horizon.stellar.org/effects?order=asc\u0026cursor=281195992815112193-3"
+          }
+        },
+        "id": "0281195992815112193-0000000003",
+        "paging_token": "281195992815112193-3",
+        "account": "GCXGCKC3M3INZKPKTNT37BLULP5M5KODZDSZPNBNYBKSWOJ2XZ6Z34O7",
+        "type": "liquidity_pool_trade",
+        "type_i": 92,
+        "created_at": "2026-11-14T07:27:42Z",
+        "liquidity_pool": {
+          "id": "ec318c86aeb38f64ad9b163df9f6222885ea9aaaf39d21954512f8ff2b93854f",
+          "fee_bp": 30,
+          "type": "constant_product",
+          "total_trustlines": "9",
+          "total_shares": "45776137.5514128",
+          "reserves": [
+            {
+              "asset": "USDX:GA5G7HKQBJ4PDKIVE53FOZPY3C7YZI5R4QTDQN3UKILQYME7KUL2CKKH",
+              "amount": "1305595549.0362702"
+            },
+            {
+              "asset": "XPi:GDOFJEZ3FUWAC2EVHPRMJPSWPOD3KJF7FTXFZIERFFPB2VMTRQLZFUEF",
+              "amount": "1904012.0874639"
+            }
+          ]
+        },
+        "sold": {
+          "asset": "USDX:GA5G7HKQBJ4PDKIVE53FOZPY3C7YZI5R4QTDQN3UKILQYME7KUL2CKKH",
+          "amount": "13673.1530657"
+        },
+        "bought": {
+          "asset": "XPi:GDOFJEZ3FUWAC2EVHPRMJPSWPOD3KJF7FTXFZIERFFPB2VMTRQLZFUEF",
+          "amount": "20.0000000"
+        }
+      }
+    ]
+  }
+}

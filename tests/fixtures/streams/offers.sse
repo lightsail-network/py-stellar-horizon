@@ -1,0 +1,17 @@
+retry: 1000
+event: open
+data: "hello"
+
+id: 1865812521
+data: {"_links":{"self":{"href":"https://horizon.stellar.org/offers/1865812521"},"offer_maker":{"href":"https://horizon.stellar.org/accounts/GA5HNNTDGY2OBU7DOM7U6YTHCMCK7WFP6ERLM44MHHGKGAWCNO36JOPI"}},"id":"1865812521","paging_token":"1865812521","seller":"GA5HNNTDGY2OBU7DOM7U6YTHCMCK7WFP6ERLM44MHHGKGAWCNO36JOPI","selling":{"asset_type":"credit_alphanum4","asset_code":"RAFA","asset_issuer":"GCQEILHHJY722RZN7644ODZSYU37ZWFO26RHLTXHXW44UX5B3P6BEYKK"},"buying":{"asset_type":"native"},"amount":"1.4142858","price_r":{"n":7,"d":1000000},"price":"0.0000070","last_modified_ledger":65471041,"last_modified_time":"2026-11-14T07:27:27Z"}
+
+id: 1865812522
+data: {"_links":{"self":{"href":"https://horizon.stellar.org/offers/1865812522"},"offer_maker":{"href":"https://horizon.stellar.org/accounts/GA5HNNTDGY2OBU7DOM7U6YTHCMCK7WFP6ERLM44MHHGKGAWCNO36JOPI"}},"id":"1865812522","paging_token":"1865812522","seller":"GA5HNNTDGY2OBU7DOM7U6YTHCMCK7WFP6ERLM44MHHGKGAWCNO36JOPI","selling":{"asset_type":"credit_alphanum4","asset_code":"RAFA","asset_issuer":"GCQEILHHJY722RZN7644ODZSYU37ZWFO26RHLTXHXW44UX5B3P6BEYKK"},"buying":{"asset_type":"native"},"amount":"1.4142858","price_r":{"n":7,"d":1000000},"price":"0.0000070","last_modified_ledger":65471041,"last_modified_time":"2026-11-14T07:27:27Z"}
+
+id: 1865944765
+data: {"_links":{"self":{"href":"https://horizon.stellar.org/offers/1865944765"},"offer_maker":{"href":"https://horizon.stellar.org/accounts/GA5HNNTDGY2OBU7DOM7U6YTHCMCK7WFP6ERLM44MHHGKGAWCNO36JOPI"}},"id":"1865944765","paging_token":"1865944765","seller":"GA5HNNTDGY2OBU7DOM7U6YTHCMCK7WFP6ERLM44MHHGKGAWCNO36JOPI","selling":{"asset_type":"native"},"buying":{"asset_type":"credit_alphanum4","asset_code":"VELO","asset_issuer":"GDM4RQUQQUVSKQA7S6EM7XBZP3FCGH4Q7CL6TABQ7B2BEJ5ERARM2M5M"},"amount":"25.0000000","price_r":{"n":484444031,"d":10000000},"price":"48.4444031","last_modified_ledger":65471018,"last_modified_time":"2026-11-14T07:25:32Z"}
+
+retry: 10
+event: close
+data: "byebye"
+

@@ -1,0 +1,39 @@
+{
+  "_links": {
+    "self": {
+      "href": "https://horizon-testnet.stellar.org/transactions/33d65984d16a848ff85d48563a0dae2fe5e77a3bea0e5de36974a45135a5c487/effects?cursor=0\u0026limit=1\u0026order=asc"
+    },
+    "next": {
+      "href": "https://horizon-testnet.stellar.org/transactions/33d65984d16a848ff85d48563a0dae2fe5e77a3bea0e5de36974a45135a5c487/effects?cursor=24582537376444417-1\u0026limit=1\u0026order=asc"
+    },
+    "prev": {
+      "href": "https://horizon-testnet.stellar.org/transactions/33d65984d16a848ff85d48563a0dae2fe5e77a3bea0e5de36974a45135a5c487/effects?cursor=24582537376444417-1\u0026limit=1\u0026order=desc"
+    }
+  },
+  "_embedded": {
+    "records": [
+      {
+        "_links": {
+          "operation": {
+            "href": "https://horizon-testnet.stellar.org/operations/24582537376444417"
+          },
+          "succeeds": {
+            "href": "https://horizon-testnet.stellar.org/effects?order=desc\u0026cursor=24582537376444417-1"
+          },
+          "precedes": {
+            "href": "https://horizon-testnet.stellar.org/effects?order=asc\u0026cursor=24582537376444417-1"
+          }
+        },
+        "id": "0024582537376444417-0000000001",
+        "paging_token": "24582537376444417-1",
+        "account": "GC7IEI5WA73CZCWNRHFB4RJWWMGTYM26VIX7THBEKNKIOLBPDDHAKN4F",
+        "type": "trustline_authorized_to_maintain_liabilities",
+        "type_i": 25,
+        "created_at": "2026-11-14T07:31:24Z",
+        "trustor": "GBWG4TML4WB24R6UUVYBV6CFGBRQK6WPOA5WKZJUJXJVTAIJXMG2UFEV",
+        "asset_type": "credit_alphanum4",
+        "asset_code": "FIX"
+      }
+    ]
+  }
+}

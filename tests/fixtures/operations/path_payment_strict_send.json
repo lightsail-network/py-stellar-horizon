@@ -1,0 +1,61 @@
+{
+  "_links": {
+    "self": {
+      "href": "https://horizon.stellar.org/operations/281176562383474689"
+    },
+    "transaction": {
+      "href": "https://horizon.stellar.org/transactions/d74425174306f999e53dcdc5732e44ef007f51bfa55bd404e18b8104a6aa4f7a"
+    },
+    "effects": {
+      "href": "https://horizon.stellar.org/operations/281176562383474689/effects"
+    },
+    "succeeds": {
+      "href": "https://horizon.stellar.org/effects?order=desc\u0026cursor=281176562383474689"
+    },
+    "precedes": {
+      "href": "https://horizon.stellar.org/effects?order=asc\u0026cursor=281176562383474689"
+    }
+  },
+  "id": "281176562383474689",
+  "paging_token": "281176562383474689",
+  "transaction_successful": false,
+  "source_account": "GD77RS525TLPXBSFTZSHDEVDSCDO3NQBTATLRJQVHBOTKUC2PMGPTQEF",
+  "type": "path_payment_strict_send",
+  "type_i": 13,
+  "created_at": "2026-11-14T01:10:42Z",
+  "transaction_hash": "d74425174306f999e53dcdc5732e44ef007f51bfa55bd404e18b8104a6aa4f7a",
+  "asset_type": "native",
+  "from": "GD77RS525TLPXBSFTZSHDEVDSCDO3NQBTATLRJQVHBOTKUC2PMGPTQEF",
+  "to": "GD77RS525TLPXBSFTZSHDEVDSCDO3NQBTATLRJQVHBOTKUC2PMGPTQEF",
+  "amount": "0.0000000",
+  "path": [
+    {
+      "asset_type": "credit_alphanum4",
+      "asset_code": "USDC",
+      "asset_issuer": "GA5ZSEJYB37JRC5AVCIA5MOP4RHTM335X2KGX3IHOJAPP5RE34K4KZVN"
+    },
+    {
+      "asset_type": "credit_alphanum12",
+      "asset_code": "CCsTurdYyy",
+      "asset_issuer": "GAFB7IYPCYZCODQBB5BR5JO45JC4PPVLARUAXQSFHWTLH2KMHPWJ36GD"
+    },
+    {
+      "asset_type": "credit_alphanum12",
+      "asset_code": "CCCsTurdYyy",
+      "asset_issuer": "GAFB7IYPCYZCODQBB5BR5JO45JC4PPVLARUAXQSFHWTLH2KMHPWJ36GD"
+    },
+    {
+      "asset_type": "credit_alphanum12",
+      "asset_code": "Crobovac",
+      "asset_issuer": "GAFB7IYPCYZCODQBB5BR5JO45JC4PPVLARUAXQSFHWTLH2KMHPWJ36GD"
+    },
+    {
+      "asset_type": "credit_alphanum12",
+      "asset_code": "robovac",
+      "asset_issuer": "GAFB7IYPCYZCODQBB5BR5JO45JC4PPVLARUAXQSFHWTLH2KMHPWJ36GD"
+    }
+  ],
+  "source_amount": "0.0171923",
+  "destination_min": "0.0171923",
+  "source_asset_type": "native"
+}

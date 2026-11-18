@@ -1,0 +1,309 @@
+{
+  "_links": {
+    "self": {
+      "href": "https://horizon.stellar.org/offers?cursor=\u0026limit=10\u0026order=desc"
+    },
+    "next": {
+      "href": "https://horizon.stellar.org/offers?cursor=1866011204\u0026limit=10\u0026order=desc"
+    },
+    "prev": {
+      "href": "https://horizon.stellar.org/offers?cursor=1866011213\u0026limit=10\u0026order=asc"
+    }
+  },
+  "_embedded": {
+    "records": [
+      {
+        "_links": {
+          "self": {
+            "href": "https://horizon.stellar.org/offers/1866011213"
+          },
+          "offer_maker": {
+            "href": "https://horizon.stellar.org/accounts/GA5HNNTDGY2OBU7DOM7U6YTHCMCK7WFP6ERLM44MHHGKGAWCNO36JOPI"
+          }
+        },
+        "id": "1866011213",
+        "paging_token": "1866011213",
+        "seller": "GA5HNNTDGY2OBU7DOM7U6YTHCMCK7WFP6ERLM44MHHGKGAWCNO36JOPI",
+        "selling": {
+          "asset_type": "credit_alphanum4",
+          "asset_code": "VELO",
+          "asset_issuer": "GDM4RQUQQUVSKQA7S6EM7XBZP3FCGH4Q7CL6TABQ7B2BEJ5ERARM2M5M"
+        },
+        "buying": {
+          "asset_type": "native"
+        },
+        "amount": "0.5809241",
+        "price_r": {
+          "n": 210883,
+          "d": 10000000
+        },
+        "price": "0.0210883",
+        "last_modified_ledger": 65471038,
+        "last_modified_time": "2026-11-14T07:27:12Z"
+      },
+      {
+        "_links": {
+          "self": {
+            "href": "https://horizon.stellar.org/offers/1866011212"
+          },
+          "offer_maker": {
+            "href": "https://horizon.stellar.org/accounts/GD7AO5CGO7TIPNY4VTSGIAZQF4EFK3YVGRRRYBERIBM2T2I4LTH7PMFP"
+          }
+        },
+        "id": "1866011212",
+        "paging_token": "1866011212",
+        "seller": "GD7AO5CGO7TIPNY4VTSGIAZQF4EFK3YVGRRRYBERIBM2T2I4LTH7PMFP",
+        "selling": {
+          "asset_type": "credit_alphanum4",
+          "asset_code": "AQUA",
+          "asset_issuer": "GBNZILSTVQZ4R7IKQDGHYGY2QXL5QOFJYQMXPKWRRM5PAV7Y4M67AQUA"
+        },
+        "buying": {
+          "asset_type": "native"
+        },
+        "amount": "908509.3357155",
+        "price_r": {
+          "n": 3240777,
+          "d": 1909647709
+        },
+        "price": "0.0016971",
+        "last_modified_ledger": 65471038,
+        "last_modified_time": "2026-11-14T07:27:12Z"
+      },
+      {
+        "_links": {
+          "self": {
+            "href": "https://horizon.stellar.org/offers/1866011211"
+          },
+          "offer_maker": {
+            "href": "https://horizon.stellar.org/accounts/GCFWE7HBGFLOSDHF3KFOQGOHSTBATCPENLD6IY3UO7WZNG54KP374DVU"
+          }
+        },
+        "id": "1866011211",
+        "paging_token": "1866011211",
+        "seller": "GCFWE7HBGFLOSDHF3KFOQGOHSTBATCPENLD6IY3UO7WZNG54KP374DVU",
+        "selling": {
+          "asset_type": "native"
+        },
+        "buying": {
+          "asset_type": "credit_alphanum12",
+          "asset_code": "STRIPE",
+          "asset_issuer": "GBEVP5ZQD7YIV5TMAXQ7KJZTY3NALWYVPJ4V5ZZCNT42C27F5HIK6PPL"
+        },
+        "amount": "4.3369538",
+        "price_r": {
+          "n": 1354904041,
+          "d": 271
+        },
+        "price": "4999645.9077491",
+        "last_modified_ledger": 65471038,
+        "last_modified_time": "2026-11-14T07:27:12Z"
+      },
+      {
+        "_links": {
+          "self": {
+            "href": "https://horizon.stellar.org/offers/1866011210"
+          },
+          "offer_maker": {
+            "href": "https://horizon.stellar.org/accounts/GCL4QO6GYJLNIIRRISMIXK4KARYWX2LNFBNH3MQ62LS3PROBB5LE2KW7"
+          }
+        },
+        "id": "1866011210",
+        "paging_token": "1866011210",
+        "seller": "GCL4QO6GYJLNIIRRISMIXK4KARYWX2LNFBNH3MQ62LS3PROBB5LE2KW7",
+        "selling": {
+          "asset_type": "credit_alphanum4",
+          "asset_code": "XPi",
+          "asset_issuer": "GDOFJEZ3FUWAC2EVHPRMJPSWPOD3KJF7FTXFZIERFFPB2VMTRQLZFUEF"
+        },
+        "buying": {
+          "asset_type": "credit_alphanum4",
+          "asset_code": "USDX",
+          "asset_issuer": "GA5G7HKQBJ4PDKIVE53FOZPY3C7YZI5R4QTDQN3UKILQYME7KUL2CKKH"
+        },
+        "amount": "165.0000000",
+        "price_r": {
+          "n": 282077211,
+          "d": 442594
+        },
+        "price": "637.3272367",
+        "last_modified_ledger": 65471038,
+        "last_modified_time": "2026-11-14T07:27:12Z"
+      },
+      {
+        "_links": {
+          "self": {
+            "href": "https://horizon.stellar.org/offers/1866011209"
+          },
+          "offer_maker": {
+            "href": "https://horizon.stellar.org/accounts/GAMU5TQFUMDGVKYQPPDCD2MKKUUWELSQAEKNNU4RFQCWFSRBPJA2MAGQ"
+          }
+        },
+        "id": "1866011209",
+        "paging_token": "1866011209",
+        "seller": "GAMU5TQFUMDGVKYQPPDCD2MKKUUWELSQAEKNNU4RFQCWFSRBPJA2MAGQ",
+        "selling": {
+          "asset_type": "credit_alphanum4",
+          "asset_code": "MOBI",
+          "asset_issuer": "GA6HCMBLTZS5VYYBCATRBRZ3BZJMAFUDKYYF6AH6MVCMGWMRDNSWJPIH"
+        },
+        "buying": {
+          "asset_type": "native"
+        },
+        "amount": "3.0113185",
+        "price_r": {
+          "n": 664161,
+          "d": 1000000
+        },
+        "price": "0.6641610",
+        "last_modified_ledger": 65471038,
+        "last_modified_time": "2026-11-14T07:27:12Z"
+      },
+      {
+        "_links": {
+          "self": {
+            "href": "https://horizon.stellar.org/offers/1866011208"
+          },
+          "offer_maker": {
+            "href": "https://horizon.stellar.org/accounts/GBZA2XWTTBO7DF7J2X3AEATUFX44PPBHGORJRJEQTLT4BWAYPPGYPS7N"
+          }
+        },
+        "id": "1866011208",
+        "paging_token": "1866011208",
+        "seller": "GBZA2XWTTBO7DF7J2X3AEATUFX44PPBHGORJRJEQTLT4BWAYPPGYPS7N",
+        "selling": {
+          "asset_type": "native"
+        },
+        "buying": {
+          "asset_type": "credit_alphanum4",
+          "asset_code": "USDC",
+          "asset_issuer": "GA5ZSEJYB37JRC5AVCIA5MOP4RHTM335X2KGX3IHOJAPP5RE34K4KZVN"
+        },
+        "amount": "18887.6760908",
+        "price_r": {
+          "n": 25903669,
+          "d": 180409734
+        },
+        "price": "0.1435824",
+        "last_modified_ledger": 65471038,
+        "last_modified_time": "2026-11-14T07:27:12Z"
+      },
+      {
+        "_links": {
+          "self": {
+            "href": "https://horizon.stellar.org/offers/1866011207"
+          },
+          "offer_maker": {
+            "href": "https://horizon.stellar.org/accounts/GBZA2XWTTBO7DF7J2X3AEATUFX44PPBHGORJRJEQTLT4BWAYPPGYPS7N"
+          }
+        },
+        "id": "1866011207",
+        "paging_token": "1866011207",
+        "seller": "GBZA2XWTTBO7DF7J2X3AEATUFX44PPBHGORJRJEQTLT4BWAYPPGYPS7N",
+        "selling": {
+          "asset_type": "native"
+        },
+        "buying": {
+          "asset_type": "credit_alphanum4",
+          "asset_code": "USDC",
+          "asset_issuer": "GA5ZSEJYB37JRC5AVCIA5MOP4RHTM335X2KGX3IHOJAPP5RE34K4KZVN"
+        },
+        "amount": "72213.5510611",
+        "price_r": {
+          "n": 131252791,
+          "d": 915499655
+        },
+        "price": "0.1433674",
+        "last_modified_ledger": 65471038,
+        "last_modified_time": "2026-11-14T07:27:12Z"
+      },
+      {
+        "_links": {
+          "self": {
+            "href": "https://horizon.stellar.org/offers/1866011206"
+          },
+          "offer_maker": {
+            "href": "https://horizon.stellar.org/accounts/GBZA2XWTTBO7DF7J2X3AEATUFX44PPBHGORJRJEQTLT4BWAYPPGYPS7N"
+          }
+        },
+        "id": "1866011206",
+        "paging_token": "1866011206",
+        "seller": "GBZA2XWTTBO7DF7J2X3AEATUFX44PPBHGORJRJEQTLT4BWAYPPGYPS7N",
+        "selling": {
+          "asset_type": "credit_alphanum4",
+          "asset_code": "USDC",
+          "asset_issuer": "GA5ZSEJYB37JRC5AVCIA5MOP4RHTM335X2KGX3IHOJAPP5RE34K4KZVN"
+        },
+        "buying": {
+          "asset_type": "native"
+        },
+        "amount": "10028.2870074",
+        "price_r": {
+          "n": 1183973293,
+          "d": 168896555
+        },
+        "price": "7.0100500",
+        "last_modified_ledger": 65471038,
+        "last_modified_time": "2026-11-14T07:27:12Z"
+      },
+      {
+        "_links": {
+          "self": {
+            "href": "https://horizon.stellar.org/offers/1866011205"
+          },
+          "offer_maker": {
+            "href": "https://horizon.stellar.org/accounts/GBZA2XWTTBO7DF7J2X3AEATUFX44PPBHGORJRJEQTLT4BWAYPPGYPS7N"
+          }
+        },
+        "id": "1866011205",
+        "paging_token": "1866011205",
+        "seller": "GBZA2XWTTBO7DF7J2X3AEATUFX44PPBHGORJRJEQTLT4BWAYPPGYPS7N",
+        "selling": {
+          "asset_type": "native"
+        },
+        "buying": {
+          "asset_type": "credit_alphanum4",
+          "asset_code": "EURC",
+          "asset_issuer": "GDHU6WRG4IEQXM5NZ4BMPKOXHW76MZM4Y2IEMFDVXBSDP6SJY4ITNPP2"
+        },
+        "amount": "72048.6678431",
+        "price_r": {
+          "n": 2000,
+          "d": 15267
+        },
+        "price": "0.1310015",
+        "last_modified_ledger": 65471038,
+        "last_modified_time": "2026-11-14T07:27:12Z"
+      },
+      {
+        "_links": {
+          "self": {
+            "href": "https://horizon.stellar.org/offers/1866011204"
+          },
+          "offer_maker": {
+            "href": "https://horizon.stellar.org/accounts/GBZA2XWTTBO7DF7J2X3AEATUFX44PPBHGORJRJEQTLT4BWAYPPGYPS7N"
+          }
+        },
+        "id": "1866011204",
+        "paging_token": "1866011204",
+        "seller": "GBZA2XWTTBO7DF7J2X3AEATUFX44PPBHGORJRJEQTLT4BWAYPPGYPS7N",
+        "selling": {
+          "asset_type": "native"
+        },
+        "buying": {
+          "asset_type": "credit_alphanum4",
+          "asset_code": "EURC",
+          "asset_issuer": "GDHU6WRG4IEQXM5NZ4BMPKOXHW76MZM4Y2IEMFDVXBSDP6SJY4ITNPP2"
+        },
+        "amount": "8971.2385455",
+        "price_r": {
+          "n": 200,
+          "d": 1529
+        },
+        "price": "0.1308044",
+        "last_modified_ledger": 65471038,
+        "last_modified_time": "2026-11-14T07:27:12Z"
+      }
+    ]
+  }
+}

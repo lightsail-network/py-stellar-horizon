@@ -1,0 +1,33 @@
+{
+  "_links": {
+    "self": {
+      "href": "https://horizon.stellar.org/liquidity_pools/ffffe478b19c0d27c19fecdf36b6b60fefc563e1806109a58b86b4138abd085a"
+    },
+    "transactions": {
+      "href": "https://horizon.stellar.org/liquidity_pools/ffffe478b19c0d27c19fecdf36b6b60fefc563e1806109a58b86b4138abd085a/transactions{?cursor,limit,order}",
+      "templated": true
+    },
+    "operations": {
+      "href": "https://horizon.stellar.org/liquidity_pools/ffffe478b19c0d27c19fecdf36b6b60fefc563e1806109a58b86b4138abd085a/operations{?cursor,limit,order}",
+      "templated": true
+    }
+  },
+  "id": "ffffe478b19c0d27c19fecdf36b6b60fefc563e1806109a58b86b4138abd085a",
+  "paging_token": "ffffe478b19c0d27c19fecdf36b6b60fefc563e1806109a58b86b4138abd085a",
+  "fee_bp": 30,
+  "type": "constant_product",
+  "total_trustlines": "1",
+  "total_shares": "90988.3130213",
+  "reserves": [
+    {
+      "asset": "LIBRE:GAYCCWKECNGDRHYU3UTREBD2XLC3CUQN6FV22TKM4WCQER3IWR7TF5CY",
+      "amount": "3376.9695452"
+    },
+    {
+      "asset": "NFIUM:GD76B36XOOH432PICDIVEOD4RU7TEFJ5DZVA2C5MW5LKTSCARK45V3DB",
+      "amount": "2470567.4095665"
+    }
+  ],
+  "last_modified_ledger": 65467547,
+  "last_modified_time": "2026-11-14T02:36:17Z"
+}
