@@ -1,0 +1,58 @@
+name: Scheduled
+
+# Early warnings about upstream changes. A failure here does not block anything; it
+# says what to look at before the next release.
+
+on:
+  schedule:
+    - cron: "17 3 * * 1"
+  workflow_dispatch:
+
+permissions: {}
+
+env:
+  UV_LOCKED: "1"
+
+jobs:
+  # The models against the newest release of go-stellar-sdk, which the next Horizon
+  # release will use: fields that Horizon is about to add or change show up here.
+  go-structs-latest:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
+        with:
+          enable-cache: false
+      - uses: actions/setup-go@924ae3a1cded613372ab5595356fb5720e22ba16 # v6.5.0
+        with:
+          go-version: stable
+          cache: false
+      - name: Move go_structs to the newest go-stellar-sdk
+        working-directory: scripts/go_structs
+        run: |
+          go get github.com/stellar/go-stellar-sdk@latest
+          go mod tidy
+      - run: make check-go-structs
+
+  # The newest httpx2 that pyproject.toml allows: its minor releases have changed
+  # behaviour before, and users get them as soon as they are out.
+  newest-httpx2:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    env:
+      UV_LOCKED: "false"
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
+        with:
+          enable-cache: false
+      - run: uv lock --upgrade-package httpx2
+      - run: uv run --no-default-groups --group test python -c "import importlib.metadata as m; print('httpx2', m.version('httpx2'))"
+      - run: uv run --no-default-groups --group test pytest

@@ -9,6 +9,7 @@ format:
 lint:
 	uv run ruff format --check .
 	uv run ruff check .
+	uv run zizmor .github
 
 typecheck:
 	uv run mypy
