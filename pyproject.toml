@@ -122,10 +122,10 @@ convention = "google"
 [tool.mypy]
 strict = true
 python_version = "3.11"
-files = ["src", "tests", "scripts"]
+files = ["src", "tests", "scripts", "examples"]
 
 [tool.pyright]
-include = ["src", "tests", "scripts"]
+include = ["src", "tests", "scripts", "examples"]
 typeCheckingMode = "strict"
 pythonVersion = "3.11"
 
