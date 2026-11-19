@@ -1,6 +1,6 @@
 [project]
 name = "stellar-horizon"
-version = "0.1.0.dev0"
+version = "0.1.0"
 description = "A typed Python client for the Stellar Horizon API."
 readme = "README.md"
 authors = [{ name = "overcat", email = "hi@overcat.dev" }]
