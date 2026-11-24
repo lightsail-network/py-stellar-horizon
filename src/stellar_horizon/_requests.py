@@ -549,6 +549,12 @@ def order_book(
     return Request("GET", ("order_book",), ORDER_BOOK, tuple(params))
 
 
+def _amount(amount: str | Decimal) -> str:
+    # Horizon accepts only plain decimal numbers, while str() writes a Decimal such as
+    # Decimal("0.0000001") or Decimal(100).normalize() as 1E-7 or 1E+2.
+    return format(amount, "f") if isinstance(amount, Decimal) else amount
+
+
 def strict_receive_paths(
     *,
     destination_asset: str | Asset,
@@ -562,7 +568,7 @@ def strict_receive_paths(
         raise ValueError(msg)
     params = [
         *asset_params("destination", destination_asset),
-        ("destination_amount", str(destination_amount)),
+        ("destination_amount", _amount(destination_amount)),
         *([("source_account", source_account)] if source_account is not None else []),
         *(
             [("source_assets", _asset_list(source_assets))]
@@ -586,7 +592,7 @@ def strict_send_paths(
         raise ValueError(msg)
     params = [
         *asset_params("source", source_asset),
-        ("source_amount", str(source_amount)),
+        ("source_amount", _amount(source_amount)),
         *(
             [("destination_account", destination_account)]
             if destination_account is not None

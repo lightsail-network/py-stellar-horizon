@@ -1,3 +1,4 @@
+from decimal import Decimal
 from typing import Any
 
 import pytest
@@ -378,6 +379,28 @@ def test_strict_send_paths() -> None:
             destination_account="GX",
             destination_assets="native",
         )
+
+
+@pytest.mark.parametrize(
+    ("amount", "expected"),
+    [
+        (Decimal("0.0000001"), "0.0000001"),
+        (Decimal(100).normalize(), "100"),
+        (Decimal("12.50"), "12.50"),
+        ("1E-7", "1E-7"),
+    ],
+)
+def test_paths_write_decimal_amounts_without_an_exponent(
+    amount: Decimal | str, expected: str
+) -> None:
+    receive = rq.strict_receive_paths(
+        destination_asset="native", destination_amount=amount, source_account="GX"
+    )
+    send = rq.strict_send_paths(
+        source_asset="native", source_amount=amount, destination_account="GX"
+    )
+    assert ("destination_amount", expected) in receive.params
+    assert ("source_amount", expected) in send.params
 
 
 def test_assets() -> None:
