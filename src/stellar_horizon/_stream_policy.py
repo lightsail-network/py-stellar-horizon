@@ -6,6 +6,7 @@ only not getting a working connection is. The stream gives up when failures have
 on for a while without one connection that worked.
 """
 
+import math
 import random
 import re
 import time
@@ -82,6 +83,9 @@ class StreamPolicy:
     ) -> None:
         if give_up_after is not None and give_up_after < 0:
             msg = "give_up_after must not be negative"
+            raise ValueError(msg)
+        if give_up_after is not None and math.isnan(give_up_after):
+            msg = "give_up_after must not be NaN"
             raise ValueError(msg)
         self.give_up_after = give_up_after
         self.clock = clock
