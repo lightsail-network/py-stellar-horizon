@@ -23,10 +23,16 @@ from tests.support import BASE, FakeHorizon
 
 
 def client_for(
-    horizon: FakeHorizon, base: str = BASE, **options: Any
+    horizon: FakeHorizon,
+    base: str = BASE,
+    *,
+    follow_redirects: bool = False,
+    **options: Any,
 ) -> AsyncHorizonClient:
     # Most tests look at one answer, so they turn the default retries off; the tests
     # of retries say what they want.
     options.setdefault("max_retries", 0)
-    http = httpx2.AsyncClient(transport=httpx2.MockTransport(horizon))
+    http = httpx2.AsyncClient(
+        transport=httpx2.MockTransport(horizon), follow_redirects=follow_redirects
+    )
     return AsyncHorizonClient(base, http_client=http, **options)

@@ -162,6 +162,18 @@ async def test_stream_ends_at_a_redirect(
     assert horizon.paths() == ["/payments", "/"]
 
 
+async def test_stream_ends_at_a_redirect_when_the_http_client_follows_them(
+    horizon: FakeHorizon, waits: list[float]
+) -> None:
+    horizon.on("/payments", redirect("https://elsewhere.test/moved", 307))
+    async with client_for(horizon, follow_redirects=True) as client:
+        with pytest.raises(ResponseError, match="redirect"):
+            async with client.payments.stream(cursor="1") as stream:
+                await anext(stream)
+    assert waits == []
+    assert horizon.paths() == ["/payments"]
+
+
 async def test_stream_gives_up(horizon: FakeHorizon) -> None:
     # Synthetic: the server cannot be reached.
     horizon.on("/payments", httpx2.ConnectError("refused"))

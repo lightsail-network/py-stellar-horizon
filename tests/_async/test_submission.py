@@ -48,6 +48,17 @@ async def test_submit_refused(
     assert len(horizon.requests) == 1
 
 
+async def test_submit_refused_at_a_redirect_when_the_http_client_follows_them(
+    horizon: FakeHorizon,
+) -> None:
+    # A 307 keeps the method: followed, it would send the submission a second time.
+    horizon.on("/transactions", redirect("https://elsewhere.test/moved", 307))
+    async with client_for(horizon, follow_redirects=True) as client:
+        with pytest.raises(ResponseError, match="redirect"):
+            await client.transactions.submit("AAAA")
+    assert horizon.paths() == ["/transactions"]
+
+
 async def test_submit_failed_has_the_result_codes(horizon: FakeHorizon) -> None:
     horizon.on("/transactions", captured("errors/transaction_failed.json"))
     async with client_for(horizon) as client:
