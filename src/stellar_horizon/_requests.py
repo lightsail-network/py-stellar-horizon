@@ -143,6 +143,12 @@ def asset_param(asset: str | Asset) -> str:
         return asset
     if asset.asset_type == "native":
         return "native"
+    if not asset.asset_code or not asset.asset_issuer:
+        msg = (
+            "an asset is 'native' or 'CODE:ISSUER', not an Asset of type "
+            f"{asset.asset_type!r} without a code or an issuer"
+        )
+        raise ValueError(msg)
     return f"{asset.asset_code}:{asset.asset_issuer}"
 
 

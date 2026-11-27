@@ -123,6 +123,16 @@ async def test_redirect_is_an_error(horizon: FakeHorizon) -> None:
     assert len(horizon.requests) == 1
 
 
+async def test_redirect_is_an_error_when_the_http_client_follows_them(
+    horizon: FakeHorizon,
+) -> None:
+    horizon.on(f"/accounts/{ACCOUNT_ID}", redirect("https://elsewhere.test/moved", 307))
+    async with client_for(horizon, follow_redirects=True) as client:
+        with pytest.raises(ResponseError, match="redirect"):
+            await client.accounts.get(ACCOUNT_ID)
+    assert horizon.paths() == [f"/accounts/{ACCOUNT_ID}"]
+
+
 @pytest.fixture
 def too_deep(monkeypatch: pytest.MonkeyPatch) -> None:
     """Make the JSON decoder give up on every body, as it does on one nested too deep.

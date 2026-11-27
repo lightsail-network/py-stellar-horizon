@@ -81,9 +81,13 @@ class AsyncPage(Generic[T]):
         Raises:
             PagingError: A page links to itself, so going on would never end.
         """
-        if max_records is not None and max_records < 0:
-            msg = "max_records must not be negative"
-            raise ValueError(msg)
+        if max_records is not None:
+            if isinstance(max_records, bool) or not isinstance(max_records, int):  # pyright: ignore[reportUnnecessaryIsInstance]
+                msg = f"max_records must be an int, not {type(max_records).__name__}"
+                raise TypeError(msg)
+            if max_records < 0:
+                msg = "max_records must not be negative"
+                raise ValueError(msg)
         page = self
         count = 0
         while True:

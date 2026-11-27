@@ -23,9 +23,17 @@ from stellar_horizon import HorizonClient
 from tests.support import BASE, FakeHorizon
 
 
-def client_for(horizon: FakeHorizon, base: str = BASE, **options: Any) -> HorizonClient:
+def client_for(
+    horizon: FakeHorizon,
+    base: str = BASE,
+    *,
+    follow_redirects: bool = False,
+    **options: Any,
+) -> HorizonClient:
     # Most tests look at one answer, so they turn the default retries off; the tests
     # of retries say what they want.
     options.setdefault("max_retries", 0)
-    http = httpx2.Client(transport=httpx2.MockTransport(horizon))
+    http = httpx2.Client(
+        transport=httpx2.MockTransport(horizon), follow_redirects=follow_redirects
+    )
     return HorizonClient(base, http_client=http, **options)

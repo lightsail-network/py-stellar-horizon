@@ -246,6 +246,26 @@ def test_asset_params_need_code_and_issuer(asset: str) -> None:
 
 
 @pytest.mark.parametrize(
+    "asset",
+    [
+        Asset(asset_type="credit_alphanum4", asset_issuer=ISSUER),
+        Asset(asset_type="credit_alphanum4", asset_code="USD"),
+        Asset(asset_type="credit_alphanum4"),
+        Asset(asset_type="credit_alphanum4", asset_code="", asset_issuer=""),
+    ],
+)
+def test_asset_model_needs_code_and_issuer(asset: Asset) -> None:
+    with pytest.raises(ValueError, match="CODE:ISSUER"):
+        rq.asset_param(asset)
+    with pytest.raises(ValueError, match="CODE:ISSUER"):
+        rq.asset_params("p", asset)
+    with pytest.raises(ValueError, match="CODE:ISSUER"):
+        rq.strict_send_paths(
+            source_asset="native", source_amount="1", destination_assets=[asset]
+        )
+
+
+@pytest.mark.parametrize(
     ("scope", "endpoint"),
     [
         ({}, "/trades"),

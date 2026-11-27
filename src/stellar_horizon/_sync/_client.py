@@ -62,7 +62,8 @@ class HorizonClient:
         headers: Headers to send with every request, streams and submissions
             included, such as `{"Authorization": "Bearer <key>"}`. They take the place
             of headers of the same name, those of `http_client` and the client's own
-            `X-Client-Name` and `X-Client-Version` included.
+            `X-Client-Name` and `X-Client-Version` included. A stream sends its own
+            `Accept` all the same.
     """
 
     def __init__(  # noqa: PLR0915

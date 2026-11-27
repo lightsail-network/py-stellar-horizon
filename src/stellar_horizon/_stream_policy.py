@@ -6,6 +6,7 @@ only not getting a working connection is. The stream gives up when failures have
 on for a while without one connection that worked.
 """
 
+import math
 import random
 import re
 import time
@@ -28,6 +29,8 @@ AFTER_WORKING = 1.0
 
 There is no wait after one that the client ended by its read timeout.
 """
+MAX_RETRY_AFTER = 3600.0
+"""Seconds of `Retry-After` a stream honours at most: a longer one is cut to this."""
 
 # Problems that a stream reports in an `error` event and that pass.
 _PASSING = frozenset(
@@ -81,6 +84,9 @@ class StreamPolicy:
         if give_up_after is not None and give_up_after < 0:
             msg = "give_up_after must not be negative"
             raise ValueError(msg)
+        if give_up_after is not None and math.isnan(give_up_after):
+            msg = "give_up_after must not be NaN"
+            raise ValueError(msg)
         self.give_up_after = give_up_after
         self.clock = clock
         self.jitter = jitter
@@ -98,18 +104,23 @@ class StreamPolicy:
             or self.clock() - attempt.opened_at >= WORKING_AFTER
         )
 
+    def reset(self) -> None:
+        """Forget the failures, as after a connection that worked."""
+        self.failing_since = None
+        self.next_wait = FIRST_WAIT
+
     def after(self, attempt: Attempt) -> float | None:
         """Return the seconds to wait before connecting again, or `None` to give up."""
         if self.worked(attempt):
-            self.failing_since = None
-            self.next_wait = FIRST_WAIT
+            self.reset()
             if attempt.timed_out:
                 # The client ended a quiet connection itself, and replaces it at once.
                 # A wait would only make late the records that come during it, and
                 # such connections cannot spin: each one lasts the read timeout.
                 return 0.0
             if attempt.closed_by_server and attempt.server_retry is not None:
-                return attempt.server_retry / 1000
+                # Bounded in milliseconds: the number can be too large for a float.
+                return min(max(attempt.server_retry, 0), MAX_WAIT * 1000) / 1000
             return AFTER_WORKING
         now = self.clock()
         if self.failing_since is None:
@@ -122,7 +133,7 @@ class StreamPolicy:
         wait = self.next_wait * (0.5 + self.jitter() / 2)
         self.next_wait = min(self.next_wait * 2, MAX_WAIT)
         if attempt.retry_after is not None:
-            wait = max(wait, attempt.retry_after)
+            wait = max(wait, min(attempt.retry_after, MAX_RETRY_AFTER))
         if self.give_up_after is not None:
             # Don't sleep past the moment of giving up: one more attempt is due then.
             left = self.failing_since + self.give_up_after - now

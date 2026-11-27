@@ -58,6 +58,10 @@ async def test_iter_records_stops_after_max_records(horizon: FakeHorizon) -> Non
         assert len([p async for p in first.iter_records(max_records=2)]) == 2
         with pytest.raises(ValueError, match="negative"):
             [p async for p in first.iter_records(max_records=-1)]
+        with pytest.raises(TypeError, match="max_records must be an int, not bool"):
+            [p async for p in first.iter_records(max_records=True)]
+        with pytest.raises(TypeError, match="max_records must be an int, not float"):
+            [p async for p in first.iter_records(max_records=1.5)]  # type: ignore[arg-type]
     assert len(horizon.requests) == 1
 
 

@@ -71,6 +71,19 @@ async def test_stream_starts_now_and_continues_from_the_last_record(
     assert waits == [0.01, 0.01]
 
 
+async def test_stream_sends_its_own_accept_header(horizon: FakeHorizon) -> None:
+    horizon.on("/payments", captured(FIRST_STREAM))
+    async with (
+        client_for(horizon, headers={"Accept": "application/json"}) as client,
+        client.payments.stream() as stream,
+    ):
+        await anext(stream)
+    root, payments = horizon.requests
+    assert root.url.path == "/"
+    assert root.headers.get_list("accept") == ["application/json"]
+    assert payments.headers.get_list("accept") == ["text/event-stream"]
+
+
 async def test_stream_from_the_oldest_history(horizon: FakeHorizon) -> None:
     horizon.on("/payments", captured(FIRST_STREAM))
     async with client_for(horizon) as client:
@@ -162,6 +175,18 @@ async def test_stream_ends_at_a_redirect(
     assert horizon.paths() == ["/payments", "/"]
 
 
+async def test_stream_ends_at_a_redirect_when_the_http_client_follows_them(
+    horizon: FakeHorizon, waits: list[float]
+) -> None:
+    horizon.on("/payments", redirect("https://elsewhere.test/moved", 307))
+    async with client_for(horizon, follow_redirects=True) as client:
+        with pytest.raises(ResponseError, match="redirect"):
+            async with client.payments.stream(cursor="1") as stream:
+                await anext(stream)
+    assert waits == []
+    assert horizon.paths() == ["/payments"]
+
+
 async def test_stream_gives_up(horizon: FakeHorizon) -> None:
     # Synthetic: the server cannot be reached.
     horizon.on("/payments", httpx2.ConnectError("refused"))
@@ -225,6 +250,32 @@ async def test_stream_waits_for_the_root_at_the_start(
     assert len(waits) >= 2
 
 
+async def test_stream_connects_afresh_once_the_root_answers(
+    horizon: FakeHorizon, waits: list[float]
+) -> None:
+    # Synthetic: the root fails until give_up_after is almost over, then answers, and
+    # the first connection fails once.
+    horizon.on(
+        "/",
+        httpx2.ConnectError("refused"),
+        httpx2.ConnectError("refused"),
+        httpx2.ConnectError("refused"),
+        captured("root.json"),
+    )
+    horizon.on("/payments", httpx2.ConnectError("refused"), captured(FIRST_STREAM))
+    async with client_for(horizon) as client:
+        stream = client.payments.stream(give_up_after=7)
+        # Time passes only in the waits, and each wait is as long as it can be.
+        stream._policy.clock = lambda: sum(waits)
+        stream._policy.jitter = lambda: 1.0
+        async with stream:
+            await anext(stream)
+    assert horizon.paths() == ["/", "/", "/", "/", "/payments", "/payments"]
+    # The connections neither give up at their first failure nor continue the
+    # backoff of the root: the wait after that failure is the first one again.
+    assert waits == [1, 2, 4, 1]
+
+
 async def test_stream_start_that_fails_tries_again_when_read_again(
     horizon: FakeHorizon,
 ) -> None:
@@ -255,10 +306,42 @@ async def test_stream_gives_up_on_the_root(horizon: FakeHorizon) -> None:
 
 
 async def test_stream_close_before_use(horizon: FakeHorizon) -> None:
+    horizon.on("/payments", captured(FIRST_STREAM))
+    async with client_for(horizon) as client:
+        stream = client.payments.stream(cursor="1")
+        await stream.aclose()
+        # A closed stream yields nothing, and closing it again does no harm.
+        with pytest.raises(StopAsyncIteration):
+            await anext(stream)
+        await stream.aclose()
+    assert horizon.requests == []
+
+
+async def test_stream_closed_before_use_does_not_start_when_entered(
+    horizon: FakeHorizon,
+) -> None:
+    horizon.on("/", captured("root.json"))
+    horizon.on("/payments", captured(FIRST_STREAM))
     async with client_for(horizon) as client:
         stream = client.payments.stream()
         await stream.aclose()
+        async with stream as entered:
+            assert entered is stream
+            assert stream.cursor is None
+            with pytest.raises(StopAsyncIteration):
+                await anext(stream)
     assert horizon.requests == []
+
+
+async def test_stream_left_without_a_read_stays_closed(horizon: FakeHorizon) -> None:
+    horizon.on("/", captured("root.json"))
+    horizon.on("/payments", captured(FIRST_STREAM))
+    async with client_for(horizon) as client:
+        async with client.payments.stream() as stream:
+            pass
+        with pytest.raises(StopAsyncIteration):
+            await anext(stream)
+    assert horizon.paths() == ["/"]
 
 
 async def test_stream_survives_a_reset_after_delivering(horizon: FakeHorizon) -> None:

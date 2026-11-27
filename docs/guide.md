@@ -257,11 +257,12 @@ cursor = saved.read_text() if saved.exists() else "now"
 with client.payments.stream(account="G...", cursor=cursor) as stream:
     for payment in stream:
         handle(payment)
-        # Replace the file in one step: a crash in the middle of a plain write
-        # would leave it empty, and an empty cursor starts at the oldest history.
-        draft = saved.with_suffix(".tmp")
-        draft.write_text(stream.cursor)
-        draft.replace(saved)
+        if stream.cursor is not None:
+            # Replace the file in one step: a crash in the middle of a plain write
+            # would leave it empty, and an empty cursor starts at the oldest history.
+            draft = saved.with_suffix(".tmp")
+            draft.write_text(stream.cursor)
+            draft.replace(saved)
 ```
 
 A cursor older than the history the server keeps is moved forward by the server,
@@ -290,8 +291,8 @@ A connection that worked is never a failure, however it ends: it delivered a rec
 was ended by the server, or stayed open for 15 seconds. Not getting a working
 connection is a failure: no connection, no answer, a 429 or 5xx, or a connection that
 dies at once. Failures wait 1 second, then longer each time up to 30 seconds, and no
-shorter than the server's `Retry-After`. Each is logged at `WARNING` on the logger
-`stellar_horizon`.
+shorter than the server's `Retry-After`, up to an hour. Each is logged at `WARNING` on
+the logger `stellar_horizon`.
 
 When failures have gone on for `give_up_after` seconds without one working connection,
 the stream raises `StreamError`, which has the `cursor` to start again from. The default
@@ -534,7 +535,8 @@ client.close()
 ```
 
 A key in a header goes in `headers`. They are sent with every request, streams and
-submissions included, and take the place of headers of the same name:
+submissions included, and take the place of headers of the same name, except that a
+stream sends its own `Accept`:
 
 ```python
 from stellar_horizon import HorizonClient
