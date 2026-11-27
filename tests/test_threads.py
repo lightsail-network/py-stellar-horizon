@@ -147,10 +147,8 @@ def test_threads_share_one_client() -> None:
         except Exception as error:  # noqa: BLE001
             failures.append(error)
 
-    with (
-        LocalHorizon(stream, router=route) as local,
-        HorizonClient(local.url, max_retries=0) as client,
-    ):
+    with LocalHorizon(stream, router=route) as local:
+        client = HorizonClient(local.url, max_retries=0)
         threads = [
             threading.Thread(target=run, args=(client, thread), daemon=True)
             for thread in range(THREADS)
@@ -160,7 +158,10 @@ def test_threads_share_one_client() -> None:
         deadline = time.monotonic() + WAIT
         for each in threads:
             each.join(max(deadline - time.monotonic(), 0))
+        # Checked before the client is closed: closing it under a thread that hangs
+        # in it could hang as well, or raise in the place of this failure.
         assert not [each for each in threads if each.is_alive()], "a thread hangs"
+        client.close()
     if failures:
         msg = "a thread failed"
         raise ExceptionGroup(msg, failures)
