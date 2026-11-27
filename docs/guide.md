@@ -257,11 +257,12 @@ cursor = saved.read_text() if saved.exists() else "now"
 with client.payments.stream(account="G...", cursor=cursor) as stream:
     for payment in stream:
         handle(payment)
-        # Replace the file in one step: a crash in the middle of a plain write
-        # would leave it empty, and an empty cursor starts at the oldest history.
-        draft = saved.with_suffix(".tmp")
-        draft.write_text(stream.cursor)
-        draft.replace(saved)
+        if stream.cursor is not None:
+            # Replace the file in one step: a crash in the middle of a plain write
+            # would leave it empty, and an empty cursor starts at the oldest history.
+            draft = saved.with_suffix(".tmp")
+            draft.write_text(stream.cursor)
+            draft.replace(saved)
 ```
 
 A cursor older than the history the server keeps is moved forward by the server,
