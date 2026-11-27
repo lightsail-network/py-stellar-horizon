@@ -71,6 +71,19 @@ async def test_stream_starts_now_and_continues_from_the_last_record(
     assert waits == [0.01, 0.01]
 
 
+async def test_stream_sends_its_own_accept_header(horizon: FakeHorizon) -> None:
+    horizon.on("/payments", captured(FIRST_STREAM))
+    async with (
+        client_for(horizon, headers={"Accept": "application/json"}) as client,
+        client.payments.stream() as stream,
+    ):
+        await anext(stream)
+    root, payments = horizon.requests
+    assert root.url.path == "/"
+    assert root.headers.get_list("accept") == ["application/json"]
+    assert payments.headers.get_list("accept") == ["text/event-stream"]
+
+
 async def test_stream_from_the_oldest_history(horizon: FakeHorizon) -> None:
     horizon.on("/payments", captured(FIRST_STREAM))
     async with client_for(horizon) as client:

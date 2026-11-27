@@ -205,7 +205,7 @@ class Stream(Generic[T]):
         with session.http.sse(
             session.url(self._request.endpoint),
             params=session.params(self._params()),
-            headers=session.headers,
+            headers=session.with_headers({"Accept": "text/event-stream"}),
             timeout=session.stream_timeout,
             max_event_size=None,
             follow_redirects=False,

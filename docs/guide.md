@@ -534,7 +534,8 @@ client.close()
 ```
 
 A key in a header goes in `headers`. They are sent with every request, streams and
-submissions included, and take the place of headers of the same name:
+submissions included, and take the place of headers of the same name, except that a
+stream sends its own `Accept`:
 
 ```python
 from stellar_horizon import HorizonClient
