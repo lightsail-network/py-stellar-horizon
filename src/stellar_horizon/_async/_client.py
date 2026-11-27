@@ -206,13 +206,18 @@ class AsyncHorizonClient:
 
         Args:
             method: The HTTP method, such as `GET`.
-            path: The path below the base URL, percent-encoded, such as
+            path: The path below the base URL, percent-encoded and without a query
+                (that goes in `params`), such as
                 `/accounts/G.../data/config.memo_required`.
             params: Query parameters.
             data: Form fields, sent as `application/x-www-form-urlencoded`.
             headers: Headers to send in addition to the client's own, in the place
                 of those of the same name.
         """
+        if "?" in path:
+            # With `params` or a query in the base URL, httpx2 would drop it.
+            msg = "path must not have a query; put query parameters in params"
+            raise ValueError(msg)
         if not path.startswith("/"):
             path = "/" + path
         return await self._session.send(

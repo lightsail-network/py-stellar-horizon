@@ -210,3 +210,12 @@ def test_request(horizon: FakeHorizon) -> None:
         "1",
     )
     assert posted.headers["X-Client-Name"] == "py-stellar-horizon"
+
+
+def test_request_refuses_a_query_in_the_path(horizon: FakeHorizon) -> None:
+    # With `params`, or a query in the base URL, the query of the path would be
+    # dropped without a word, so it is refused wherever it is given.
+    with client_for(horizon) as client:
+        with pytest.raises(ValueError, match="params"):
+            client.request("GET", "/offers?limit=1")
+    assert horizon.requests == []
