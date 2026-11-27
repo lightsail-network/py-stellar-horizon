@@ -105,6 +105,7 @@ class AsyncSession:
                 data=data or None,
                 headers=self.with_headers(headers),
                 timeout=self.timeout,
+                follow_redirects=False,
             )
         except httpx2.RequestError as error:
             # Not only `httpx2.TransportError`: a body that cannot be decoded, such
@@ -177,6 +178,7 @@ class AsyncSession:
                 data=dict(request.form),
                 headers=self.headers,
                 timeout=self.timeout,
+                follow_redirects=False,
             )
         except _NOT_SENT as error:
             raise TransportError(str(error) or type(error).__name__) from error

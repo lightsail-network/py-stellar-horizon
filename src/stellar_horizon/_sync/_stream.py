@@ -208,6 +208,7 @@ class Stream(Generic[T]):
             headers=session.headers,
             timeout=session.stream_timeout,
             max_event_size=None,
+            follow_redirects=False,
         ) as source:
             response = source.response
             if not response.is_success:
