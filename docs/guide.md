@@ -290,8 +290,8 @@ A connection that worked is never a failure, however it ends: it delivered a rec
 was ended by the server, or stayed open for 15 seconds. Not getting a working
 connection is a failure: no connection, no answer, a 429 or 5xx, or a connection that
 dies at once. Failures wait 1 second, then longer each time up to 30 seconds, and no
-shorter than the server's `Retry-After`. Each is logged at `WARNING` on the logger
-`stellar_horizon`.
+shorter than the server's `Retry-After`, up to an hour. Each is logged at `WARNING` on
+the logger `stellar_horizon`.
 
 When failures have gone on for `give_up_after` seconds without one working connection,
 the stream raises `StreamError`, which has the `cursor` to start again from. The default

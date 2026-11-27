@@ -28,6 +28,8 @@ AFTER_WORKING = 1.0
 
 There is no wait after one that the client ended by its read timeout.
 """
+MAX_RETRY_AFTER = 3600.0
+"""Seconds of `Retry-After` a stream honours at most: a longer one is cut to this."""
 
 # Problems that a stream reports in an `error` event and that pass.
 _PASSING = frozenset(
@@ -109,7 +111,8 @@ class StreamPolicy:
                 # such connections cannot spin: each one lasts the read timeout.
                 return 0.0
             if attempt.closed_by_server and attempt.server_retry is not None:
-                return attempt.server_retry / 1000
+                # Bounded in milliseconds: the number can be too large for a float.
+                return min(max(attempt.server_retry, 0), MAX_WAIT * 1000) / 1000
             return AFTER_WORKING
         now = self.clock()
         if self.failing_since is None:
@@ -122,7 +125,7 @@ class StreamPolicy:
         wait = self.next_wait * (0.5 + self.jitter() / 2)
         self.next_wait = min(self.next_wait * 2, MAX_WAIT)
         if attempt.retry_after is not None:
-            wait = max(wait, attempt.retry_after)
+            wait = max(wait, min(attempt.retry_after, MAX_RETRY_AFTER))
         if self.give_up_after is not None:
             # Don't sleep past the moment of giving up: one more attempt is due then.
             left = self.failing_since + self.give_up_after - now

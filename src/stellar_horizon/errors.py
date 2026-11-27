@@ -8,6 +8,7 @@ can hand one to its parent.
 """
 
 import json
+import math
 from typing import Any, TypeVar, cast
 
 import httpx2
@@ -326,7 +327,10 @@ def error_for(response: httpx2.Response) -> ResponseError:
 
 
 def retry_after(response: httpx2.Response) -> float | None:
-    """Return the seconds of a `Retry-After` header, if it has a number of seconds."""
+    """Return the seconds of a `Retry-After` header, if it has a finite number of them.
+
+    A negative number counts as none.
+    """
     value = response.headers.get("retry-after")
     if value is None:
         return None
@@ -334,4 +338,4 @@ def retry_after(response: httpx2.Response) -> float | None:
         seconds = float(value)
     except ValueError:
         return None
-    return seconds if seconds >= 0 else None
+    return seconds if math.isfinite(seconds) and seconds >= 0 else None
