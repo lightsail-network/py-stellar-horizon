@@ -121,6 +121,11 @@ def test_give_up_after_must_not_be_negative() -> None:
         StreamPolicy(give_up_after=-1)
 
 
+def test_give_up_after_must_not_be_nan() -> None:
+    with pytest.raises(ValueError, match="give_up_after must not be NaN"):
+        StreamPolicy(give_up_after=float("nan"))
+
+
 @pytest.mark.parametrize(
     ("data", "passing"),
     [
