@@ -142,6 +142,9 @@ class Stream(Generic[T]):
                 ledger = root.history_latest_ledger
                 self._cursor = str(ledger << 32 | NOW_TRANSACTION_AND_OPERATION)
                 self._wants_now = False
+                # The server is back: the connections get the whole time, and the
+                # first wait.
+                self._policy.reset()
                 return
             self._wait_after(attempt, failure)
 

@@ -225,6 +225,32 @@ async def test_stream_waits_for_the_root_at_the_start(
     assert len(waits) >= 2
 
 
+async def test_stream_connects_afresh_once_the_root_answers(
+    horizon: FakeHorizon, waits: list[float]
+) -> None:
+    # Synthetic: the root fails until give_up_after is almost over, then answers, and
+    # the first connection fails once.
+    horizon.on(
+        "/",
+        httpx2.ConnectError("refused"),
+        httpx2.ConnectError("refused"),
+        httpx2.ConnectError("refused"),
+        captured("root.json"),
+    )
+    horizon.on("/payments", httpx2.ConnectError("refused"), captured(FIRST_STREAM))
+    async with client_for(horizon) as client:
+        stream = client.payments.stream(give_up_after=7)
+        # Time passes only in the waits, and each wait is as long as it can be.
+        stream._policy.clock = lambda: sum(waits)
+        stream._policy.jitter = lambda: 1.0
+        async with stream:
+            await anext(stream)
+    assert horizon.paths() == ["/", "/", "/", "/", "/payments", "/payments"]
+    # The connections neither give up at their first failure nor continue the
+    # backoff of the root: the wait after that failure is the first one again.
+    assert waits == [1, 2, 4, 1]
+
+
 async def test_stream_start_that_fails_tries_again_when_read_again(
     horizon: FakeHorizon,
 ) -> None:

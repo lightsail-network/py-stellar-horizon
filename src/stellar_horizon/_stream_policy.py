@@ -98,11 +98,15 @@ class StreamPolicy:
             or self.clock() - attempt.opened_at >= WORKING_AFTER
         )
 
+    def reset(self) -> None:
+        """Forget the failures, as after a connection that worked."""
+        self.failing_since = None
+        self.next_wait = FIRST_WAIT
+
     def after(self, attempt: Attempt) -> float | None:
         """Return the seconds to wait before connecting again, or `None` to give up."""
         if self.worked(attempt):
-            self.failing_since = None
-            self.next_wait = FIRST_WAIT
+            self.reset()
             if attempt.timed_out:
                 # The client ended a quiet connection itself, and replaces it at once.
                 # A wait would only make late the records that come during it, and
