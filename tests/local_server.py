@@ -4,6 +4,9 @@ A mock transport hands the client a whole body at once and cannot show what a so
 does: when bytes arrive, how a reset or a silent peer surfaces, and whether closing a
 stream closes its connection. This server runs in a thread and writes each event to
 the socket as soon as the test's script says so, chunked, as Horizon does.
+
+A test can also give it a router, which answers a request with a whole document over
+a connection that is kept open for the next request, as for any other call.
 """
 
 import contextlib
@@ -24,6 +27,11 @@ class Connection:
 
     def __init__(self, handler: "_Handler") -> None:
         self._handler = handler
+
+    @property
+    def path(self) -> str:
+        """The path and query of the request, as sent."""
+        return self._handler.path
 
     def send(self, *events: str) -> None:
         """Write each event, in full and at once, as one chunk."""
@@ -71,16 +79,23 @@ class Connection:
 
 Answer = Callable[[Connection], None]
 
+Document = tuple[int, str, bytes]
+"""A whole response: its status, its content type and its body."""
+Router = Callable[[str, str, bytes], Document | None]
+"""Answers a request, from its method, path and body, or leaves it to the script."""
+
 
 class LocalHorizon:
     """A server on a free port of localhost that answers with event streams.
 
     Each request takes the next answer of the script; the last one is repeated. An
-    answer is a function that writes to the connection.
+    answer is a function that writes to the connection. With a `router`, the requests
+    it answers with a document do not take one, and a `POST` must be one of them.
     """
 
-    def __init__(self, *answers: Answer) -> None:
+    def __init__(self, *answers: Answer, router: Router | None = None) -> None:
         self.answers = list(answers)
+        self.router = router
         self.requests: list[str] = []
         """The path and query of each request, as sent."""
         self.failures: list[str] = []
@@ -117,6 +132,8 @@ class LocalHorizon:
 
 class _Server(ThreadingHTTPServer):
     daemon_threads = True
+    # Room for every client that connects at once, so that none waits for a retry.
+    request_queue_size = 64
 
     def __init__(self, local: LocalHorizon) -> None:
         super().__init__(("127.0.0.1", 0), _Handler)
@@ -132,6 +149,8 @@ class _Handler(BaseHTTPRequestHandler):
 
     def do_GET(self) -> None:
         self.local.requests.append(self.path)
+        if self._routed("GET", b""):
+            return
         answer = self.local.answer()
         self.send_response(200)
         self.send_header("Content-Type", "text/event-stream; charset=utf-8")
@@ -141,6 +160,27 @@ class _Handler(BaseHTTPRequestHandler):
         # The client can go away, which some scripts expect.
         with contextlib.suppress(OSError):
             answer(Connection(self))
+
+    def do_POST(self) -> None:
+        self.local.requests.append(self.path)
+        body = self.rfile.read(int(self.headers.get("Content-Length", 0)))
+        if not self._routed("POST", body):
+            self.local.failures.append(f"no document for POST {self.path}")
+            self.send_error(404)
+
+    def _routed(self, method: str, body: bytes) -> bool:
+        """Answer with the router's document, if it has one, and tell whether it did."""
+        router = self.local.router
+        document = None if router is None else router(method, self.path, body)
+        if document is None:
+            return False
+        status, content_type, content = document
+        self.send_response(status)
+        self.send_header("Content-Type", content_type)
+        self.send_header("Content-Length", str(len(content)))
+        self.end_headers()
+        self.wfile.write(content)
+        return True
 
     def finish(self) -> None:
         # The script may have reset the connection.
