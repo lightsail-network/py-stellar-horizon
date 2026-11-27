@@ -213,3 +213,22 @@ async def test_request(horizon: FakeHorizon) -> None:
         "1",
     )
     assert posted.headers["X-Client-Name"] == "py-stellar-horizon"
+
+
+@pytest.mark.parametrize(
+    ("path", "match"),
+    [
+        ("/offers?limit=1", "params"),
+        ("/offers#x", "percent-encoded"),
+        (f"/accounts/{ACCOUNT_ID}/data/键", "percent-encoded"),
+        ("/offers\n", "not a URL path"),
+        ("/offers\x00", "not a URL path"),
+    ],
+)
+async def test_request_refuses_a_path_it_cannot_send(
+    horizon: FakeHorizon, path: str, match: str
+) -> None:
+    async with client_for(horizon) as client:
+        with pytest.raises(ValueError, match=match):
+            await client.request("GET", path)
+    assert horizon.requests == []

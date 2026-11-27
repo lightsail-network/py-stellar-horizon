@@ -205,7 +205,8 @@ class AsyncHorizonClient:
 
         Args:
             method: The HTTP method, such as `GET`.
-            path: The path below the base URL, percent-encoded, such as
+            path: The path below the base URL, percent-encoded and without a query
+                (that goes in `params`), such as
                 `/accounts/G.../data/config.memo_required`.
             params: Query parameters.
             data: Form fields, sent as `application/x-www-form-urlencoded`.
@@ -214,9 +215,15 @@ class AsyncHorizonClient:
         """
         if not path.startswith("/"):
             path = "/" + path
+        _check_path(path)
+        try:
+            url = self._session.url(path)
+        except httpx2.InvalidURL as error:
+            msg = f"path is not a URL path: {error}"
+            raise ValueError(msg) from error
         return await self._session.send(
             method.upper(),
-            self._session.url(path),
+            url,
             params=params,
             data=data,
             headers=headers,
@@ -237,6 +244,16 @@ def _checked_base_url(base_url: str) -> httpx2.URL:
         msg = "base_url must not have a fragment"
         raise ValueError(msg)
     return url
+
+
+def _check_path(path: str) -> None:
+    """Raise `ValueError` if `path` has a query or is not percent-encoded."""
+    if "?" in path:
+        msg = "path must not have a query; put query parameters in params"
+        raise ValueError(msg)
+    if "#" in path or not path.isascii():
+        msg = f"path must be percent-encoded: {path!r}"
+        raise ValueError(msg)
 
 
 def _package_version() -> str:
