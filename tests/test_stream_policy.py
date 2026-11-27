@@ -66,6 +66,18 @@ def test_a_connection_that_worked_is_not_a_failure(attempt: Attempt) -> None:
     assert p.next_wait == FIRST_WAIT
 
 
+def test_reset_forgets_the_failures() -> None:
+    p, clock = policy()
+    p.after(Attempt())
+    p.after(Attempt())
+    p.reset()
+    assert p.failing_since is None
+    assert p.next_wait == FIRST_WAIT
+    clock.now += 300
+    assert p.after(Attempt()) == FIRST_WAIT
+    assert p.failing_since == clock.now
+
+
 def test_failures_wait_longer_each_time() -> None:
     p, clock = policy(give_up_after=None)
     waits: list[float | None] = []
