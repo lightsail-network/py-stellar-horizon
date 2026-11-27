@@ -52,7 +52,9 @@ resource, such as `stellar_horizon.models.offer`.
 
 Models can be pickled, but a pickle is not guaranteed to load in another release: the
 module of a class, which a pickle records, and the fields of a model can change between
-releases. To store models, keep `model_dump_json()` and validate it again.
+releases. To store models, keep `model_dump_json()` and validate it again. It names
+the fields as the models do, such as `links` and `from_`; with `by_alias=True` it writes
+Horizon's names, `_links` and `from`. Both can be validated again.
 
 ### Common values
 
