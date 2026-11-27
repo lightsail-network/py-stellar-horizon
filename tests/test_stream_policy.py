@@ -2,6 +2,7 @@ import pytest
 
 from stellar_horizon._stream_policy import (
     FIRST_WAIT,
+    MAX_RETRY_AFTER,
     MAX_WAIT,
     WORKING_AFTER,
     Attempt,
@@ -29,6 +30,19 @@ def test_close_from_the_server_waits_its_retry_time() -> None:
     p, clock = policy()
     attempt = Attempt(opened_at=clock.now, closed_by_server=True, server_retry=10)
     assert p.after(attempt) == pytest.approx(0.01)
+
+
+@pytest.mark.parametrize(
+    ("server_retry", "wait"),
+    [(10**15, MAX_WAIT), (10**400, MAX_WAIT), (-1000, 0.0)],
+    ids=["huge", "too-large-for-a-float", "negative"],
+)
+def test_the_server_retry_time_is_bounded(server_retry: int, wait: float) -> None:
+    p, clock = policy()
+    attempt = Attempt(
+        opened_at=clock.now, closed_by_server=True, server_retry=server_retry
+    )
+    assert p.after(attempt) == wait
 
 
 def test_close_without_retry_waits_a_second() -> None:
@@ -96,6 +110,11 @@ def test_jitter_shortens_the_wait() -> None:
 def test_retry_after_is_respected() -> None:
     p, _ = policy()
     assert p.after(Attempt(retry_after=12)) == 12
+
+
+def test_a_long_retry_after_is_cut() -> None:
+    p, _ = policy(give_up_after=None)
+    assert p.after(Attempt(retry_after=1e100)) == MAX_RETRY_AFTER
 
 
 def test_gives_up_after_the_time_without_a_working_connection() -> None:

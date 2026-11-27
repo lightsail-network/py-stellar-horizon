@@ -209,7 +209,17 @@ def test_transaction_failed_with_diagnostic_events() -> None:
 
 
 @pytest.mark.parametrize(
-    ("header", "expected"), [("2", 2.0), ("0.5", 0.5), ("-1", None), ("soon", None)]
+    ("header", "expected"),
+    [
+        ("2", 2.0),
+        ("0.5", 0.5),
+        ("-1", None),
+        ("soon", None),
+        ("inf", None),
+        ("Infinity", None),
+        ("1e400", None),
+        ("nan", None),
+    ],
 )
 def test_retry_after(header: str, expected: float | None) -> None:
     error = error_for(
