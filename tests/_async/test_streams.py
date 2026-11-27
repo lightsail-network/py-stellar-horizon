@@ -280,10 +280,42 @@ async def test_stream_gives_up_on_the_root(horizon: FakeHorizon) -> None:
 
 
 async def test_stream_close_before_use(horizon: FakeHorizon) -> None:
+    horizon.on("/payments", captured(FIRST_STREAM))
+    async with client_for(horizon) as client:
+        stream = client.payments.stream(cursor="1")
+        await stream.aclose()
+        # A closed stream yields nothing, and closing it again does no harm.
+        with pytest.raises(StopAsyncIteration):
+            await anext(stream)
+        await stream.aclose()
+    assert horizon.requests == []
+
+
+async def test_stream_closed_before_use_does_not_start_when_entered(
+    horizon: FakeHorizon,
+) -> None:
+    horizon.on("/", captured("root.json"))
+    horizon.on("/payments", captured(FIRST_STREAM))
     async with client_for(horizon) as client:
         stream = client.payments.stream()
         await stream.aclose()
+        async with stream as entered:
+            assert entered is stream
+            assert stream.cursor is None
+            with pytest.raises(StopAsyncIteration):
+                await anext(stream)
     assert horizon.requests == []
+
+
+async def test_stream_left_without_a_read_stays_closed(horizon: FakeHorizon) -> None:
+    horizon.on("/", captured("root.json"))
+    horizon.on("/payments", captured(FIRST_STREAM))
+    async with client_for(horizon) as client:
+        async with client.payments.stream() as stream:
+            pass
+        with pytest.raises(StopAsyncIteration):
+            await anext(stream)
+    assert horizon.paths() == ["/"]
 
 
 async def test_stream_survives_a_reset_after_delivering(horizon: FakeHorizon) -> None:

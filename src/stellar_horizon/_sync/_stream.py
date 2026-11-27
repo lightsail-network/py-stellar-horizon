@@ -81,6 +81,7 @@ class Stream(Generic[T]):
         self._policy = StreamPolicy(give_up_after=give_up_after)
         self._records: Generator[T, None, None] | None = None
         self._last: Any = None
+        self._closed = False
 
     @property
     def cursor(self) -> str | None:
@@ -92,7 +93,8 @@ class Stream(Generic[T]):
         return self._cursor
 
     def __enter__(self) -> Self:
-        self._start()
+        if not self._closed:
+            self._start()
         return self
 
     def __exit__(self, *_: object) -> None:
@@ -102,15 +104,18 @@ class Stream(Generic[T]):
         return self
 
     def __next__(self) -> T:
+        if self._closed:
+            raise StopIteration
         if self._records is None:
             self._start()
             self._records = self._run()
         return next(self._records)
 
     def close(self) -> None:
-        """Stop the stream and release its connection."""
+        """Stop the stream and release its connection; it yields nothing more."""
         if self._records is not None:
             self._records.close()
+        self._closed = True
 
     def _start(self) -> None:
         """Turn `now` into a cursor, before the first connection.
