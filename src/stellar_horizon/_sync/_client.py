@@ -211,17 +211,15 @@ class HorizonClient:
             headers: Headers to send in addition to the client's own, in the place
                 of those of the same name.
         """
+        if "?" in path:
+            # With `params` or a query in the base URL, httpx2 would drop it.
+            msg = "path must not have a query; put query parameters in params"
+            raise ValueError(msg)
         if not path.startswith("/"):
             path = "/" + path
-        _check_path(path)
-        try:
-            url = self._session.url(path)
-        except httpx2.InvalidURL as error:
-            msg = f"path is not a URL path: {error}"
-            raise ValueError(msg) from error
         return self._session.send(
             method.upper(),
-            url,
+            self._session.url(path),
             params=params,
             data=data,
             headers=headers,
@@ -242,16 +240,6 @@ def _checked_base_url(base_url: str) -> httpx2.URL:
         msg = "base_url must not have a fragment"
         raise ValueError(msg)
     return url
-
-
-def _check_path(path: str) -> None:
-    """Raise `ValueError` if `path` has a query or is not percent-encoded."""
-    if "?" in path:
-        msg = "path must not have a query; put query parameters in params"
-        raise ValueError(msg)
-    if "#" in path or not path.isascii():
-        msg = f"path must be percent-encoded: {path!r}"
-        raise ValueError(msg)
 
 
 def _package_version() -> str:
