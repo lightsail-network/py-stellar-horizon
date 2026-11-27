@@ -43,6 +43,14 @@ async def test_base_url_has_no_fragment() -> None:
         AsyncHorizonClient(BASE + "/#a")
 
 
+async def test_base_url_cannot_be_changed() -> None:
+    # Requests would still go to the first server, so assigning is refused.
+    async with AsyncHorizonClient(BASE) as client:
+        with pytest.raises(AttributeError):
+            client.base_url = httpx2.URL("https://elsewhere.test")  # type: ignore[misc]
+        assert str(client.base_url) == BASE
+
+
 async def test_http_client_must_be_of_the_flavour() -> None:
     with pytest.raises(TypeError, match=r"httpx2\.AsyncClient"):
         AsyncHorizonClient(BASE, http_client=object())  # type: ignore[arg-type]

@@ -77,8 +77,6 @@ class AsyncHorizonClient:
         headers: Mapping[str, str] | None = None,
     ) -> None:
         url = _checked_base_url(base_url)
-        self.base_url: httpx2.URL = url
-        """The URL of the server."""
         if http_client is None:
             self._http = httpx2.AsyncClient()
             self._owns_http = True
@@ -150,6 +148,11 @@ class AsyncHorizonClient:
         """Claimable balances."""
         self.liquidity_pools: AsyncLiquidityPools = AsyncLiquidityPools(self._session)
         """Liquidity pools."""
+
+    @property
+    def base_url(self) -> httpx2.URL:
+        """The URL of the server. It cannot be changed: make a new client instead."""
+        return self._session.base_url
 
     def __repr__(self) -> str:
         # Only the scheme and the host: the path or the query can hold a key.

@@ -42,6 +42,14 @@ def test_base_url_has_no_fragment() -> None:
         HorizonClient(BASE + "/#a")
 
 
+def test_base_url_cannot_be_changed() -> None:
+    # Requests would still go to the first server, so assigning is refused.
+    with HorizonClient(BASE) as client:
+        with pytest.raises(AttributeError):
+            client.base_url = httpx2.URL("https://elsewhere.test")  # type: ignore[misc]
+        assert str(client.base_url) == BASE
+
+
 def test_http_client_must_be_of_the_flavour() -> None:
     with pytest.raises(TypeError, match=r"httpx2\.Client"):
         HorizonClient(BASE, http_client=object())  # type: ignore[arg-type]
