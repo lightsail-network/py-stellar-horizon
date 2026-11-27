@@ -80,6 +80,7 @@ class AsyncStream(Generic[T]):
         self._policy = StreamPolicy(give_up_after=give_up_after)
         self._records: AsyncGenerator[T, None] | None = None
         self._last: Any = None
+        self._closed = False
 
     @property
     def cursor(self) -> str | None:
@@ -91,7 +92,8 @@ class AsyncStream(Generic[T]):
         return self._cursor
 
     async def __aenter__(self) -> Self:
-        await self._start()
+        if not self._closed:
+            await self._start()
         return self
 
     async def __aexit__(self, *_: object) -> None:
@@ -101,15 +103,18 @@ class AsyncStream(Generic[T]):
         return self
 
     async def __anext__(self) -> T:
+        if self._closed:
+            raise StopAsyncIteration
         if self._records is None:
             await self._start()
             self._records = self._run()
         return await anext(self._records)
 
     async def aclose(self) -> None:
-        """Stop the stream and release its connection."""
+        """Stop the stream and release its connection; it yields nothing more."""
         if self._records is not None:
             await self._records.aclose()
+        self._closed = True
 
     async def _start(self) -> None:
         """Turn `now` into a cursor, before the first connection.

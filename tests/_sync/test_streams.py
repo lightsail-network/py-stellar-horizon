@@ -252,10 +252,42 @@ def test_stream_gives_up_on_the_root(horizon: FakeHorizon) -> None:
 
 
 def test_stream_close_before_use(horizon: FakeHorizon) -> None:
+    horizon.on("/payments", captured(FIRST_STREAM))
+    with client_for(horizon) as client:
+        stream = client.payments.stream(cursor="1")
+        stream.close()
+        # A closed stream yields nothing, and closing it again does no harm.
+        with pytest.raises(StopIteration):
+            next(stream)
+        stream.close()
+    assert horizon.requests == []
+
+
+def test_stream_closed_before_use_does_not_start_when_entered(
+    horizon: FakeHorizon,
+) -> None:
+    horizon.on("/", captured("root.json"))
+    horizon.on("/payments", captured(FIRST_STREAM))
     with client_for(horizon) as client:
         stream = client.payments.stream()
         stream.close()
+        with stream as entered:
+            assert entered is stream
+            assert stream.cursor is None
+            with pytest.raises(StopIteration):
+                next(stream)
     assert horizon.requests == []
+
+
+def test_stream_left_without_a_read_stays_closed(horizon: FakeHorizon) -> None:
+    horizon.on("/", captured("root.json"))
+    horizon.on("/payments", captured(FIRST_STREAM))
+    with client_for(horizon) as client:
+        with client.payments.stream() as stream:
+            pass
+        with pytest.raises(StopIteration):
+            next(stream)
+    assert horizon.paths() == ["/"]
 
 
 def test_stream_survives_a_reset_after_delivering(horizon: FakeHorizon) -> None:
