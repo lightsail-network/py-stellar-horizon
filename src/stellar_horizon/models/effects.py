@@ -314,8 +314,8 @@ class TrustlineFlagsUpdatedEffect(BaseEffect):
     trustor: str
     authorized_flag: bool | None = None
     authorized_to_maintain_liabilites_flag: bool | None = None
-    """Never sent: Horizon stores this flag as
-    `authorized_to_maintain_liabilities_flag` and drops it when it writes the effect.
+    """Never sent: Horizon stores this flag under another name,
+    `authorized_to_maintain_liabilites`, and drops it when it writes the effect.
     The field follows Horizon's own type, misspelling included."""
     clawback_enabled_flag: bool | None = None
 
